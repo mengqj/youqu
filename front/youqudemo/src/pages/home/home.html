@@ -1,17 +1,51 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="wh">
+    <ion-buttons left>
+      <button ion-button>
+        <ion-icon ios="ios-pin" md="md-pin"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>
+      <ion-searchbar [(ngModel)]="searchInput" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" class="search"></ion-searchbar>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button>
+       <ion-icon ios="ios-notifications" md="md-notifications"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+  <!--轮播图-->
+  <ion-slides class="slide" loop="true" pager="true">
+    <ion-slide>
+      <img src="assets/imgs/slide1.png">
+    </ion-slide>    
+    <ion-slide>
+      <img src="assets/imgs/slide2.jpg">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide3.png">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide4.png">
+    </ion-slide>
+  </ion-slides>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<!--文章推荐列表-->
+<ion-content>
+  <ion-list class="index-list" *ngFor="let item of items;">
+    <h5 style="padding-left:16px;margin:15px 0px">{{item.title}}</h5>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{item.img}}">
+      </ion-thumbnail>
+      <p>{{item.title2}}</p>
+      <br>
+      <p>{{item.count}}<button ion-button outline item-end  color="primary">{{item.btn}}</button></p>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

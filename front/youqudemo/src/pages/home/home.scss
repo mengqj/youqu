@@ -1,3 +1,35 @@
 page-home {
-
+    *{
+        padding:0px;
+        margin:0px;
+    }
+    ion-header .slide{
+        height: auto;
+    }
+    ion-header .searchbar-md .searchbar-input{
+        height:35px;
+        line-height: 35px;
+        font-size:14px;
+        box-shadow: 0px;
+        padding: 6px 42px;
+        border: 0.5px solid #e5e5e5;
+        border-radius: 2px;
+        box-shadow:none;
+    }
+    ion-header .searchbar-md .searchbar-search-icon{
+        top:8px;
+    }
+    ion-content .index-list{
+        border: 0.5px solid #e5e5e5;
+    }
+    ion-content .item-md p{
+        margin:0 0 -5px;
+        font-size: 14px;
+    }
+    ion-content .item-md [item-end]{
+        margin:8px 8px 12px 65px;
+    }
+    ion-content .label-md{
+        margin:22px 8px 6px 0
+    }
 }
