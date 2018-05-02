@@ -8,7 +8,7 @@
 
   <ion-navbar>
        
-    <ion-title text-center>我&nbsp;的</ion-title>
+    <ion-title text-center>Elon&nbsp;&nbsp;Musk</ion-title>
         <ion-buttons end>
             <button ion-button icon-only>
               <ion-icon name="settings"></ion-icon>
@@ -21,6 +21,7 @@
 
 
 <ion-content>
+  <!-- 背景部分 -->
 <ion-list>
    <img src="assets/imgs/bg.jpg" alt="" class="bg"> 
 </ion-list>
@@ -29,25 +30,27 @@
   <ion-grid>
       <ion-row>
         <ion-col col-5 text-center>
-            <img src="assets/imgs/touxiang.jpg" alt="" class="touxiang">
+            <img src="assets/imgs/touxiang3.jpg" alt="" class="touxiang">
             <p class="name">travel</p>
         </ion-col>
-        <ion-col col-7>
+        <ion-col col-4 text-center>
          <ion-row>
            <ion-col text-center style="margin-top:-20px;">关注</ion-col>
            <ion-col text-center style="margin-top:-20px;">粉丝</ion-col>
-           <ion-col text-center style="margin-top:-20px;">获赞</ion-col>
          </ion-row>
          <ion-row *ngFor="let item of item;">
           <ion-col text-center>{{item.focus}}</ion-col>
           <ion-col text-center>{{item.fans}}</ion-col>
-          <ion-col text-center>{{item.favor}}</ion-col>
         </ion-row>
+        
         </ion-col>
-      
+        <ion-col col-3 text-center style="margin-top:-12px;">
+          <button ion-button outline class="focus-btn">关&nbsp;注</button>
+        </ion-col>
       </ion-row>
       </ion-grid>
 </ion-list>
+<!-- 主体内容 -->
 <ion-list>
           <ion-segment [(ngModel)]="show"> 
               <ion-segment-button value='information' class="seg-btn"> 
@@ -57,8 +60,7 @@
                  相册
               </ion-segment-button> 
               <ion-segment-button value="star" class="seg-btn"> 
-                 
-                      我的收藏
+                 喜欢
                </ion-segment-button> 
           </ion-segment>
 </ion-list>
@@ -82,9 +84,9 @@
                       <p>November 5, 1955</p>
                     </ion-item>
                     
-                  <ion-card-content >
-                    <p class="text">Wait a minute. Wait a minute, Doc.Uhhh... Are you telling me that you built a time machine... out of
-                       a DeLorean?! Whoa. This is heavy.</p>
+                  <ion-card-content>
+                    <p class="text">Wait a minute. Wait a minute, Doc.Uhhh... Are you telling me that 
+                      you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
                   </ion-card-content>
                 
                   <ion-row>

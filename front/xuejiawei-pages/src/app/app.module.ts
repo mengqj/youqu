@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from "../pages/setting/setting";
 import { ForgetpasswordPage } from "../pages/forgetpassword/forgetpassword";
-
+import { DiscoveryPage } from "../pages/discovery/discovery";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingPage,
     ForgetpasswordPage,
     SendyzmPage,
+    DiscoveryPage,
     TabsPage
   ],
   imports: [
@@ -31,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SettingPage,
     ForgetpasswordPage,
     SendyzmPage,
+    DiscoveryPage,
     TabsPage
   ],
   providers: [
