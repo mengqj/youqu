@@ -11,27 +11,27 @@ import { Platform, ToastController, App, Tabs } from 'ionic-angular';
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
   
-  items=[{
-    title:'有哪些地方可以拍出不一样的重庆？',
-    img:'assets/imgs/index-thumbnail1.png',
-    title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-    count:'22727次浏览',
-    btn:'问答'
-  },
-  {
-    title:'有哪些地方可以拍出不一样的重庆？',
-    img:'assets/imgs/index-thumbnail2.png',
-    title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-    count:'22727次浏览',
-    btn:'攻略'
-  },
-  {
-    title:'有哪些地方可以拍出不一样的重庆？',
-    img:'assets/imgs/index-thumbnail1.png',
-    title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-    count:'22727次浏览',
-    btn:'问答'
-  }];
+  //items=[{
+  //  title:'香港 | 拿上这份徒步攻略',
+  //  img:'assets/imgs/index-thumbnail2.png',
+  //  title2:'不要以为这又是一次shopping之旅',
+  //  count:'22727次浏览',
+  //  btn:'攻略'
+  //},
+  //{
+  //  title:'有哪些地方可以拍出不一样的重庆？',
+  //  img:'assets/imgs/index-thumbnail1.png',
+  //  title2:'史上最全的27个机位，让你看到一个更全面的重庆',
+  //  count:'22727次浏览',
+  //  btn:'问答'
+  //},
+  //{
+  //  title:'有哪些地方可以拍出不一样的重庆？',
+  //  img:'assets/imgs/index-thumbnail1.png',
+  //  title2:'史上最全的27个机位，让你看到一个更全面的重庆',
+  //  count:'22727次浏览',
+  //  btn:'问答'
+  //}];
 
   constructor(public platform: Platform,
     public appCtrl: App,
@@ -83,39 +83,38 @@ export class HomePage {
   }
 
   //下拉加载
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
+  //doInfinite(infiniteScroll) {
+  //  console.log('Begin async operation');
 
-    setTimeout(() => {
-        this.items.push({
-          title:'有哪些地方可以拍出不一样的重庆？',
-          img:'assets/imgs/index-thumbnail1.png',
-          title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-          count:'22727次浏览',
-          btn:'问答'
-        },
-        {
-          title:'有哪些地方可以拍出不一样的重庆？',
-          img:'assets/imgs/index-thumbnail1.png',
-          title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-          count:'22727次浏览',
-          btn:'问答'
-        },
-        {
-          title:'有哪些地方可以拍出不一样的重庆？',
-          img:'assets/imgs/index-thumbnail1.png',
-          title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-          count:'22727次浏览',
-          btn:'问答'
-        });
+  //  setTimeout(() => {
+  //        title:'香港 | 拿上这份徒步攻略',
+  //        img:'assets/imgs/index-thumbnail2.png',
+  //        title2:'不要以为这又是一次shopping之旅',
+  //        count:'22727次浏览',
+  //        btn:'攻略'
+  //      },
+  //      {
+  //        title:'有哪些地方可以拍出不一样的重庆？',
+  //        img:'assets/imgs/index-thumbnail1.png',
+  //        title2:'史上最全的27个机位，让你看到一个更全面的重庆',
+  //        count:'22727次浏览',
+  //        btn:'问答'
+  //      },
+  //      {
+  //        title:'有哪些地方可以拍出不一样的重庆？',
+  //        img:'assets/imgs/index-thumbnail1.png',
+  //        title2:'史上最全的27个机位，让你看到一个更全面的重庆',
+  //        count:'22727次浏览',
+  //        btn:'问答'
+  //      });
 
-      infiniteScroll.complete();
-      if(this.items.length==9){
-        console.log(this.items.length);
-        infiniteScroll.enable(false);
-      }
-    }, 500);
-  }
+  //    infiniteScroll.complete();
+  //    if(this.items.length==9){
+  //      console.log(this.items.length);
+  //      infiniteScroll.enable(false);
+  //    }
+  //  }, 500);
+  //}
 
   //轮播图
   ngAfterViewInit() {
