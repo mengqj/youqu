@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar color="wh">
-    <ion-buttons left>
+    <ion-buttons left >
       <button ion-button>
-        <ion-icon ios="ios-pin" md="md-pin"></ion-icon>
+        <ion-icon ios="ios-pin" md="md-pin" color="primary"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -12,7 +12,7 @@
 
     <ion-buttons right>
       <button ion-button>
-       <ion-icon ios="ios-notifications" md="md-notifications"></ion-icon>
+       <ion-icon ios="ios-notifications" md="md-notifications" color="primary"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -36,16 +36,37 @@
 
 <!--文章推荐列表-->
 <ion-content>
-  <ion-list class="index-list" *ngFor="let item of items;">
-    <h5 style="padding-left:16px;margin:15px 0px">{{item.title}}</h5>
+  <!--<h2>热文推送</h2>-->
+  <ion-list class="index-list">
+    <h5 style="padding-left:16px;margin:15px 0px">香港 | 拿上这份徒步攻略,去全球最佳步道之一远足吧</h5>
     <ion-item>
       <ion-thumbnail item-start>
-        <img src="{{item.img}}">
+        <img src="assets/imgs/index-thumbnail2.png" class="thumb-img">
       </ion-thumbnail>
-      <p>{{item.title2}}</p>
-      <br>
-      <p>{{item.count}}<button ion-button outline item-end  color="primary">{{item.btn}}</button></p>
+      <p>不要以为这又是一次shopping之旅</p>
+      <p>227次浏览<button ion-button outline item-end  color="danger" style="float:right">攻略</button></p>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list class="index-list">
+    <h5 style="padding-left:16px;margin:15px 0px">有哪些地方可以拍出不一样的重庆？</h5>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/index-thumbnail1.png" class="thumb-img">
+      </ion-thumbnail>
+      <p>史上最全的27个机位，让你看到一个更全面的重庆</p>
+      <p>22727次浏览<button ion-button outline item-end  color="primary"  style="float:right">问答</button></p>
     </ion-item>
   </ion-list>
 
+  <ion-list class="index-list">
+    <h5 style="padding-left:16px;margin:15px 0px">香港 | 拿上这份徒步攻略</h5>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/index-thumbnail1.png" class="thumb-img">
+      </ion-thumbnail>
+      <p>史上最全的27个机位，让你看到一个更全面的重庆</p>
+      <p>22727次浏览<button ion-button outline item-end  color="danger"  style="float:right">攻略</button></p>
+    </ion-item>
+  </ion-list>
 </ion-content>

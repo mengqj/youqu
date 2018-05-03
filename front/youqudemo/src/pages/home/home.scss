@@ -6,7 +6,7 @@ page-home {
     ion-header .slide{
         height: auto;
     }
-    ion-header .searchbar-md .searchbar-input{
+    ion-header .searchbar .searchbar-input{
         height:35px;
         line-height: 35px;
         font-size:14px;
@@ -16,20 +16,25 @@ page-home {
         border-radius: 2px;
         box-shadow:none;
     }
-    ion-header .searchbar-md .searchbar-search-icon{
+    ion-header .searchbar .searchbar-search-icon{
         top:8px;
     }
     ion-content .index-list{
-        border: 0.5px solid #e5e5e5;
+        border-top: 0.5px solid #e5e5e5;     
+        border-bottom: 0.5px solid #e5e5e5;     
     }
-    ion-content .item-md p{
-        margin:0 0 -5px;
-        font-size: 14px;
+    ion-content ion-label{
+       white-space:normal;
+       word-wrap:break-word;
+       word-break:break-all; 
+    }
+    ion-content .item ion-thumbnail img{
+        width:120px;
+        height:85px;
+        margin-top:-10px;
     }
     ion-content .item-md [item-end]{
-        margin:8px 8px 12px 65px;
+        margin:0px 8px 9px 0px;
     }
-    ion-content .label-md{
-        margin:22px 8px 6px 0
-    }
+
 }
