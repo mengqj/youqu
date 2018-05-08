@@ -10,6 +10,9 @@ import { ForgetpasswordPage } from "../pages/forgetpassword/forgetpassword";
 import { DiscoveryPage } from "../pages/discovery/discovery";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { PhotoLibrary } from '@ionic-native/photo-library';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    PhotoLibrary,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

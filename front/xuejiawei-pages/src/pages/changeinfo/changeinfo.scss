@@ -11,9 +11,6 @@ page-changeinfo {}
     height: 30px;
     font-size: 1.3rem;
     font-weight: lighter;
-    position: absolute;
-    top: 22%;
-    left: 41%;
 }
 
 .c-bg {
@@ -36,6 +33,10 @@ page-changeinfo {}
     border-radius: 50%;
 }
 
+.user-head button {
+    display: inline-block;
+}
+
 .c-list ion-label {
     color: #a396a3;
 }
@@ -51,10 +52,10 @@ page-changeinfo {}
 
 .c-select-gen {
     position: relative;
-    left: -258px;
+    left: -75%;
 }
 
 .c-select-date {
     position: relative;
-    left: -145px;
+    left: -49%;
 }
