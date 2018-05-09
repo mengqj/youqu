@@ -4,7 +4,7 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { Platform, ToastController, App, Tabs } from 'ionic-angular';
 import { ContentPage } from '../content/content';
-import { NewslistPage } from '../newslist/newslist';
+import { NewslistPage } from '../newslist/newslist'; 
 
 @Component({
   selector: 'page-home',
