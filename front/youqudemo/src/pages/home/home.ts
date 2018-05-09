@@ -10,7 +10,7 @@ import { Platform, ToastController, App, Tabs } from 'ionic-angular';
 })
 export class HomePage {
   @ViewChild(Slides) slides: Slides;
-  
+  items = [];
   //items=[{
   //  title:'香港 | 拿上这份徒步攻略',
   //  img:'assets/imgs/index-thumbnail2.png',
