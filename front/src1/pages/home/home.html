@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--<ion-content padding>
+<button ion-button color="secondary" (click)="goSub()">跳转二级页</button>
+  
+  <ion-list></ion-list>
+</ion-content>-->
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let libraryItem of library" (click)="itemTapped($event, libraryItem)">
+      <img [src]="libraryItem.thumbnailURL | cdvphotolibrary">
+    </button>
+  </ion-list>
+  <!-- virtualScroll is still problematic -->
+  <!--<ion-list [virtualScroll]="library" [approxItemWidth]="thumbnailWidth" [approxItemHeight]="thumbnailHeight" [virtualTrackBy]="trackById" >
+    <button ion-item *virtualItem="let libraryItem">
+      <ion-img [src]="libraryItem.thumbnailURL" [width]="thumbnailWidth" [height]="thumbnailHeight" cache="true"></ion-img>
+    </button>
+  </ion-list>-->
+</ion-content>
+
