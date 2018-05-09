@@ -111,4 +111,4 @@ import { ThumbsupPage } from '../pages/thumbsup/thumbsup';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {} 
