@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="color1">      
+    <ion-title text-center>点赞我的</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="list-avatar-page">
+  <ion-list>
+    <ion-item class="item" *ngFor="let item of items">
+      <div class="div1">
+        <img src="{{item.avatar}}"><span class="name">{{item.name}}</span><span class="thumbup">点赞了我</span><span class="time">{{item.time}}</span>
+      </div>
+      <div class="div2">{{item.text}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>
