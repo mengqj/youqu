@@ -33,6 +33,8 @@ import { SendtextPage } from '../pages/sendtext/sendtext';
 import { SendyzmPage } from '../pages/sendyzm/sendyzm';
 import { SettingPage } from '../pages/setting/setting';
 import { ContactPage } from '../pages/contact/contact';
+import { NewslistPage } from '../pages/newslist/newslist';
+import { ThumbsupPage } from '../pages/thumbsup/thumbsup';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { ContactPage } from '../pages/contact/contact';
     SendyzmPage,
     SettingPage,
     TheyPage,
-    
+    NewslistPage,
+    ThumbsupPage    
   ],
   imports: [
     BrowserModule,
@@ -99,6 +102,8 @@ import { ContactPage } from '../pages/contact/contact';
     SendyzmPage,
     SettingPage,
     TheyPage,
+    NewslistPage,
+    ThumbsupPage  
   ],
   providers: [
     StatusBar,
