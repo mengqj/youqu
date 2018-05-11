@@ -1,0 +1,33 @@
+<ion-content style="background-image:url('assets/imgs/bg.jpeg');background-size:100% 100%;" class="content">
+  <ion-grid style="margin-top:90%">
+    <ion-row>
+      <ion-col col-3 (click)="opentext()">    
+        <button ion-fab color="text" mini><ion-icon ios="ios-create" md="md-create"></ion-icon></button>
+        <span class="text">文字</span>
+      </ion-col>
+      <ion-col col-3 (click)="openCamera()">
+        <button ion-fab color="camera" mini><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+        <span class="text">拍摄</span>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-fab color="primary" mini><ion-icon ios="ios-image" md="md-image"></ion-icon></button>
+        <span class="text">相册</span>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-fab color="question" mini><ion-icon ios="ios-help" md="md-help"></ion-icon></button>
+        <span class="text">提问</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3>    
+          <button ion-fab color="primary" mini><ion-icon ios="ios-pin" md="md-pin"></ion-icon></button>
+        <span class="text">同游</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>    
+        <button block ion-button clear color="wh" (click)="goAdd()"><ion-icon ios="ios-close" md="md-close"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
