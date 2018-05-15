@@ -1,0 +1,67 @@
+page-contact {
+    ion-title{
+        text-align: center;
+        font-size: 18px;
+    }
+    ion-navbar{
+        height: 45px;
+    }
+}
+.searchbar-ios{
+    border-radius: 30px;
+    border: 2px solid gray;
+    background-color: white;
+    margin-top: 10px;
+}
+.searchbar-ios .searchbar-input{
+    border-radius:30px;
+}
+.list-ios{
+    margin-top: 10px;
+}
+.label-ios img{
+    border-radius: 150px;
+    width: 50px;
+    height: 50px;
+}
+.label-ios h2{
+    display: inline;
+    position: relative;
+    top: -30px;
+    left: 5px;
+    color: black;
+    font-size: 16px;
+}
+.label-ios .span1{
+    font-size: 14px;
+    position: relative;
+    left: 60px;
+    top: -35px;
+    color: gray;
+}
+.label-ios p{
+    font-size: 12px;
+    color: #FF8A00;
+    border:2px solid #E5E5E5;
+    background-color: #E5E5E5;
+    width: 85px;
+    border-radius: 30px;
+    position: relative;
+    top: -20px;
+}
+.label-ios .span2{
+    font-size: 12px;
+    text-align: center;
+    color: #009633;
+    border:2px solid #A8EDAB;
+    background-color: #A8EDAB;
+    border-radius: 30px;
+    width: 51px;
+    position: relative;
+    left: 100px;
+    top: -52px;
+}
+.div1{
+    border-top: 0.15px solid #A396A3;
+    height: 20px;
+}
