@@ -7,24 +7,25 @@ page-contact {
         height: 45px;
     }
 }
-.searchbar-ios{
+.searchbar-md .searchbar-input{
     border-radius: 30px;
     border: 2px solid gray;
     background-color: white;
     margin-top: 10px;
 }
-.searchbar-ios .searchbar-input{
-    border-radius:30px;
+.searchbar-md .searchbar-search-icon{
+    top: 30px;
+    left: 18px;
 }
-.list-ios{
+.list-md{
     margin-top: 10px;
 }
-.label-ios img{
+.label-md img{
     border-radius: 150px;
     width: 50px;
     height: 50px;
 }
-.label-ios h2{
+.label-md h2{
     display: inline;
     position: relative;
     top: -30px;
@@ -32,14 +33,14 @@ page-contact {
     color: black;
     font-size: 16px;
 }
-.label-ios .span1{
+.label-md .span1{
     font-size: 14px;
     position: relative;
     left: 60px;
     top: -35px;
     color: gray;
 }
-.label-ios p{
+.label-md p{
     font-size: 12px;
     color: #FF8A00;
     border:2px solid #E5E5E5;
@@ -49,7 +50,7 @@ page-contact {
     position: relative;
     top: -20px;
 }
-.label-ios .span2{
+.label-md .span2{
     font-size: 12px;
     text-align: center;
     color: #009633;
