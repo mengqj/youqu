@@ -7,14 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-       
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="more" style="opacity:0;"></ion-icon>
+      </button>
+  </ion-buttons>
     <ion-title text-center>我&nbsp;的</ion-title>
         <ion-buttons end >
             <button ion-button icon-only (click)="setting()">
               <ion-icon name="settings" ></ion-icon>
             </button>
           </ion-buttons>
-    
+
   </ion-navbar>
 
 </ion-header>
@@ -22,10 +26,10 @@
 
 <ion-content>
 <ion-list>
-   <img src="assets/imgs/bg.jpg" alt="" class="bg"> 
+   <img src="assets/imgs/bg.jpg" alt="" class="bg">
 </ion-list>
 <ion-list style="border-bottom:1px solid #eeeeee;margin-bottom:0px;">
- 
+
   <ion-grid>
       <ion-row>
         <ion-col col-5 text-center>
@@ -44,26 +48,26 @@
           <ion-col text-center>{{item.favor}}</ion-col>
         </ion-row>
         </ion-col>
-      
+
       </ion-row>
       </ion-grid>
 </ion-list>
 <ion-list>
-          <ion-segment [(ngModel)]="show"> 
-              <ion-segment-button value='information' class="seg-btn"> 
+          <ion-segment [(ngModel)]="show">
+              <ion-segment-button value='information' class="seg-btn">
                  游记
-              </ion-segment-button> 
-              <ion-segment-button value="server" class="seg-btn"> 
+              </ion-segment-button>
+              <ion-segment-button value="server" class="seg-btn">
                  相册
-              </ion-segment-button> 
-              <ion-segment-button value="star" class="seg-btn"> 
-                 
+              </ion-segment-button>
+              <ion-segment-button value="star" class="seg-btn">
+
                       我的收藏
-               </ion-segment-button> 
+               </ion-segment-button>
           </ion-segment>
 </ion-list>
 <div [ngSwitch]="show">
-     
+
      <ion-list  *ngSwitchCase="'information'">
        <ion-icon name="md-time" style="margin-left:72px;font-size:25px;"></ion-icon>
         <ion-item *ngFor="let items of items">
@@ -81,12 +85,12 @@
                       <h2>Marty McFly</h2>
                       <p>November 5, 1955</p>
                     </ion-item>
-                    
+
                   <ion-card-content >
                     <p class="text">Wait a minute. Wait a minute, Doc.Uhhh... Are you telling me that you built a time machine... out of
                        a DeLorean?! Whoa. This is heavy.</p>
                   </ion-card-content>
-                
+
                   <ion-row>
                     <ion-col>
                       <button ion-button icon-left clear small>
@@ -101,17 +105,17 @@
                       </button>
                     </ion-col>
                   </ion-row>
-                
-                </ion-card>
-                 
 
-                 
- 
+                </ion-card>
+
+
+
+
 
             </ion-col>
           </ion-row>
         </ion-grid>
-       
+
         {{items}}
       </ion-item>
      </ion-list>

@@ -1,19 +1,53 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ContentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {HttpClient} from "@angular/common/http";
 
 @IonicPage()
+
 @Component({
   selector: 'page-content',
   templateUrl: 'content.html',
 })
 export class ContentPage {
+  id='S1LhUhwRM';
+  val;
+  value;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
+
+  }
+  ionViewDidLoad(){
+    let url:string='http://35.194.153.183:8080/api/content/getContent?id='+this.id;
+    this.http.get(url)
+    .subscribe(
+    data =>{
+      this.val = data['doc'].title;
+      // this.val=data.doc.title;
+
+    });
+
+
+  };
+
+
+
+  item=[{
+    title:'北京速览',
+
+  }];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   items=[{
     title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
     img:'assets/imgs/content_01.jpeg',
@@ -33,8 +67,6 @@ export class ContentPage {
     btn:'浏览'
   }];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
      //下拉加载
   doInfinite(infiniteScroll) {
     console.log('Begin async operation');
@@ -67,10 +99,5 @@ export class ContentPage {
     }, 500);
   }
 
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ContentPage');
-  }
 
 }

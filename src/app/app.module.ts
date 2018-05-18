@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {MultiPickerModule} from 'ion-multi-picker';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
 
@@ -30,7 +31,6 @@ import { ForgetpasswordPage } from '../pages/forgetpassword/forgetpassword';
 import { GuidePage } from '../pages/guide/guide';
 import { RegisterPage } from '../pages/register/register';
 import { SendtextPage } from '../pages/sendtext/sendtext';
-import { SendyzmPage } from '../pages/sendyzm/sendyzm';
 import { SettingPage } from '../pages/setting/setting';
 import { ContactPage } from '../pages/contact/contact';
 import { LoginPage } from '../pages/login/login';
@@ -60,11 +60,10 @@ import { LoginPage } from '../pages/login/login';
     RecommendPage,
     RegisterPage,
     SendtextPage,
-    SendyzmPage,
     SettingPage,
     TheyPage,
     LoginPage,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -77,7 +76,7 @@ import { LoginPage } from '../pages/login/login';
     }
     ),
     MultiPickerModule,
-
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -105,7 +104,6 @@ import { LoginPage } from '../pages/login/login';
     RecommendPage,
     RegisterPage,
     SendtextPage,
-    SendyzmPage,
     SettingPage,
     TheyPage,
     LoginPage,

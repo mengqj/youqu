@@ -13,8 +13,4 @@ export class ForgetpasswordPage {
   back(){
       this.viewCtrl.dismiss();
   }
-  sendyzm(){
-    let modal = this.modalCtrl.create(SendyzmPage);
-    modal.present();
-  }
 }

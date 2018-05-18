@@ -6,63 +6,65 @@ page-contact {
     ion-navbar{
         height: 45px;
     }
-}
-.searchbar-md .searchbar-input {
-    border-radius: 30px;
-    border: 2px solid white;
-    background-color: white;
-    margin-top: 10px;
-}
-.searchbar-md .searchbar-search-icon{
-    top: 30px;
-    left: 18px;
-}
-.list-md{
-    margin-top: 10px;
-}
-.label-md .img1{
-    border-radius: 150px;
-    width: 50px;
-    height: 50px;
-}
-.label-md .hang{
-    display: inline;
-    position: relative;
-    top: -30px;
-    left: 5px;
-    color: black;
-    font-size: 16px;
-}
-.label-md .span1{
-    font-size: 14px;
-    position: relative;
-    left: 60px;
-    top: -35px;
-    color: gray;
-}
-.label-md .p111{
-    font-size: 12px;
-    color: #FF8A00;
-    border:2px solid #E5E5E5;
-    background-color: #E5E5E5;
-    width: 85px;
-    border-radius: 30px;
-    position: relative;
-    top: -20px;
-}
-.label-md .span2{
-    font-size: 12px;
-    text-align: center;
-    color: #009633;
-    border:2px solid #A8EDAB;
-    background-color: #A8EDAB;
-    border-radius: 30px;
-    width: 51px;
-    position: relative;
-    left: 100px;
-    top: -52px;
-}
-.div1{
-    border-top: 0.15px solid #A396A3;
-    height: 20px;
+    .searchbar-md .searchbar-input{
+      height: 40px;
+      border-radius: 30px;
+
+      background-color: white;
+      margin-top: 10px;
+  }
+  .searchbar-md .searchbar-search-icon{
+      top: 20px;
+      left: 18px;
+  }
+  .list-md{
+      margin-top: 10px;
+  }
+  .label-md .img1{
+      border-radius: 150px;
+      width: 50px;
+      height: 50px;
+  }
+  .label-md .hang{
+      display: inline;
+      position: relative;
+      top: -30px;
+      left: 5px;
+      color: black;
+      font-size: 16px;
+  }
+  .label-md .span1{
+      font-size: 14px;
+      position: relative;
+      left: 60px;
+      top: -35px;
+      color: gray;
+  }
+  .label-md .p111{
+      font-size: 12px;
+      color: #FF8A00;
+      border:2px solid #E5E5E5;
+      background-color: #E5E5E5;
+      width: 85px;
+      border-radius: 30px;
+      position: relative;
+      text-align: center;
+      top: 20px;
+  }
+  .label-md .span2{
+      font-size: 12px;
+      text-align: center;
+      color: #009633;
+      border:2px solid #A8EDAB;
+      background-color: #A8EDAB;
+      border-radius: 30px;
+      width: 51px;
+      position: relative;
+      left: 100px;
+      top: -4px;
+  }
+  .div1{
+      border-top: 0.15px solid #A396A3;
+      height: 20px;
+  }
 }
