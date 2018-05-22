@@ -34,7 +34,8 @@ import { SendtextPage } from '../pages/sendtext/sendtext';
 import { SettingPage } from '../pages/setting/setting';
 import { ContactPage } from '../pages/contact/contact';
 import { LoginPage } from '../pages/login/login';
-
+import { Http } from '@angular/http';
+import { HttpModule,JsonpModule } from "@angular/http";
 @NgModule({
   declarations: [
     MyApp,
@@ -66,6 +67,8 @@ import { LoginPage } from '../pages/login/login';
 
   ],
   imports: [
+    HttpModule,
+    JsonpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
