@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient} from "@angular/common/http";
+
 
 @IonicPage()
 
@@ -9,44 +10,38 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: 'content.html',
 })
 export class ContentPage {
-  id='S1LhUhwRM';
-  val;
-  value;
+  idArr:string[]=['BkmlD3v0G','S1LhUhwRM','HyVv96v0f','BkmlD3v0G','S1LhUhwRM','HyVv96v0f'];
+  place1Arr:string[]=['北京','厦门','上海','三亚','成都','丽江'];
+  id;
+  place;
+  val={
+    title:'',
+    sImg:'',
+    comments:''
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
-
+    this.place=navParams.data['place'];
+    for(let i=0;i<6;i++){
+      if(this.place==this.place1Arr[i]){
+        this.id=this.idArr[i];
+      }
+    }
   }
   ionViewDidLoad(){
-    let url:string='http://35.194.153.183:8080/api/content/getContent?id='+this.id;
+    let host='35.194.153.183';
+    let host2='localhost';
+    let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
     this.http.get(url)
     .subscribe(
     data =>{
-      this.val = data['doc'].title;
-      // this.val=data.doc.title;
-
+      this.val = data['doc'];
+      this.val.sImg='http://'+host+':8080'+data['doc'].sImg;
+      console.log(data);
+      //console.log(this.val.sImg);
+      console.log(this.id);
+      console.log(this.place);
     });
-
-
   };
-
-
-
-  item=[{
-    title:'北京速览',
-
-  }];
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   items=[{
     title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
@@ -98,6 +93,4 @@ export class ContentPage {
       }
     }, 500);
   }
-
-
 }
