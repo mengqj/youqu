@@ -5,10 +5,12 @@
   Ionic pages and navigation.
 -->
 <!--  -->
+
 <ion-header >
 
   <ion-navbar color="white1">
-    <ion-searchbar (ionInput)="getItems($event)" class="search" placeholder="搜索目的地" ></ion-searchbar>
+      <!-- (ionInput)="getItems($event)" -->
+    <ion-searchbar class="search" placeholder="搜索目的地" ></ion-searchbar>
   </ion-navbar>
 
 </ion-header>
@@ -17,7 +19,7 @@
 
     <ion-content class="card-background-page">
       <!-- <ion-searchbar (ionInput)="getItems($event)" class="search" placeholder="搜索目的地" ></ion-searchbar> -->
-        <ion-card (click)="content()">
+        <ion-card>
           <img src="assets/imgs/bg3.jpg"/>
          
           <div class="card-subtitle"><p>去海参崴旅游前，我有一本《独家指南》相赠 </p>
@@ -45,34 +47,26 @@
                   </ion-segment-button> 
             </ion-segment>
         </ion-list>
-        <div [ngSwitch]="show">
+        <div [ngSwitch]="show" >
           <ion-list *ngSwitchCase="'show1'">
             <ion-grid>
-              <ion-row>
-                <ion-col col-4 center>
-                  <img src="assets/imgs/item1.png" alt="" (click)="content()">
-                  <p class="title">北京</p>
+              <ion-row class="row1">
+                <ion-col col-4 center *ngFor="let item of items;" (click)="goDetail()" class="col1">
+                  <img src="{{item.img}}" alt="">
+                  <p class="title">{{item.title}}</p>
                 </ion-col>
-                <ion-col col-4>
-                    <img src="assets/imgs/item2.png" alt="" (click)="content()">
-                    <p class="title">厦门</p>
-                  </ion-col>
-                  <ion-col col-4>
-                      <img src="assets/imgs/item3.png" alt="" (click)="content()">
-                      <p class="title">上海</p>
-                    </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col col-4>
-                  <img src="assets/imgs/item4.png" alt="" (click)="content()">
+                <ion-col col-4 (click)="goDetail()" class="col1">
+                  <img src="assets/imgs/item4.png" alt="">
                   <p class="title">三亚</p>
                 </ion-col>
-                <ion-col col-4>
-                  <img src="assets/imgs/item5.png" alt="" (click)="content()">
+                <ion-col col-4 (click)="goDetail()" class="col1">
+                  <img src="assets/imgs/item5.png" alt="">
                   <p class="title">成都</p>
                 </ion-col>
-                <ion-col col-4>
-                  <img src="assets/imgs/item6.png" alt="" (click)="content()">
+                <ion-col col-4 (click)="goDetail()" class="col1">
+                  <img src="assets/imgs/item6.png" alt="">
                   <p class="title">丽江</p>
                 </ion-col>
               </ion-row>
@@ -84,30 +78,30 @@
             <ion-grid>
               <ion-row>
                 <ion-col col-4 center>
-                  <img src="assets/imgs/item1.png" alt="" (click)="content()">
-                  <p class="title">北京</p>
+                  <img src="assets/imgs/item8.jpg" alt="">
+                  <p class="title">首尔</p>
                 </ion-col>
                 <ion-col col-4>
-                    <img src="assets/imgs/item2.png" alt="" (click)="content()">
-                    <p class="title">厦门</p>
+                    <img src="assets/imgs/item9.jpg" alt="">
+                    <p class="title">京都</p>
                   </ion-col>
                   <ion-col col-4>
-                      <img src="assets/imgs/item3.png" alt="" (click)="content()">
-                      <p class="title">上海</p>
+                      <img src="assets/imgs/item10.jpg" alt="">
+                      <p class="title">济州岛</p>
                     </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col col-4>
-                  <img src="assets/imgs/item4.png" alt="" (click)="content()">
-                  <p class="title">三亚</p>
+                  <img src="assets/imgs/item11.jpg" alt="">
+                  <p class="title">札幌</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item5.png" alt="" (click)="content()">
-                  <p class="title">成都</p>
+                  <img src="assets/imgs/item12.jpg" alt="">
+                  <p class="title">东京</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item6.png" alt="" (click)="content()">
-                  <p class="title">丽江</p>
+                  <img src="assets/imgs/item13.jpg" alt="">
+                  <p class="title">大阪</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -117,30 +111,30 @@
             <ion-grid>
               <ion-row>
                 <ion-col col-4 center>
-                  <img src="assets/imgs/item1.png" alt="" (click)="content()">
-                  <p class="title">北京</p>
+                  <img src="assets/imgs/item14.jpg" alt="">
+                  <p class="title">伦敦</p>
                 </ion-col>
                 <ion-col col-4>
-                    <img src="assets/imgs/item2.png" alt="" (click)="content()">
-                    <p class="title">厦门</p>
+                    <img src="assets/imgs/item16.jpg" alt="">
+                    <p class="title">纽约</p>
                   </ion-col>
                   <ion-col col-4>
-                      <img src="assets/imgs/item3.png" alt="" (click)="content()">
-                      <p class="title">上海</p>
+                      <img src="assets/imgs/item17.jpg" alt="">
+                      <p class="title">巴黎</p>
                     </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col col-4>
-                  <img src="assets/imgs/item4.png" alt="" (click)="content()">
-                  <p class="title">三亚</p>
+                  <img src="assets/imgs/item15.jpg" alt="">
+                  <p class="title">塞班岛</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item5.png" alt="" (click)="content()">
-                  <p class="title">成都</p>
+                  <img src="assets/imgs/item18.jpg" alt="">
+                  <p class="title">洛杉矶</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item6.png" alt="" (click)="content()">
-                  <p class="title">丽江</p>
+                  <img src="assets/imgs/item21.jpg" alt="">
+                  <p class="title">罗马</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -150,30 +144,30 @@
             <ion-grid>
               <ion-row>
                 <ion-col col-4 center>
-                  <img src="assets/imgs/item1.png" alt="" (click)="content()">
-                  <p class="title">北京</p>
+                  <img src="assets/imgs/item19.jpg" alt="">
+                  <p class="title">墨尔本</p>
                 </ion-col>
                 <ion-col col-4>
-                    <img src="assets/imgs/item2.png" alt="" (click)="content()">
-                    <p class="title">厦门</p>
+                    <img src="assets/imgs/item17.jpg" alt="">
+                    <p class="title">凯恩斯</p>
                   </ion-col>
                   <ion-col col-4>
-                      <img src="assets/imgs/item3.png" alt="" (click)="content()">
-                      <p class="title">上海</p>
+                      <img src="assets/imgs/item22.jpg" alt="">
+                      <p class="title">皇后镇</p>
                     </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col col-4>
-                  <img src="assets/imgs/item4.png" alt="" (click)="content()">
-                  <p class="title">三亚</p>
+                  <img src="assets/imgs/item23.jpg" alt="">
+                  <p class="title">黄金海岸</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item5.png" alt="" (click)="content()">
-                  <p class="title">成都</p>
+                  <img src="assets/imgs/item20.jpg" alt="">
+                  <p class="title">奥克兰</p>
                 </ion-col>
                 <ion-col col-4>
-                  <img src="assets/imgs/item6.png" alt="" (click)="content()">
-                  <p class="title">丽江</p>
+                  <img src="assets/imgs/item24.jpg" alt="">
+                  <p class="title">悉尼</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
