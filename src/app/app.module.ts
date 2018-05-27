@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {MultiPickerModule} from 'ion-multi-picker';
-import {HttpClientModule} from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AboutPage } from '../pages/about/about';
-
+import * as $ from 'jquery';
+ 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -31,11 +31,12 @@ import { ForgetpasswordPage } from '../pages/forgetpassword/forgetpassword';
 import { GuidePage } from '../pages/guide/guide';
 import { RegisterPage } from '../pages/register/register';
 import { SendtextPage } from '../pages/sendtext/sendtext';
+import { SendyzmPage } from '../pages/sendyzm/sendyzm';
 import { SettingPage } from '../pages/setting/setting';
 import { ContactPage } from '../pages/contact/contact';
 import { LoginPage } from '../pages/login/login';
-import { Http } from '@angular/http';
-import { HttpModule,JsonpModule } from "@angular/http";
+import { NewslistPage } from '../pages/newslist/newslist';
+import { ThumbsupPage } from '../pages/thumbsup/thumbsup';
 @NgModule({
   declarations: [
     MyApp,
@@ -61,25 +62,25 @@ import { HttpModule,JsonpModule } from "@angular/http";
     RecommendPage,
     RegisterPage,
     SendtextPage,
+    SendyzmPage,
     SettingPage,
     TheyPage,
     LoginPage,
-
+    NewslistPage,
+    ThumbsupPage
   ],
   imports: [
-    HttpModule,
-    JsonpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
       backButtonText:'',
       pageTransition:'ios-transition',
 		 backButtonIcon:"ios-arrow-back",
-
     }
     ),
     MultiPickerModule,
     HttpClientModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -107,9 +108,11 @@ import { HttpModule,JsonpModule } from "@angular/http";
     RecommendPage,
     RegisterPage,
     SendtextPage,
+    SendyzmPage,
     SettingPage,
     TheyPage,
     LoginPage,
+    NewslistPage,ThumbsupPage
   ],
   providers: [
     StatusBar,
