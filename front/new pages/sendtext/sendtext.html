@@ -16,7 +16,11 @@
 <ion-content>
     <ion-textarea class="area" placeholder="分享新鲜事..." [(ngModel)]="words">
     </ion-textarea>
-    <button ion-button (click)="upload()">上传</button>
-    <div><img [src]="path"></div>
-
+    <form  method="post" enctype="multipart/form-data" action='javascript:;'>
+      <input type="file" name="file" id="img">
+      <button ion-button (click)="upload()">上传</button>
+      <button type=" button" ion-button id="btn">发送</button>
+      <img id="show">
+    </form>
+    <p id="page">北京</p>
 </ion-content>
