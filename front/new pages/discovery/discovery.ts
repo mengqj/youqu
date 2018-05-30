@@ -37,6 +37,7 @@ export class DiscoveryPage {
   condition;
   val=new Array();
   ionViewDidLoad(){
+    //定位和获取定位城市的天气
     let url:string='http://api.map.baidu.com/location/ip?ak=yvuRyfeZeWrT6KxGgGK5G5MU1bI4L8tf&coor=bd09ll&callback=jsonpCallback';
     this.http.jsonp(url,'callback').subscribe(
       (data:any)=>{
@@ -56,6 +57,7 @@ export class DiscoveryPage {
             this.condition=val.HeWeather6[0].now.cond_txt;
         })
       })
+      //获取精选内容
     let host='35.194.153.183';
     let host2='localhost';
     let typeId='HyrnbcqyX';
