@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContentPage } from '../content/content';
 import * as $ from 'jquery';
 
-/**
- * Generated class for the GuidePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-/**/
 @IonicPage()
 @Component({
   selector: 'page-guide',
@@ -31,20 +24,24 @@ export class GuidePage {
   {
     title:'上海',
     img:'assets/imgs/item3.png'
-  }];
-  
-show="show1";
-ionViewDidLoad(){
-  $(".col1").click(function(){
-    var title = $(this).find('.title').text();
-    console.log(title);
-  });
-}
+  },
+  {
+    title:'三亚',
+    img:'assets/imgs/item4.png'
+  },
+  {
+    title:'成都',
+    img:'assets/imgs/item5.png'
+  },
+  {
+    title:'丽江',
+    img:'assets/imgs/item6.png'
+  },
+];
 
-  place;
-  goDetail(){
-    //this.place=this.title;
-    this.navCtrl.push(ContentPage,{place:this.place});
-    console.log(this.place);
+show="show1";
+
+  goDetail(title){
+    this.navCtrl.push(ContentPage,{place:title});
   }
 }

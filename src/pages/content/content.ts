@@ -10,8 +10,6 @@ import { HttpClient} from "@angular/common/http";
   templateUrl: 'content.html',
 })
 export class ContentPage {
-  idArr:string[]=['BkmlD3v0G','S1LhUhwRM','HyVv96v0f','BkmlD3v0G','S1LhUhwRM','HyVv96v0f'];
-  place1Arr:string[]=['北京','厦门','上海','三亚','成都','丽江'];
   id;
   place;
   val={
@@ -21,11 +19,13 @@ export class ContentPage {
   };
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.place=navParams.data['place'];
-    for(let i=0;i<6;i++){
-      if(this.place==this.place1Arr[i]){
-        this.id=this.idArr[i];
-      }
+    if (this.place=='北京') {
+      this.id='ryh28F9km';
+    } else if(this.place=='厦门')
+    {
+      this.id='BkFAFF9J7';
     }
+
   }
   ionViewDidLoad(){
     let host='35.194.153.183';
@@ -38,8 +38,7 @@ export class ContentPage {
       this.val.sImg='http://'+host+':8080'+data['doc'].sImg;
       console.log(data);
       //console.log(this.val.sImg);
-      console.log(this.id);
-      console.log(this.place);
+      //console.log(this.id);
     });
   };
 

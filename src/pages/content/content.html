@@ -13,14 +13,13 @@
 <ion-content  class="card-background-page" lazy-scroll>
   <!--上部分 图片-->
   <ion-card>
-    <img src="../../assets/imgs/content_beijing.jpeg"/>
+      <img src="{{val.sImg}}" alt="">
     <div class="card-title">{{val.title}}</div>
     <div class="card-subtitle">BeiJing</div>
   </ion-card>
   <!--文字内容-->
   <div class="textcontent">
-      <!--第一部分 北京预览-->
-      <img src="{{val.sImg}}" alt="">
+      <!--第一部分 预览-->
       <div class="text">
         <div innerHTML={{val.comments}} id="valcom"></div>
 
