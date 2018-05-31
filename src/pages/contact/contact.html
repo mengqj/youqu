@@ -17,19 +17,19 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
-      <ion-item *ngFor="let item of items">
-        <img class="img1" src="../assets/imgs/logo2.gif">
-        <h2 class="hang">name</h2><br/>
-        <span class="span1">2017-12-27 18:19:52</span><br/>
-        <p class="p111">2月10号出发</p>
-        <span class="span2">{{ item }}</span>
-        <h2 class="hang">想玩的地点，想要发的话...</h2>
+      <ion-item *ngFor="let i of val;let in = index;">
+        <img class="img1" src="{{val[in].logo}}">
+        <h2 class="hang">{{val[in].name}}</h2><br/>
+        <span class="span1">{{val[in].updateDate}}</span><br/>
+        <h2 class="hang">{{val[in].content}}</h2>
+        <p class="p111">{{val[in].godate}}出发</p>
+        <span class="span2">{{val[in].des}}</span>
+
         <div class="div1">
          <ion-icon ios="ios-pin" md="md-pin" style="width:30px;height:30px;margin-top:10px;"></ion-icon>
-          <span style="font-size:14px;margin-top:-5px;">{{ item }} 北京大学</span>
-          <button ion-button (click)="goMes()" clear item-end style="float:right;color:#A396A3;margin-top:15px;">
+          <span style="font-size:14px;margin-top:-5px;">{{val[in].loc}}</span>
+          <button ion-button clear item-end style="float:right;color:#A396A3;margin-top:15px;">
               <ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon>
             </button>
         </div>

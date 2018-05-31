@@ -6,17 +6,6 @@ page-contact {
     ion-navbar{
         height: 45px;
     }
-    .searchbar-md .searchbar-input{
-      height: 40px;
-      border-radius: 30px;
-
-      background-color: white;
-      margin-top: 10px;
-  }
-  .searchbar-md .searchbar-search-icon{
-      top: 20px;
-      left: 18px;
-  }
   .list-md{
       margin-top: 10px;
   }
@@ -45,11 +34,10 @@ page-contact {
       color: #FF8A00;
       border:2px solid #E5E5E5;
       background-color: #E5E5E5;
-      width: 85px;
+      width: 30%;
       border-radius: 30px;
-      position: relative;
       text-align: center;
-      top: 20px;
+      float: left;
   }
   .label-md .span2{
       font-size: 12px;
@@ -58,10 +46,8 @@ page-contact {
       border:2px solid #A8EDAB;
       background-color: #A8EDAB;
       border-radius: 30px;
-      width: 51px;
-      position: relative;
-      left: 100px;
-      top: -4px;
+      width: 35%;
+      float: left;
   }
   .div1{
       border-top: 0.15px solid #A396A3;
