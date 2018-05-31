@@ -14,7 +14,7 @@ page-contact {
       width: 50px;
       height: 50px;
   }
-  .label-md .hang{
+  .label-md .hang1{
       display: inline;
       position: relative;
       top: -30px;
@@ -22,6 +22,13 @@ page-contact {
       color: black;
       font-size: 16px;
   }
+  .label-md .hang{
+    display: inline;
+    position: relative;
+    top: 20px;
+    color: black;
+    font-size: 16px;
+}
   .label-md .span1{
       font-size: 14px;
       position: relative;
@@ -32,24 +39,30 @@ page-contact {
   .label-md .p111{
       font-size: 12px;
       color: #FF8A00;
-      border:2px solid #E5E5E5;
+      border:2.5px solid #E5E5E5;
       background-color: #E5E5E5;
       width: 30%;
       border-radius: 30px;
       text-align: center;
       float: left;
+      position: relative;
+      top: -20px;
   }
   .label-md .span2{
       font-size: 12px;
       text-align: center;
       color: #009633;
-      border:2px solid #A8EDAB;
+      border:2.5px solid #A8EDAB;
       background-color: #A8EDAB;
       border-radius: 30px;
       width: 35%;
-      float: left;
+      float: right;
+      position: relative;
+      left: -110px;
+      top: -52px;
   }
   .div1{
+      margin-top: 30px;
       border-top: 0.15px solid #A396A3;
       height: 20px;
   }
