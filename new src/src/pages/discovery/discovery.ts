@@ -6,8 +6,6 @@ import { GuanzhuPage } from '../guanzhu/guanzhu';
 import { QuestionPage } from '../question/question';
 import { ContentPage } from '../content/content';
 import {HttpClient} from "@angular/common/http";
-import {Jsonp} from "@angular/http";
-
 @IonicPage()
 @Component({
   selector: 'page-discovery',
@@ -15,7 +13,7 @@ import {Jsonp} from "@angular/http";
 })
 export class DiscoveryPage {
   date;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient,private jsonp:Jsonp) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.date=new Date().toISOString();
   }
   recommend(){
@@ -30,8 +28,8 @@ export class DiscoveryPage {
   question(){
     this.navCtrl.push(QuestionPage);
   }
-  content(){
-    this.navCtrl.push(ContentPage);
+  content(id){
+    this.navCtrl.push('ClicktextPage',{textId:id});
   }
   location;
   tmp;
@@ -60,7 +58,6 @@ export class DiscoveryPage {
       })
       //获取精选内容
     let host='35.194.153.183';
-    let host2='localhost';
     let typeId='HyrnbcqyX';
     let url3:string='http://'+host+':8080/api/content/getSimpleListByParams?typeId='+typeId;
     this.http.get(url3)
@@ -72,9 +69,9 @@ export class DiscoveryPage {
       this.val[i].author.logo='http://'+host+':8080'+data['docs'][i].author.logo;
         this.val[i].sImg='http://'+host+':8080'+data['docs'][i].sImg;
         console.log(this.val[i].author.name);
-
       }
     });
+
     }
 
 
