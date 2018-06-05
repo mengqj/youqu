@@ -21,14 +21,26 @@ export class ContentPage {
     this.place=navParams.data['place'];
     if (this.place=='北京') {
       this.id='ryh28F9km';
-    } else if(this.place=='厦门')
+    } else if(this.place=='杭州')
     {
-      this.id='BkFAFF9J7';
+      this.id='HkWzTETkm';
+    }else if(this.place=='昆明')
+    {
+      this.id='Bk7pIN6yQ';
+    }else if(this.place=='三亚')
+    {
+      this.id='Byd8hX6Jm';
+    }else if(this.place=='厦门')
+    {
+      this.id='HJ_9-STJ7';
+    }else if(this.place=='珠海')
+    {
+      this.id='BygAEST1Q';
     }
-
   }
   ionViewDidLoad(){
     let host='35.194.153.183';
+    let host2='localhost';
     let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
     this.http.get(url)
     .subscribe(
