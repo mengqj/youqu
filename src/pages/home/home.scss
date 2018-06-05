@@ -3,6 +3,14 @@ page-home {
         padding:0px;
         margin:0px;
     }
+    ion-slides{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    ion-header .slide{
+        height: auto;
+    }
     ion-header .searchbar .searchbar-input{
         height:35px;
         line-height: 35px;
@@ -28,8 +36,8 @@ page-home {
         padding-left:4px;
     }
     ion-content .index-list{
-        border-top: 0.5px  dashed #e5e5e5;
-        border-bottom: 0.5px  dashed #e5e5e5;
+        border-top: 0.5px  dashed #e5e5e5;     
+        border-bottom: 0.5px  dashed #e5e5e5;     
     }
     ion-content  .index-list .p1{
         height: 55px;
@@ -42,15 +50,11 @@ page-home {
     ion-content ion-label{
        white-space:normal;
        word-wrap:break-word;
-       word-break:break-all;
+       word-break:break-all; 
     }
     ion-content .item ion-thumbnail img{
         width:130px;
         height:85px;
         border-radius: 3px;
-    }
-    .slide img{
-    }
-    .swiper-slide img{
     }
 }
