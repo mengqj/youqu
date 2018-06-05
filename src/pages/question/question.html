@@ -2,8 +2,8 @@
   <ion-navbar>
     <ion-title>问答</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="ios-search-outline"></ion-icon>
+      <button ion-button icon-only (click)="ask()">
+        提问
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -19,168 +19,71 @@
           <ion-segment-button value="myquestion">
             我的提问
           </ion-segment-button>
-          <ion-segment-button value="myanswer">
-            我的回答
-          </ion-segment-button>
         </ion-segment>
       </div>
-      
       <div [ngSwitch]="question">
         <ion-list *ngSwitchCase="'recommend'">
-            <ion-card>
-
-                <ion-item>
-                  <ion-avatar item-start>
-                    <img src="../../assets/imgs/tuijian1.jpg">
+            <ion-card *ngFor="let item of val;let i = index;">
+                <ion-item class="askhead">
+                  <ion-avatar item-start >
+                    <img src="{{val[i].logo}}" class="logo">
                   </ion-avatar>
-                  <h2>Marty McFly</h2>
+                  <h2>{{val[i].name}}</h2>
+                  <h2>{{val[i].title}}</h2>
                 </ion-item>
-                <ion-card-content>
-                  <p>哪些地方适合一个人去旅行？</p>
-                  <ion-row>
-                    <ion-col>
-                    <p><ion-note>49条回答</ion-note></p>
-                    </ion-col>
-                    <ion-col text-end>
-                      <button ion-button icon-left small class="guanzhu"><ion-icon name="md-add">关注问题</ion-icon></button>
-                    </ion-col>
-                  </ion-row>
-                </ion-card-content>
-              
-                <ion-row text-center>
-                  <ion-col border>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="md-chatboxes"></ion-icon>
-                      <div>查看回答</div>
-                    </button>
-                  </ion-col>
-                  <ion-col border>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="ios-create"></ion-icon>
-                      <div>添加回答</div>
-                    </button>
-                  </ion-col>
-                </ion-row>
+                <ion-card-content (click)="show(val[i].id)">
+                  <div class="contentdiv">
+                      <p class="content">{{val[i].content}}</p>
+                  </div>
 
-              </ion-card>
-            <ion-card>
-              <ion-item>
-                  <ion-avatar item-start>
-                    <img src="../../assets/imgs/tuijian2.gif">
-                  </ion-avatar>
-                  <h2>Foresee</h2>
-                </ion-item>
-                <ion-card-content>
-                  <p>哪些地方适合一个人去旅行？</p>
-                  <ion-row>
-                    <ion-col>
-                    <p><ion-note>49条回答</ion-note></p>
-                    </ion-col>
-                    <ion-col text-end>
-                      <button ion-button icon-left small class="guanzhu"><ion-icon name="md-add">关注问题</ion-icon></button>
-                    </ion-col>
-                  </ion-row>
                 </ion-card-content>
-              
-                <ion-row text-center>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="md-chatboxes"></ion-icon>
-                      <div>查看回答</div>
-                    </button>
-                  </ion-col>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="ios-create"></ion-icon>
-                      <div>添加回答</div>
-                    </button>
-                  </ion-col>
-                </ion-row>
 
+                <ion-row>
+                  <ion-col center text-left>
+                      <ion-note>
+                        {{val[i].commentNum}}条回答
+                      </ion-note>
+                    </ion-col>
+                    <ion-col center text-right>
+                      <ion-note>
+                          {{val[i].date}}
+                      </ion-note>
+                    </ion-col>
+                </ion-row>
               </ion-card>
         </ion-list>
-      
+
         <ion-list *ngSwitchCase="'myquestion'">
-          
-            <ion-card>
-              
-                <ion-item>
-                  <ion-avatar item-start>
-                    <img src="../../assets/imgs/tuijian2.gif">
+            <ion-card *ngFor="let item of valt;let i = index;">
+                <ion-item class="askhead">
+                  <ion-avatar item-start >
+                    <img src="{{valt[i].logo}}" class="logo">
                   </ion-avatar>
-                  <h2>Foresee</h2>
+                  <h2>{{valt[i].name}}</h2>
+                  <h2>{{valt[i].title}}</h2>
                 </ion-item>
-                <ion-card-content>
-                  <p>西安攻略了解一下？</p>
-                  <ion-row>
-                    <ion-col>
-                    <p><ion-note>49条回答</ion-note></p>
-                    </ion-col>
-                    <ion-col text-end>
-                      <button ion-button icon-left small class="guanzhu"><ion-icon name="md-add">关注问题</ion-icon></button>
-                    </ion-col>
-                  </ion-row>
+                <ion-card-content (click)="show(valt[i].id)">
+                  <div class="contentdiv">
+                      <p class="content">{{valt[i].content}}</p>
+                  </div>
+
                 </ion-card-content>
-              
-                <ion-row text-center>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="md-chatboxes"></ion-icon>
-                      <div>查看回答</div>
-                    </button>
-                  </ion-col>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="ios-create"></ion-icon>
-                      <div>添加回答</div>
-                    </button>
-                  </ion-col>
+
+                <ion-row>
+                  <ion-col center text-left>
+                      <ion-note>
+                        {{valt[i].commentNum}}条回答
+                      </ion-note>
+                    </ion-col>
+                    <ion-col center text-right>
+                      <ion-note>
+                          {{valt[i].date}}
+                      </ion-note>
+                    </ion-col>
                 </ion-row>
-
               </ion-card>
-
         </ion-list>
 
-        <ion-list *ngSwitchCase="'myanswer'">
-            
-            <ion-card>
-              
-                <ion-item>
-                  <ion-avatar item-start>
-                    <img src="../../assets/imgs/tuijian1.jpg">
-                  </ion-avatar>
-                  <h2>username</h2>
-                </ion-item>
-                <ion-card-content>
-                  <p>哪些地方适合一个人去旅行？</p>
-                  <ion-row>
-                    <ion-col>
-                    <p><ion-note>49条回答</ion-note></p>
-                    </ion-col>
-                    <ion-col text-end>
-                      <button ion-button icon-left small class="guanzhu"><ion-icon name="md-add">关注问题</ion-icon></button>
-                    </ion-col>
-                  </ion-row>
-                </ion-card-content>
-              
-                <ion-row text-center>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="md-chatboxes"></ion-icon>
-                      <div>查看回答</div>
-                    </button>
-                  </ion-col>
-                  <ion-col>
-                    <button ion-button icon-left clear small>
-                      <ion-icon name="ios-create"></ion-icon>
-                      <div>添加回答</div>
-                    </button>
-                  </ion-col>
-                </ion-row>
-
-              </ion-card>
-
-          </ion-list>
       </div>
 
 

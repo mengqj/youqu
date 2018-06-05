@@ -1,6 +1,11 @@
 <ion-header>
   <ion-navbar color="wh">
     <ion-title text-center>发布信息</ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only>
+          <ion-icon name="more" style="opacity:0;"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -13,7 +18,7 @@
     </ion-item>
     <ion-item class="launch-item">
       <ion-label><ion-icon ios="ios-send" md="md-send" class="label-icon" color="primary"></ion-icon>想去哪儿</ion-label>
-      <ion-multi-picker item-content [multiPickerColumns]="cityColumns" [cancelText]="'取消'" [doneText]="'完成'" style="font-size:14px;"></ion-multi-picker>
+      <ion-multi-picker item-content [multiPickerColumns]="cityColumns" [cancelText]="'取消'" [doneText]="'完成'" style="font-size:14px;"id="des"></ion-multi-picker>
       <button ion-button clear item-end><ion-icon name="ios-arrow-forward"></ion-icon></button>
     </ion-item>
   </ion-list>
@@ -24,21 +29,21 @@
     </ion-item>
   </ion-list>
 
-  <div class="add-img">
+ <!-- <div class="add-img">
     <button ion-button clear><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
-    <span style="display:block">添加图片</span>     
-  </div>
+    <span style="display:block">添加图片</span>
+  </div>-->
 
   <ion-list class="launch-list">
     <ion-item class="launch-item">
       <ion-label><ion-icon ios="ios-pin" md="md-pin" class="label-icon" color="primary"></ion-icon>出发地</ion-label>
-      <ion-multi-picker item-content [multiPickerColumns]="cityColumns" [cancelText]="'取消'" [doneText]="'完成'"></ion-multi-picker>
+      <ion-multi-picker item-content [multiPickerColumns]="cityColumns" [cancelText]="'取消'" [doneText]="'完成'" id="location"></ion-multi-picker>
       <button ion-button clear item-end><ion-icon name="ios-arrow-forward"></ion-icon></button>
   </ion-item>
   </ion-list>
 
   <!--确认发布按钮-->
   <div class="btn">
-    <button ion-button block color="yel">发布</button> 
+    <button ion-button block color="yel" (click)="send()">发布</button>
   </div>
 </ion-content>

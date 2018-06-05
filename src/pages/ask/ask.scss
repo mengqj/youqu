@@ -1,0 +1,28 @@
+page-ask {
+  .content{
+    background-color:#f9f9f9;
+}
+  ion-content .item-md.item-block .item-inner{
+    border:0px;
+}
+  ion-content .ask-list{
+    margin-bottom: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+ion-content .ask-list .ask-item{
+    border-bottom: 0.5px solid #e5e5e5;
+}
+ion-content .ask-list .ask-item .label-icon{
+    padding-right: 10px;
+}
+ion-content .select .select-icon{
+  display: none;
+}
+ion-content .input-textarea{
+  height: 220px;
+}
+ion-content .btn{
+  width: 80%;
+  margin: 50px auto;
+}
+}
