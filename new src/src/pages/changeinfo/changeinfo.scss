@@ -1,6 +1,5 @@
-page-changeinfo {}
-
-.c-top {
+page-changeinfo {
+  .c-top {
     margin-top: 1px;
     height: 30%;
     width: 100%;
@@ -16,8 +15,8 @@ page-changeinfo {}
 .c-bg {
     height: 100%;
     width: 100%;
-    background: url("../../assets/imgs/user-bg.jpg")no-repeat;
-    background-size: 100%;
+    background:no-repeat;
+    background-size: 100% 100%;
     opacity: 0.6;
 }
 
@@ -59,3 +58,13 @@ page-changeinfo {}
     position: relative;
     left: -49%;
 }
+.logobtn{
+    height: 30px;
+    text-align: center;
+    border: 1px #e8e8e8 solid;
+    color: #e8e8e8;
+    font-weight: lighter;
+    padding-top: 5px;
+}
+}
+

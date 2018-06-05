@@ -1,99 +1,143 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-// import { PhotoLibrary } from '@ionic-native/photo-library';
-import { HttpClient } from '@angular/common/http';
-import { AlertController } from 'ionic-angular';
+import {HttpClient} from "@angular/common/http";
+import  * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-changeinfo',
   templateUrl: 'changeinfo.html',
 })
 export class ChangeinfoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,public http:HttpClient,public alertCtrl:AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,private http: HttpClient) {
+    this.getInfo();
   }
+  userId='BJpVFFMRG';
+
+  name:string;
+  userName;
+  gender: string;
+  email:string;
+  phone:string;
+  logo:string;
+  bgLogo:string;
+  newlogo;
+  newbg;
+  public event = {
+    month:'',
+    timeStarts: '07:43',
+    timeEnds: '1990-02-20'
+  }
+  //设置头像
+  setLogo(){
+    this.upload1();
+    this.logo=this.newlogo;
+  }
+  //设置背景图像
+  setBgLogo(){
+    this.upload2();
+    this.bgLogo=this.newbg;
+  }
+  //上传
+  upload1(){
+    let file=(<HTMLInputElement>document.getElementById('file')).files[0];
+    var temp="";
+    let formData = new FormData();
+    formData.append('file',file);
+    $.ajax({
+      type: 'POST',
+      url: 'http://35.194.153.183:8080/system/upload?type=images',
+      data: formData,
+      async: false,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        console.log(data);
+        //$("#logo").attr("src", 'http://35.194.153.183:8080'+data);
+        temp=data;
+        return temp;
+      },
+      error: function (err) {
+        console.log(err);
+      }
+    });
+    this.newlogo=temp;
+  }
+  upload2(){
+    let file=(<HTMLInputElement>document.getElementById('file2')).files[0];
+    let formData = new FormData();
+    var temp;
+    formData.append('file',file);
+    $.ajax({
+      type: 'POST',
+      url: 'http://35.194.153.183:8080/system/upload?type=images',
+      data: formData,
+      async: false,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        console.log(data);
+        $(".c-bg").css("background-image","url('http://35.194.153.183:8080"+data+"')");
+        temp=data;
+        return temp;
+      },
+      error: function (err) {
+        console.log(err);
+      }
+    });
+    this.newbg=temp;
+}
+  //获取用户信息
+  getInfo(){
+    let host='35.194.153.183';
+    let url:string='http://'+host+':8080/api/users/getUser?searchkey='+this.userId;
+    this.http.get(url)
+    .subscribe(
+    data =>{
+      console.log(data);
+      this.logo=data['docs'][0].logo;
+      this.bgLogo=data['docs'][0].bgLogo;
+      this.userName=data['docs'][0].userName;
+      this.name=data['docs'][0].name;
+      this.email=data['docs'][0].email;
+      this.event.month=data['docs'][0].birth;
+      this.phone=data['docs'][0].phoneNum;
+      this.gender=data['docs'][0].gender;
+      console.log(this.bgLogo);
+      $(".c-bg").css("background-image","url('http://35.194.153.183:8080"+this.bgLogo+"')");
+    });
+  }
+  //修改信息
+  send(){
+    var params = {
+    "_id": this.userId,
+    "name":this.name,
+    "email": this.email,
+    "logo": this.logo,
+    "gender": this.gender,
+    "birth": this.event.month,
+    "phoneNum":this.phone,
+    "bgLogo":this.bgLogo,
+    };
+      let url:string='http://35.194.153.183:8080/api/users/updateInfo';
+      this.http.post(url,params)
+      .subscribe(
+        (data:any) => {
+          console.log(data);
+          if (data.state=="success") {
+            this.viewCtrl.dismiss();
+          } else {
+            alert('发送失败');
+          }
+
+        }
+    );
+  }
+
+
 
   back() {
     this.viewCtrl.dismiss();
   }
-  public event = {
-    month: '1990-02-19',
-    timeStarts: '07:43',
-    timeEnds: '1990-02-20'
-  }
-  gender: string = "f";
-  name:string;
-  email:string;
-  phone:string;
-  name1:string;
-  
-
-//   tryRequestAuthorization() {
-//   this.photoLibrary.requestAuthorization().then(() => {
-//     this.photoLibrary.getLibrary().subscribe({
-//       next: library => {
-//         library.forEach(function(libraryItem) {
-//           console.log(libraryItem.id);          // ID of the photo
-//           console.log(libraryItem.photoURL);    // Cross-platform access to photo
-//           console.log(libraryItem.thumbnailURL);// Cross-platform access to thumbnail
-//           console.log(libraryItem.fileName);
-//           console.log(libraryItem.width);
-//           console.log(libraryItem.height);
-//           console.log(libraryItem.creationDate);
-//           console.log(libraryItem.latitude);
-//           console.log(libraryItem.longitude);
-//           console.log(libraryItem.albumIds);    // array of ids of appropriate AlbumItem, only of includeAlbumsData was used
-//         });
-//       },
-//       error: err => { console.log('could not get photos'); },
-//       complete: () => { console.log('done getting photos'); }
-//     });
-//   })
-//   .catch(err => console.log('permissions weren\'t granted'));
-// }
-
-
-submit(){
-  var params={
-    userName:this.name,
-    name:this.name1,
-    gender:this.gender,
-    birth:this.event.month,
-    email:this.email,
-    phoneNum:this.phone,
-    
-  }
-  let url:string='http://35.194.153.183:8080/api/users/updateInfo ';
-  this.http.post(url,params).subscribe(data =>{
-   if(data['state']=="success")
-   {
-    let alert = this.alertCtrl.create({
-    
-      subTitle:'修改成功' ,
-      buttons: ['OK']
-    });
-    alert.present();
-   }
-   else if(data['state']=="error")
-   {
-    let alert = this.alertCtrl.create({
-      title:'修改失败',
-      subTitle:data['message'],
-      buttons: ['OK']
-    });
-    alert.present();
-   }
-   
-   else if(data['state']=="error"&&data['name'].length<2)
-   {
-    let alert = this.alertCtrl.create({
-      title:'修改失败',
-      subTitle:'昵称应为'+data['message'],
-      buttons: ['OK']
-    });
-    alert.present();
-   }
-  })
-}
-
 }
