@@ -1,11 +1,8 @@
-
 <ion-header >
-
   <ion-navbar color="white1">
       <!-- (ionInput)="getItems($event)" -->
     <ion-searchbar class="search" placeholder="搜索目的地" ></ion-searchbar>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -44,7 +41,7 @@
           <ion-list *ngSwitchCase="'show1'">
             <ion-grid>
               <ion-row class="row1">
-                <ion-col col-4 center *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="{{item.img}}" alt="">
                   <p class="title">{{item.title}}</p>
                 </ion-col>
@@ -56,62 +53,41 @@
           <ion-list *ngSwitchCase="'show2'">
             <ion-grid>
               <ion-row>
-                <ion-col col-4 center>
-                  <img src="assets/imgs/item8.jpg" alt="">
-                  <p class="title">首尔</p>
-                </ion-col>
-                <ion-col col-4>
-                    <img src="assets/imgs/item9.jpg" alt="">
-                    <p class="title">京都</p>
-                  </ion-col>
-                  <ion-col col-4>
-                      <img src="assets/imgs/item10.jpg" alt="">
-                      <p class="title">济州岛</p>
-                    </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-4>
-                  <img src="assets/imgs/item11.jpg" alt="">
-                  <p class="title">札幌</p>
-                </ion-col>
-                <ion-col col-4>
-                  <img src="assets/imgs/item12.jpg" alt="">
-                  <p class="title">东京</p>
-                </ion-col>
-                <ion-col col-4>
-                  <img src="assets/imgs/item13.jpg" alt="">
-                  <p class="title">大阪</p>
+                <ion-col col-4 *ngFor="let item of items2;" (click)="goDetail(item.title)" class="col1">
+                  <img src="{{item.img}}" alt="">
+                  <p class="title">{{item.title}}</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-list>
 
+          
           <ion-list *ngSwitchCase="'show3'">
             <ion-grid>
               <ion-row>
-                <ion-col col-4 center>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1" center>
                   <img src="assets/imgs/item14.jpg" alt="">
                   <p class="title">伦敦</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                     <img src="assets/imgs/item16.jpg" alt="">
                     <p class="title">纽约</p>
                   </ion-col>
-                  <ion-col col-4>
+                  <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                       <img src="assets/imgs/item17.jpg" alt="">
                       <p class="title">巴黎</p>
                     </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item15.jpg" alt="">
                   <p class="title">塞班岛</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item18.jpg" alt="">
                   <p class="title">洛杉矶</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item21.jpg" alt="">
                   <p class="title">罗马</p>
                 </ion-col>
@@ -122,29 +98,29 @@
           <ion-list *ngSwitchCase="'show4'">
             <ion-grid>
               <ion-row>
-                <ion-col col-4 center>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1" center>
                   <img src="assets/imgs/item19.jpg" alt="">
                   <p class="title">墨尔本</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                     <img src="assets/imgs/item17.jpg" alt="">
                     <p class="title">凯恩斯</p>
                   </ion-col>
-                  <ion-col col-4>
+                  <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                       <img src="assets/imgs/item22.jpg" alt="">
                       <p class="title">皇后镇</p>
                     </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item23.jpg" alt="">
                   <p class="title">黄金海岸</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item20.jpg" alt="">
                   <p class="title">奥克兰</p>
                 </ion-col>
-                <ion-col col-4>
+                <ion-col col-4 *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
                   <img src="assets/imgs/item24.jpg" alt="">
                   <p class="title">悉尼</p>
                 </ion-col>
@@ -156,4 +132,3 @@
           <button ion-button outline class="more-btn">更多目的地</button>
         </ion-list>
      </ion-content>
-
