@@ -2,72 +2,40 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import {MultiPickerModule} from 'ion-multi-picker';
-import { HttpClientModule } from '@angular/common/http';
-import { AboutPage } from '../pages/about/about';
-import * as $ from 'jquery';
- 
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
+import { MultiPickerModule} from 'ion-multi-picker';
+import { CommonModule } from "@angular/common";
+import { HttpClientModule,HttpClientJsonpModule } from '@angular/common/http';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { CityDataProvider} from "../providers/city-data/city-data";
+import { Keyboard } from '@ionic-native/keyboard';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
+import * as $ from 'jquery';
+
+import { TabsPage } from '../pages/tabs/tabs';
+import { StatusBar } from '@ionic-native/status-bar';
 import { BeginPage } from '../pages/begin/begin';
-import { ClausePage } from '../pages/clause/clause';
-import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
-import { LaunchPage } from '../pages/launch/launch';
-import { MyPage } from '../pages/my/my';
-import { PlusPage } from '../pages/plus/plus';
-import { QuestionPage } from '../pages/question/question';
-import { RecommendPage } from '../pages/recommend/recommend';
-import { TheyPage } from '../pages/they/they';
-import { CallbackPage } from '../pages/callback/callback';
-import { CameraPage } from '../pages/camera/camera';
-import { ChangeinfoPage } from '../pages/changeinfo/changeinfo';
-import { ContentPage } from '../pages/content/content';
+import { HomePage } from '../pages/home/home';
 import { DiscoveryPage } from '../pages/discovery/discovery';
-import { EditPage } from '../pages/edit/edit';
-import { ForgetpasswordPage } from '../pages/forgetpassword/forgetpassword';
-import { GuidePage } from '../pages/guide/guide';
-import { RegisterPage } from '../pages/register/register';
 import { SendtextPage } from '../pages/sendtext/sendtext';
-import { SendyzmPage } from '../pages/sendyzm/sendyzm';
-import { SettingPage } from '../pages/setting/setting';
-import { ContactPage } from '../pages/contact/contact';
-import { LoginPage } from '../pages/login/login';
-import { NewslistPage } from '../pages/newslist/newslist';
-import { ThumbsupPage } from '../pages/thumbsup/thumbsup';
+import { GuidePage } from '../pages/guide/guide';
+import { MyPage } from '../pages/my/my';
+
+import { ContactPage } from "../pages/contact/contact";
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    HomePage,
     TabsPage,
     BeginPage,
-    CallbackPage,
-    CameraPage,
-    ChangeinfoPage,
-    ClausePage,
-    ContactPage,
-    ContentPage,
+    HomePage,
     DiscoveryPage,
-    EditPage,
-    ForgetpasswordPage,
-    GuanzhuPage,
-    GuidePage,
-    LaunchPage,
-    MyPage,
-    PlusPage,
-    QuestionPage,
-    RecommendPage,
-    RegisterPage,
     SendtextPage,
-    SendyzmPage,
-    SettingPage,
-    TheyPage,
-    LoginPage,
-    NewslistPage,
-    ThumbsupPage
+    GuidePage,
+    MyPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -75,48 +43,37 @@ import { ThumbsupPage } from '../pages/thumbsup/thumbsup';
       tabsHideOnSubPages:true,
       backButtonText:'',
       pageTransition:'ios-transition',
-		 backButtonIcon:"ios-arrow-back",
+     backButtonIcon:"ios-arrow-back",
+     dayNames: ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
     }
     ),
     MultiPickerModule,
     HttpClientModule,
-    
+    CommonModule,
+    HttpClientJsonpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
     TabsPage,
     BeginPage,
-    CallbackPage,
-    CameraPage,
-    ChangeinfoPage,
-    ClausePage,
-    ContactPage,
-    ContentPage,
+    HomePage,
     DiscoveryPage,
-    EditPage,
-    ForgetpasswordPage,
-    GuanzhuPage,
-    GuidePage,
-    LaunchPage,
-    MyPage,
-    PlusPage,
-    QuestionPage,
-    RecommendPage,
-    RegisterPage,
     SendtextPage,
-    SendyzmPage,
-    SettingPage,
-    TheyPage,
-    LoginPage,
-    NewslistPage,ThumbsupPage
+    GuidePage,
+    MyPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FileTransfer,
+    FileTransferObject,
+    CityDataProvider,
+    Keyboard,
+    ImagePicker,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

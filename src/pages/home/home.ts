@@ -3,15 +3,12 @@ import { NavController,ModalController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { Platform, ToastController, App, Tabs } from 'ionic-angular';
-import { ContentPage } from '../content/content';
-import { NewslistPage } from '../newslist/newslist';
-import { ThumbsupPage } from '../thumbsup/thumbsup';
 import { HttpClient} from "@angular/common/http";
 
-    @Component({
+@Component({
       selector: 'page-home',
       templateUrl: 'home.html'
-    })
+})
     export class HomePage {
       @ViewChild(Slides) slides: Slides;
       items = [];
@@ -58,7 +55,7 @@ import { HttpClient} from "@angular/common/http";
         console.log(data);
        for(var i=0;i<this.val.length;i++){
         this.val[i].sImg='http://'+this.host+':8080'+data.docs[i].sImg;
-    
+
         }
       });
       }
@@ -77,12 +74,12 @@ import { HttpClient} from "@angular/common/http";
         }
       });
       }
-  
+
        //控制硬件返回按钮是否触发，默认false
        backButtonPressed: boolean = false;
       //注册方法
       registerBackButtonAction(tabRef: Tabs): void {
-    
+
         //registerBackButtonAction是系统自带的方法
         this.platform.registerBackButtonAction(() => {
           //获取NavController
@@ -124,44 +121,10 @@ import { HttpClient} from "@angular/common/http";
     content(id){
       this.navCtrl.push('ClicktextPage',{textId:id});
     }
-    
+
     openlist(){
-      this.navCtrl.push(NewslistPage);
+      this.navCtrl.push('NewslistPage');
     }
   }
-  
 
-  //下拉加载
-  //doInfinite(infiniteScroll) {
-  //  console.log('Begin async operation');
-
-  //  setTimeout(() => {
-  //        title:'香港 | 拿上这份徒步攻略',
-  //        img:'assets/imgs/index-thumbnail2.png',
-  //        title2:'不要以为这又是一次shopping之旅',
-  //        count:'22727次浏览',
-  //        btn:'攻略'
-  //      },
-  //      {
-  //        title:'有哪些地方可以拍出不一样的重庆？',
-  //        img:'assets/imgs/index-thumbnail1.png',
-  //        title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-  //        count:'22727次浏览',
-  //        btn:'问答'
-  //      },
-  //      {
-  //        title:'有哪些地方可以拍出不一样的重庆？',
-  //        img:'assets/imgs/index-thumbnail1.png',
-  //        title2:'史上最全的27个机位，让你看到一个更全面的重庆',
-  //        count:'22727次浏览',
-  //        btn:'问答'
-  //      });
-
-  //    infiniteScroll.complete();
-  //    if(this.items.length==9){
-  //      console.log(this.items.length);
-  //      infiniteScroll.enable(false);
-  //    }
-  //  }, 500);
-  //}
 

@@ -1,6 +1,5 @@
 import { Component,OnInit,ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ContentPage } from '../content/content';
 import * as $ from 'jquery';
 
 @IonicPage()
@@ -66,6 +65,6 @@ items2=[{
 show="show1";
 
   goDetail(title){
-    this.navCtrl.push(ContentPage,{place:title});
+    this.navCtrl.push('ContentPage',{place:title});
   }
 }

@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RecommendPage } from '../recommend/recommend';
-import { ContactPage } from '../contact/contact';
-import { GuanzhuPage } from '../guanzhu/guanzhu';
-import { QuestionPage } from '../question/question';
-import { ContentPage } from '../content/content';
 import {HttpClient} from "@angular/common/http";
+import { ContactPage } from "../contact/contact";
 @IonicPage()
 @Component({
   selector: 'page-discovery',
@@ -17,16 +13,13 @@ export class DiscoveryPage {
     this.date=new Date().toISOString();
   }
   recommend(){
-    this.navCtrl.push(RecommendPage);
+    this.navCtrl.push('RecommendPage');
   }
   contact(){
     this.navCtrl.push(ContactPage);
   }
-  guanzhu(){
-    this.navCtrl.push(GuanzhuPage);
-  }
   question(){
-    this.navCtrl.push(QuestionPage);
+    this.navCtrl.push('QuestionPage');
   }
   content(id){
     this.navCtrl.push('ClicktextPage',{textId:id});

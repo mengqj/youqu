@@ -66,23 +66,4 @@ export class ContentPage {
       }
     });
   }
-
-  //items=[{
-  //  title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
-  //  img:'assets/imgs/content_01.jpeg',
-  //  count:'22727',
-  //  btn:'浏览'
-  //},
-  //{
-  //  title:'京郊10个值得体验的亲子农庄，让孩子与小动物亲密接触！',
-  //   img:'assets/imgs/content_02.jpeg',
-  //  count:'22727次',
-  //  btn:'浏览'
-  //},
-  //{
-  //  title:'帝都牛排指南 | 那么，你最爱哪一块呢？',
-  //  img:'assets/imgs/content_03.jpeg',
-  //  count:'22727',
-  //  btn:'浏览'
-  //}];  
 }

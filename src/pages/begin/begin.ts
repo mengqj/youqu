@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { RegisterPage } from '../register/register';
 
 @IonicPage()
 @Component({
@@ -19,7 +17,7 @@ export class BeginPage {
        Object.keys(elements).map((key) => {
           elements[key].style.display = 'none';
          });
-       }   
+       }
   }
   //ionic当退出页面的时候触发的方法
   ionViewWillLeave() {
@@ -31,9 +29,9 @@ export class BeginPage {
     }
 }
 home(){
-  this.navCtrl.push(LoginPage);
+  this.navCtrl.push('LoginPage');
 }
 zhuce(){
-  this.navCtrl.push(RegisterPage);
+  this.navCtrl.push('RegisterPage');
 }
 }
