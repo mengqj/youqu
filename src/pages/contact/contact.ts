@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
+import { LaunchPage } from '../launch/launch';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -8,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
 export class ContactPage {
   searchQuery: string = '';
   items: string[];
-  constructor(public navCtrl: NavController,private http: HttpClient) {
+  constructor(public navCtrl: NavController,private http: HttpClient, public modalCtrl: ModalController) {
   }
   val=new Array();
   ionViewDidLoad(){
@@ -31,7 +32,10 @@ export class ContactPage {
     }
   });
   }
-
+  send(){
+    let modal = this.modalCtrl.create(LaunchPage);
+      modal.present();
+  }
 
 
   /*getItems(ev: any) {

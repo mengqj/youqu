@@ -6,127 +6,64 @@ page-contact {
     ion-navbar{
         height: 45px;
     }
-
-    .searchbar{
-        border-radius: 30px;
-        border: 2px solid gray;
-        background-color: white;
-        margin-top: 10px;
-    }
-    .searchbar .searchbar-input{
-        border-radius:30px;
-    }
-    .list{
-        margin-top: 10px;
-    }
-    .label img{
-        border-radius: 150px;
-        width: 50px;
-        height: 50px;
-    }
-    .label h2{
-        display: inline;
-        position: relative;
-        top: -30px;
-        left: 5px;
-        color: black;
-        font-size: 16px;
-    }
-    .label .span1{
-        font-size: 14px;
-        position: relative;
-        left: 60px;
-        top: -35px;
-        color: gray;
-    }
-    .label p{
-        font-size: 12px;
-        color: #FF8A00;
-        border:2px solid #E5E5E5;
-        background-color: #E5E5E5;
-        width: 85px;
-        border-radius: 30px;
-        position: relative;
-        top: -20px;
-    }
-    .label .span2{
-        font-size: 12px;
-        text-align: center;
-        color: #009633;
-        border:2px solid #A8EDAB;
-        background-color: #A8EDAB;
-        border-radius: 30px;
-        width: 51px;
-        position: relative;
-        left: 100px;
-        top: -52px;
-    }
-    .div1{
-        border-top: 0.15px solid #A396A3;
-        height: 20px;
-    }
-
-    .searchbar{
-        border-radius: 30px;
-        border: 2px solid gray;
-        background-color: white;
-        margin-top: 10px;
-    }
-    .searchbar .searchbar-input{
-        border-radius:30px;
-    }
-    .list{
-        margin-top: 10px;
-    }
-    .label img{
-        border-radius: 150px;
-        width: 50px;
-        height: 50px;
-    }
-    .label h2{
-        display: inline;
-        position: relative;
-        top: -30px;
-        left: 5px;
-        color: black;
-        font-size: 16px;
-    }
-    .label .span1{
-        font-size: 14px;
-        position: relative;
-        left: 60px;
-        top: -35px;
-        color: gray;
-    }
-    .label p{
-        font-size: 12px;
-        color: #FF8A00;
-        border:2px solid #E5E5E5;
-        background-color: #E5E5E5;
-        width: 85px;
-        border-radius: 30px;
-        position: relative;
-        top: -20px;
-    }
-    .label .span2{
-        font-size: 12px;
-        text-align: center;
-        color: #009633;
-        border:2px solid #A8EDAB;
-        background-color: #A8EDAB;
-        border-radius: 30px;
-        width: 51px;
-        position: relative;
-        left: 100px;
-        top: -43px;
-    }
-    .div1{
-        border-top: 0.15px solid #A396A3;
-        height:20px;
-        margin:0px 0px !important;
-    }
-    .item-content{
-        
-        margin-top:50px !important;
-    }
+  .list-md{
+      margin-top: 10px;
+  }
+  .label-md .img1{
+      border-radius: 150px;
+      width: 50px;
+      height: 50px;
+  }
+  .label-md .hang1{
+      display: inline;
+      position: relative;
+      top: -30px;
+      left: 5px;
+      color: black;
+      font-size: 16px;
+  }
+  .label-md .hang{
+    display: inline;
+    position: relative;
+    top: 20px;
+    color: black;
+    font-size: 16px;
+}
+  .label-md .span1{
+      font-size: 14px;
+      position: relative;
+      left: 60px;
+      top: -35px;
+      color: gray;
+  }
+  .label-md .p111{
+      font-size: 12px;
+      color: #FF8A00;
+      border:2.5px solid #E5E5E5;
+      background-color: #E5E5E5;
+      width: 30%;
+      border-radius: 30px;
+      text-align: center;
+      float: left;
+      position: relative;
+      top: -20px;
+  }
+  .label-md .span2{
+      font-size: 12px;
+      text-align: center;
+      color: #009633;
+      border:2.5px solid #A8EDAB;
+      background-color: #A8EDAB;
+      border-radius: 30px;
+      width: 35%;
+      float: right;
+      position: relative;
+      left: -110px;
+      top: -52px;
+  }
+  .div1{
+      margin-top: 30px;
+      border-top: 0.15px solid #A396A3;
+      height: 20px;
+  }
 }

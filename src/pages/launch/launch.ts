@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CityDataProvider} from "../../providers/city-data/city-data";
 import { MultiPickerModule} from 'ion-multi-picker';
 import {HttpClient} from "@angular/common/http";
@@ -16,7 +16,7 @@ export class LaunchPage {
   comments;
   destination;
   location;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public cityDataProvider: CityDataProvider,private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cityDataProvider: CityDataProvider,private http: HttpClient, public viewCtrl: ViewController) {
     this.cityColumns = this.cityDataProvider.cities;
   }
 
@@ -48,8 +48,11 @@ export class LaunchPage {
       .subscribe(
         data => {
           console.log(data);
-
+          this.viewCtrl.dismiss();
         }
     );
+  }
+  back(){
+    this.viewCtrl.dismiss();
   }
 }
