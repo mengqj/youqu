@@ -1,0 +1,218 @@
+<!--
+  Generated template for the MorecityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>更多目的地</ion-title>
+    <ion-buttons style="background:none;" right>
+        <ion-icon name="search" style="font-size:2em;"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+      
+  
+</ion-header>
+
+
+<ion-content>
+    <div>
+    <ion-segment [(ngModel)]="city" mode="md">
+        <ion-segment-button value="domestic">
+         国内
+        </ion-segment-button>
+        <ion-segment-button value="hongkong">
+         港澳台
+        </ion-segment-button>
+        <ion-segment-button value="japan">
+         日韩
+        </ion-segment-button>
+        <ion-segment-button value="asiae">
+          亚洲
+        </ion-segment-button>
+
+        <ion-segment-button value="europe">
+        欧洲&nbsp;美洲
+        </ion-segment-button>
+        <ion-segment-button value="australia">
+      澳洲&nbsp;非洲
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+<div (swipe)="swipeEvent($event)">
+    <ion-list [ngSwitch]="city">
+      <ion-list *ngSwitchCase="'domestic'">
+          <ion-grid>
+            <p class="location">直辖市</p>
+            <ion-row >
+            
+              <ion-col col-3 center *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
+                  <img src="{{item.img}}" alt="" class="image">
+                  <p class="title">{{item.title}}</p>
+              </ion-col>
+            </ion-row>
+            <p class="location">云南</p>
+            <ion-row >
+            
+                <ion-col col-3 center *ngFor="let item of items1;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+              </ion-row>
+              <p class="location">成都</p>
+              <ion-row >
+                  <ion-col col-3 center *ngFor="let item of items2;" (click)="goDetail(item.title)" class="col1">
+                      <img src="{{item.img}}" alt="" class="image">
+                      <p class="title">{{item.title}}</p>
+                  </ion-col>
+                </ion-row>
+                <p class="location">浙江</p>
+                <ion-row >
+                    <ion-col col-3 center *ngFor="let item of items3;" (click)="goDetail(item.title)" class="col1">
+                        <img src="{{item.img}}" alt="" class="image">
+                        <p class="title">{{item.title}}</p>
+                    </ion-col>
+                  </ion-row>
+                  <p class="location">福建</p>
+                  <ion-row >
+                      <ion-col col-3 center *ngFor="let item of items4;" (click)="goDetail(item.title)" class="col1">
+                          <img src="{{item.img}}" alt="" class="image">
+                          <p class="title">{{item.title}}</p>
+                      </ion-col>
+                    </ion-row>
+                    <p class="location">河北</p>
+                    <ion-row >
+                        <ion-col col-3 center *ngFor="let item of items5;" (click)="goDetail(item.title)" class="col1">
+                            <img src="{{item.img}}" alt="" class="image">
+                            <p class="title">{{item.title}}</p>
+                        </ion-col>
+                      </ion-row>
+          </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'hongkong'">
+          <ion-grid>
+            <p class="location">台湾</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items6;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">特别行政区</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items7;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'japan'">
+          <ion-grid>
+            <p class="location">日本</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items8;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">韩国</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items9;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-list>   
+      <ion-list *ngSwitchCase="'asiae'">
+          <ion-grid>
+            <p class="location">泰国</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items10;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">新加坡</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items11;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">印度尼西亚</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items12;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">海岛</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items13;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'europe'">
+          <ion-grid>
+            <p class="location">意大利</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items14;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+
+            <p class="location">美国</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items15;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">法国</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items16;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-list>
+      <ion-list *ngSwitchCase="'australia'">
+          <ion-grid>
+            <p class="location">澳大利亚</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items17;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">新西兰</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items18;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+            <p class="location">埃及</p>
+            <ion-row>
+                <ion-col col-3 center *ngFor="let item of items19;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="" class="image">
+                    <p class="title">{{item.title}}</p>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-list>
+        
+      
+    </ion-list>
+</div>
+
+</ion-content>
