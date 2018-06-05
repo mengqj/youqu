@@ -17,25 +17,24 @@ export class ContentPage {
     sImg:'',
     comments:''
   };
+
+  val2=new Array();
+  len;
+  host='35.194.153.183';
+
+  ionViewWillEnter() {
+    this.getCon();
+  }
+
+  places=['北京','杭州','昆明','三亚','厦门','珠海'];
+  ids=['ryh28F9km','HkWzTETkm','Bk7pIN6yQ','Byd8hX6Jm','HJ_9-STJ7','BygAEST1Q'];
+
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.place=navParams.data['place'];
-    if (this.place=='北京') {
-      this.id='ryh28F9km';
-    } else if(this.place=='杭州')
-    {
-      this.id='HkWzTETkm';
-    }else if(this.place=='昆明')
-    {
-      this.id='Bk7pIN6yQ';
-    }else if(this.place=='三亚')
-    {
-      this.id='Byd8hX6Jm';
-    }else if(this.place=='厦门')
-    {
-      this.id='HJ_9-STJ7';
-    }else if(this.place=='珠海')
-    {
-      this.id='BygAEST1Q';
+    for(var i=0;i<this.places.length;i++){
+      if(this.place==this.places[i]){
+        this.id=this.ids[i];
+      }
     }
   }
   ionViewDidLoad(){
@@ -53,54 +52,37 @@ export class ContentPage {
     });
   };
 
-  items=[{
-    title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
-    img:'assets/imgs/content_01.jpeg',
-    count:'22727',
-    btn:'浏览'
-  },
-  {
-    title:'京郊10个值得体验的亲子农庄，让孩子与小动物亲密接触！',
-    img:'assets/imgs/content_02.jpeg',
-    count:'22727次',
-    btn:'浏览'
-  },
-  {
-    title:'帝都牛排指南 | 那么，你最爱哪一块呢？',
-    img:'assets/imgs/content_03.jpeg',
-    count:'22727',
-    btn:'浏览'
-  }];
-
-     //下拉加载
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-        this.items.push({
-          title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
-          img:'assets/imgs/content_01.jpeg',
-          count:'22727',
-          btn:'浏览'
-        },
-        {
-          title:'京郊10个值得体验的亲子农庄，让孩子与小动物亲密接触！',
-          img:'assets/imgs/content_02.jpeg',
-          count:'22727次',
-          btn:'浏览'
-        },
-        {
-          title:'帝都牛排指南 | 那么，你最爱哪一块呢？',
-          img:'assets/imgs/content_03.jpeg',
-          count:'22727',
-          btn:'浏览'
-        });
-
-      infiniteScroll.complete();
-      if(this.items.length==9){
-        console.log(this.items.length);
-        infiniteScroll.enable(false);
+  //获取推荐内容
+  getCon(){
+    let tagName="首页推荐";
+    let url:string='http://'+this.host+':8080/api/content/getList?tagName='+tagName;
+    this.http.get(url)
+    .subscribe(
+      (data:any) =>{
+      this.val2 = data['docs'];
+      console.log(data);
+      for(var i=0;i<this.val2.length;i++){
+        this.val2[i].sImg='http://'+this.host+':8080'+data.docs[i].sImg;
       }
-    }, 500);
+    });
   }
+
+  //items=[{
+  //  title:'流动的色彩海洋——坡峰岭红叶最盛时刻到啦',
+  //  img:'assets/imgs/content_01.jpeg',
+  //  count:'22727',
+  //  btn:'浏览'
+  //},
+  //{
+  //  title:'京郊10个值得体验的亲子农庄，让孩子与小动物亲密接触！',
+  //   img:'assets/imgs/content_02.jpeg',
+  //  count:'22727次',
+  //  btn:'浏览'
+  //},
+  //{
+  //  title:'帝都牛排指南 | 那么，你最爱哪一块呢？',
+  //  img:'assets/imgs/content_03.jpeg',
+  //  count:'22727',
+  //  btn:'浏览'
+  //}];  
 }
