@@ -15,6 +15,7 @@ export class ContentPage {
   val={
     title:'',
     sImg:'',
+    keywords:'',
     comments:''
   };
 
@@ -26,8 +27,21 @@ export class ContentPage {
     this.getCon();
   }
 
-  places=['北京','杭州','昆明','三亚','厦门','珠海'];
-  ids=['ryh28F9km','HkWzTETkm','Bk7pIN6yQ','Byd8hX6Jm','HJ_9-STJ7','BygAEST1Q'];
+  places=['北京','杭州','昆明','三亚','厦门',
+  '珠海','上海','重庆','天津','丽江',
+  '大理','昆明','成都','九寨沟','杭州',
+  '乌镇','鼓浪屿','香港','普吉岛','曼谷',
+  '新加坡','北戴河','南京','广州','青岛',
+  "桂林","洛阳","少林寺","威海","深圳",
+  "拉萨","大同","苏州","五台山","无锡"];
+  ids=['ryh28F9km','HkWzTETkm','Bk7pIN6yQ','Byd8hX6Jm','HJ_9-STJ7',
+  'BygAEST1Q','ryv1xamlm','SJduMNp17','SkyAQ4akm','rkzCPEa17',
+  'S1y8D4Ty7','Bk7pIN6yQ',"r1CetEpJX","Hk5Hs4aJX","HkWzTETkm",
+  "ByZopET1m","rJ261Spk7","B1s9SNRy7","ByDRh3mem","H1-Bin7gX",
+  "B1Bu0h7gQ", "rkqxaVT1Q","rylP8frayQ","rkICQH6km","Hk8mg40JQ",
+  "HyZSqQAy7","Hyn2cNp1Q","HyWB24a1X","B1S1W4Ay7","B1st4Haym",
+  "BJ72ENCJm","BJ8EKQAk7","BJ_kmBayX","Bk9H57Cym","H17PXBTJQ"];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.place=navParams.data['place'];

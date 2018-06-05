@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ItemSliding } from 'ionic-angular';
+import { ContentPage } from '../content/content';
+import * as $ from 'jquery';
 
 /**
  * Generated class for the MorecityPage page.
@@ -65,7 +67,11 @@ items1=[{
 },{
   title:'大理',
   img:'assets/imgs/mimg4.png'
+},{
+  title:'昆明',
+  img:'assets/imgs/mimg4.png'
 }]
+
 items2=[{
   title:'成都',
   img:'assets/imgs/item5.png'
@@ -86,11 +92,8 @@ items4=[{
   title:'厦门',
   img:'assets/imgs/item2.png'
 },{
-  title:'彭浪屿',
+  title:'鼓浪屿',
   img:'assets/imgs/mimg7.jpeg'
-},{
-  title:'武夷山',
-  img:'assets/imgs/mimg8.jpeg'
 }]
 
 items5=[{
@@ -133,6 +136,7 @@ items6=[{
   title:'阿里山',
   img:'assets/imgs/mimg20.jpeg'
 }];
+
 items7=[{
   title:'香港',
   img:'assets/imgs/mimg21.jpeg'
@@ -140,6 +144,7 @@ items7=[{
   title:'澳门',
   img:'assets/imgs/mimg22.jpeg'
 }]
+
 items8=[
   {
     title:'东京',
@@ -153,6 +158,7 @@ items8=[
     img:'assets/imgs/mimg23.jpeg'
   }
 ];
+
 items9=[
   {
     title:'济州岛',
@@ -165,6 +171,7 @@ items9=[
     img:'assets/imgs/mimg24.jpeg'
   }
 ]
+
 items10=[{
   title:'曼谷',
   img:'assets/imgs/mimg25.jpeg'
@@ -172,10 +179,12 @@ items10=[{
   title:'普吉岛',
   img:'assets/imgs/mimg26.png'
 }]
+
 items11=[{
   title:'新加坡',
   img:'assets/imgs/mimg27.jpeg'
 }]
+
 items12=[{
   title:'巴厘岛',
   img:'assets/imgs/mimg28.jpeg'
@@ -183,10 +192,12 @@ items12=[{
   title:'民丹岛',
   img:'assets/imgs/mimg29.jpeg'
 }]
+
 items13=[{
   title:'马尔代夫',
   img:'assets/imgs/mimg30.jpeg'
 }]
+
 items14=[{
   title:'罗马',
   img:'assets/imgs/item21.jpg'
@@ -194,6 +205,7 @@ items14=[{
   title:'威尼斯',
   img:'assets/imgs/mimg31.jpeg'
 }]
+
 items15=[{
   title:'洛杉矶',
   img:'assets/imgs/item18.jpg'
@@ -201,6 +213,7 @@ items15=[{
   title:'塞班岛',
   img:'assets/imgs/item19.jpg'
 }]
+
 items16=[{
   title:'巴黎',
   img:'assets/imgs/mimg31.png'
@@ -227,6 +240,7 @@ items18=[{
   title:'皇后镇',
   img:'assets/imgs/item22.jpg'
 }]
+
 items19=[{
   title:'开罗',
   img:'assets/imgs/mimg33.jpeg'
@@ -234,4 +248,9 @@ items19=[{
   title:'卢克索',
   img:'assets/imgs/mimg34.jpeg'
 }]
+
+
+goDetail(title){
+  this.navCtrl.push(ContentPage,{place:title});
+}
 }
