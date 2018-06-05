@@ -1,0 +1,61 @@
+page-changeinfo {}
+
+.c-top {
+    margin-top: 1px;
+    height: 30%;
+    width: 100%;
+}
+
+.c-top button {
+    width: 65px;
+    height: 30px;
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+.c-bg {
+    height: 100%;
+    width: 100%;
+    background: url("../../assets/imgs/user-bg.jpg")no-repeat;
+    background-size: 100%;
+    opacity: 0.6;
+}
+
+.user-head {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 8%;
+    left: 41%;
+}
+
+.user-head img {
+    border-radius: 50%;
+}
+
+.user-head button {
+    display: inline-block;
+}
+
+.c-list ion-label {
+    color: #a396a3;
+}
+
+.c-list input {
+    margin: 0;
+    height: 55px;
+}
+
+.c-list div {
+    padding: 0;
+}
+
+.c-select-gen {
+    position: relative;
+    left: -75%;
+}
+
+.c-select-date {
+    position: relative;
+    left: -49%;
+}

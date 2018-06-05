@@ -1,0 +1,84 @@
+page-guide {
+    .search{
+        width:90%;
+        margin-left:5%;
+        background:transparent !important;
+       
+    }  
+    ion-card {
+      position: relative;
+      text-align: center;
+      width:100% !important;
+      margin:0px 0px !important;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .card-subtitle {
+        P{
+      font-size:1.5em;
+      position: absolute;
+      top:72%;
+      width:85%;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      float:left;
+  }
+  .icon{
+      float:left;
+      width:5% !important;
+  }
+    }
+  .more{
+      width:100%;
+      // height:100px;
+      // background-color:red;
+      margin:0px 0px !important;
+      text-align: center;
+      padding-bottom:20px;
+      border-bottom:1.5px solid #eeeeee;
+  
+      p{
+          // margin:0px 0px !important;
+          font-size:1.5em;
+          margin-bottom:0px !important;
+          .icon{
+             font-size:1em;
+          //    color:#f2f2f2;
+          }
+      }
+     
+  }
+  .p1{
+      margin-top:5px !important;
+      color:#999999;
+      font-size:1.3em !important;
+  }
+  .title{
+      text-align:center;
+      margin-top:5px !important;
+      padding:0px !important;
+      font-size:1.2em;
+  }
+  .more-btn{
+      text-align:center;
+      width:150px;
+      height:45px;
+  }
+  .seg-btn{
+      font-size:10em;
+  }
+
+  
+  //
+  }
+  

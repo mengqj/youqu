@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="color1">      
+    <ion-title text-center style="color:white;">消息</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!--联系人列表-->
+<ion-content class="list-avatar-page">
+  <ion-list>
+    <ion-item class="item" (click)="goInfo()">
+      <ion-avatar item-start>
+        <button ion-fab color="question" mini><ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon></button>
+      </ion-avatar>
+      <h2>点赞我的</h2>
+      <p>一颗柠檬点赞了我的文章</p>
+    </ion-item>
+
+
+    <ion-item class="item"  (click)="goInfo()">
+      <ion-avatar item-start>
+        <button ion-fab color="primary" mini><ion-icon ios="ios-chatboxes" md="md-chatboxes"></ion-icon></button>
+      </ion-avatar>
+      <h2>评论我的</h2>
+      <p>一颗柠檬:评论内容</p>
+    </ion-item>
+
+
+    <ion-item class="item" (click)="goInfo()">
+      <ion-avatar item-start>
+        <button ion-fab color="secondary" mini><ion-icon ios="ios-help-circle" md="md-help-circle"></ion-icon></button>        </ion-avatar>
+      <h2>互动问答</h2>
+      <p>暂无内容</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

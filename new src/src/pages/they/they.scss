@@ -1,0 +1,91 @@
+page-they {
+    .bg{
+        width:100%;
+        height:120px;
+    }
+    .touxiang{
+        width:100px;
+        height:100px;
+        margin-left:20px;
+        margin-top:-80px;
+        border-radius:50px;
+    }
+    .name{
+        margin:0px;
+        font-size:25px;
+    }
+    .seg-btn{
+        font-size:16px!important;
+       
+    }
+   .time-icon{
+       width:20px !important;
+       height:20px !important;
+   }
+   .date-box{
+      border-right: 3px solid #eeeeee;
+      // line-height:200px;
+      height:200px;
+      margin-top:0px;
+      .date{
+          margin-top:80px;
+      }
+   }
+   .content-box{
+      width:94%;
+      height:200px;
+      margin-left:3%;
+      border:2px solid #eeeeee;
+      border-radius:20px;
+      margin-top:0px !important;
+   }
+   .touxiang-box{
+      //  border-right:1px solid #eeeeee;
+      height:100%;
+           img{
+            border-radius:50%;
+       }
+   }
+  .text-box{
+      height:100%;
+      ion-icon{
+          float:right;
+          margin-right:15px;
+      }
+  }
+  .iconbox{
+      height:15px;
+      width:100%;
+      // background-color:red;
+      // margin:0px !important;
+      margin-bottom:10px !important;
+      
+  }
+  .iconbox1{
+      width:100%;
+      height:40px;
+      // background-color:yellow;
+      line-height:40px;
+      .icon{
+          font-size:27px;
+          float:left;
+          margin-left:10px;
+          margin-top:4px;
+          }
+      .number{
+          float: left;
+          margin-left:5px;
+          // line-height:40px;
+          margin-top:8px;
+      }
+  }
+  .text{
+  //     word-wrap: break-word !important; 
+  //    word-break: normal !important; 
+     width:100%;
+     height:50px;
+  }
+  .focus-btn{
+      border-radius:15px;
+  }
+}
