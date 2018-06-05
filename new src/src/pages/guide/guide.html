@@ -1,0 +1,108 @@
+
+<ion-header >
+
+    <ion-navbar color="white1">
+        <!-- (ionInput)="getItems($event)" -->
+      <!-- <ion-searchbar class="search" placeholder="搜索目的地" ></ion-searchbar> -->
+      <ion-title text-center>
+               攻&nbsp;略
+      </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  
+      <ion-content class="card-background-page">
+        <!-- <ion-searchbar (ionInput)="getItems($event)" class="search" placeholder="搜索目的地" ></ion-searchbar> -->
+          <ion-card>
+            <img src="assets/imgs/bg3.jpg"/>
+  
+            <div class="card-subtitle"><p>去海参崴旅游前，我有一本《独家指南》相赠 </p>
+  
+            </div>
+  
+          </ion-card>
+          <div class="more" (click)="gomore()" >
+            <p>热门目的地 </p>
+        <p class="p1">最受大家喜爱的目的地推荐</p>
+          </div>
+          <ion-list>
+              <ion-segment [(ngModel)]="show">
+                  <ion-segment-button value='show1' class="seg-btn">
+                     国内
+                  </ion-segment-button>
+                  <ion-segment-button value="show2" class="seg-btn">
+                     亚洲
+                  </ion-segment-button>
+                  <ion-segment-button value="show3" class="seg-btn">
+                     欧洲&nbsp;美洲
+                   </ion-segment-button>
+                   <ion-segment-button value="show4" class="seg-btn">
+                      澳洲&nbsp;非洲
+                    </ion-segment-button>
+              </ion-segment>
+          </ion-list>
+          <div [ngSwitch]="show" >
+            <ion-list *ngSwitchCase="'show1'">
+              <ion-grid>
+                <ion-row class="row1">
+
+
+                  <ion-col col-4 center *ngFor="let item of items;" (click)="goDetail(item.title)" class="col1">
+                   <img src="{{item.img}}" alt="">
+                    <p class="title">{{item.title}}</p>
+                  </ion-col>
+
+
+
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+  
+  
+            <ion-list *ngSwitchCase="'show2'">
+              <ion-grid>
+                <ion-row class="row1"> 
+
+
+                 
+                  <ion-col col-4 center *ngFor="let item of items1;" (click)="goDetail(item.title)" class="col1">
+                    <img src="{{item.img}}" alt="">
+                    <p class="title">{{item.title}}</p>
+                  </ion-col>
+                  
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+  
+            <ion-list *ngSwitchCase="'show3'">
+              <ion-grid class="row1">
+                <ion-row>
+
+                    <ion-col col-4 center *ngFor="let item of items2;" (click)="goDetail(item.title)" class="col1">
+                        <img src="{{item.img}}" alt="">
+                        <p class="title">{{item.title}}</p>
+                      </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+  
+            <ion-list *ngSwitchCase="'show4'">
+              <ion-grid>
+                <ion-row  class="row1">
+
+                    <ion-col col-4 center *ngFor="let item of items3;" (click)="goDetail(item.title)" class="col1">
+                        <img src="{{item.img}}" alt="">
+                        <p class="title">{{item.title}}</p>
+                      </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </div>
+          <ion-list style="text-align: center;">
+            <button ion-button outline class="more-btn" (click)="gomore()">更多目的地</button>
+          </ion-list>
+       </ion-content>
+  
+  

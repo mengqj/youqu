@@ -1,0 +1,130 @@
+    page-discovery {
+        .dis-head {
+            height: 30%;
+            background: url("../../assets/imgs/dis-bg.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        .dis-top {
+            margin-bottom: 15px;
+            height: 25%;
+        }
+        
+        .dis-top div {
+            background: transparent;
+            border: none !important;
+        }
+        
+        .dis-top input {
+            margin-top: 4px;
+        }
+        
+        .dis-top ion-header {
+            margin-left: 0px;
+            margin-right: 10px;
+        }
+        
+        .dis-top ion-navbar {
+            padding: 0;
+        }
+        
+        .dis-top ion-input {
+            background-color: #fff;
+            opacity: 0.6;
+            width: 80%;
+            height: 28px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .dis-head-con {
+            position: relative;
+            left: 10%;
+        }
+        
+        .dis-location {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        
+        .dis-time {
+            color: #fff;
+        }
+        
+        .dis-location h1 {
+            display: inline;
+        }
+        
+        .dis-nav {
+            height: 25%;
+        }
+        
+        .dis-nav span {
+            font-size: 23px;
+            position: relative;
+            top: -25%;
+            left: -10px;
+        }
+        
+        .dis-nav img {
+            width: 51px;
+            height: 51px;
+            position: relative;
+            right: -10%;
+        }
+        
+        .dis-nav-top {
+            text-align: center;
+            height: 50%;
+            position: relative;
+            top: 10%;
+        }
+        
+        .dis-nav-top div {
+            display: inline-block;
+            padding: 0;
+            width: 40%;
+            height: 70%;
+        }
+        
+        .dis-nav-bottom {
+            text-align: center;
+            height: 50%;
+            position: relative;
+            top: 10%;
+        }
+        
+        .dis-nav-bottom div {
+            display: inline-block;
+            padding: 0;
+            width: 40%;
+            height: 70%;
+        }
+        
+        .bottom-line {
+            border-bottom: 1px #bbbbbb solid;
+            width: 85%;
+            margin: 0 auto;
+        }
+        
+        .line {
+            border-right: 1px #bbbbbb solid;
+            width: 1px;
+            height: 22%;
+            float: left;
+            position: absolute;
+            left: 50%;
+            top: 32%;
+        }
+        
+        .dis-cards {
+            border-top: 0.5px #bbb solid;
+        }
+        
+        .dis-cards ion-card-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-indent: 5px;
+        }
+    }
+    

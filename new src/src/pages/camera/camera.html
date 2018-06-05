@@ -1,0 +1,29 @@
+<ion-header>
+
+    <ion-navbar style="background-color: #ffffff;">
+
+            <ion-buttons left>
+                    <button (click)="back()" style="background:none ;font-size:3em;">
+                    <ion-icon name="ios-close"></ion-icon>
+
+                    </button>
+            </ion-buttons>
+        <ion-title text-center>拍摄</ion-title>
+        <ion-buttons right>
+                <button ion-button (click)="tryRequestAuthorization()" style="background:none;font-size:2.5em;">
+                        <ion-icon name="ios-reverse-camera-outline" ></ion-icon>
+
+                </button>
+    </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <!-- <button ion-button (click)="takepic">拍摄</button> -->
+</ion-content>
+<ion-footer style="height:30%;background-color:#ffffff;"text-center>
+   <ion-icon name="ios-radio-button-on-outline" (click)="takepic()" style="font-size:6.5em;margin-top:20px;"></ion-icon>
+  
+</ion-footer>

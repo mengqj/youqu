@@ -1,0 +1,27 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <div style="height:197px;background-color:#3C9EFB;width:100%;">
+    <img class="logo1"  src="assets/imgs/logo2.jpg">
+  </div>
+  <ion-list>
+      <button ion-button clear item-start style="color:#999099;" class="btn1"><ion-icon ios="ios-person" md="md-person"></ion-icon></button>
+    <ion-item class="item1">
+      <ion-label color="#999099;">用户名</ion-label>
+      <ion-input id="username" (input)="changeUnm($event)" [value]="username"></ion-input>
+    </ion-item>
+    <button ion-button clear item-start style="color:#999099;" class="btn2"><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></button>
+    <ion-item class="item1">
+      <ion-label color="#999099;" >密码</ion-label>
+      <ion-input type="password" (input)="changePwd($event)" [value]="password"></ion-input>
+    </ion-item>
+    <button ion-button round  color="#38ADFF;" style="width:70%;margin-left:7%;" class="btn3" (click)="request()" >登录</button>
+    <button ion-button round outline color="#38ADFF;" style="width:70%;display:block;margin-left:7%;" class="btn4"  (click)="goReg()">注册</button>
+    <span class="span1" ><a href="javascript:;" style="color:#38ADFF;" (click)="forgetpw()">忘记密码</a></span>
+  </ion-list>  
+</ion-content>
