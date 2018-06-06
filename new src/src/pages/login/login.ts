@@ -63,7 +63,8 @@ this.http.post(url,{
     });
     let url:string='http://35.194.153.183:8080/api/users/getId?userName='+this.username;
     this.http.get(url).subscribe(val=>{
-    localStorage.setItem(this.username,val['id']);
+    localStorage.setItem('ID',val['id']);
+    localStorage.setItem('userName',this.username);
     
    
     })
