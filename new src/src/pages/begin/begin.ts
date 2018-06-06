@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { TabsPage }  from '../tabs/tabs';
 @IonicPage()
 @Component({
   selector: 'page-begin',
@@ -9,8 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class BeginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
 
+  }
   ionViewDidLoad(){
     let elements = document.querySelectorAll(".tabbar");
     if (elements != null) {

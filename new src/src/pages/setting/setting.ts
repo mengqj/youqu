@@ -15,7 +15,7 @@ export class SettingPage {
   }back(){
       this.viewCtrl.dismiss();
   }
-  
+
   items = [
     "修改个人信息",
     "修改密码",
@@ -26,7 +26,7 @@ export class SettingPage {
     if (item == "修改个人信息") {
       let modal = this.modalCtrl.create(ChangeinfoPage);
       modal.present();
-      
+
     }
     else if (item == "修改密码") {
       // let modal = this.modalCtrl.create(ForgetpasswordPage);
@@ -41,6 +41,9 @@ export class SettingPage {
       let modal = this.modalCtrl.create(AboutPage);
       modal.present();
     }
-    
+
+  }
+  clear(){
+    localStorage.clear();
   }
 }

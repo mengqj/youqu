@@ -11,7 +11,7 @@ export class ChangeinfoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,private http: HttpClient) {
     this.getInfo();
   }
-  userId='BJpVFFMRG';
+  userId=localStorage.getItem('ID');
 
   name:string;
   userName;

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CityDataProvider} from "../../providers/city-data/city-data";
 import { MultiPickerModule} from 'ion-multi-picker';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import  * as $ from 'jquery';
 @IonicPage()
 @Component({
@@ -10,7 +10,7 @@ import  * as $ from 'jquery';
   templateUrl: 'launch.html',
 })
 export class LaunchPage {
-
+  userId=localStorage.getItem('ID');
   cityColumns: any[];
   myDate;
   comments;
@@ -38,7 +38,7 @@ export class LaunchPage {
       "tags":["HJJD1YoJ7"],
       "sImg":"",
       "discription":this.myDate,
-      "author":'BJpVFFMRG',
+      "author":this.userId,
       "state":true,
       "comments":"",
       "markDownComments":this.comments,

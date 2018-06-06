@@ -22,7 +22,7 @@ export class ClicktextPage {
       this.id=navParams.data['textId'];
     }
   }
-  ionViewDidLoad(){
+  ionViewWillEnter(){
     let host='35.194.153.183';
     let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
     //获取内容
@@ -31,7 +31,7 @@ export class ClicktextPage {
     data =>{
       this.val = data['doc'];
       this.val.sImg='http://'+host+':8080'+data['doc'].sImg;
-      console.log(data);
+      //console.log(data);
       //console.log(this.val.sImg);
       //console.log(this.id);
     });
@@ -70,7 +70,7 @@ export class ClicktextPage {
       this.http.post(url,params)
       .subscribe(
         data => {
-          console.log(data);
+          //console.log(data);
           this.message='';
           this.getlist();
         }

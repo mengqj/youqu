@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
-import { LaunchPage } from '../launch/launch';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -12,7 +11,7 @@ export class ContactPage {
   constructor(public navCtrl: NavController,private http: HttpClient, public modalCtrl: ModalController) {
   }
   val=new Array();
-  ionViewDidLoad(){
+  ionViewWillEnter(){
   let host='35.194.153.183';
   let url:string='http://'+host+':8080/api/content/getSimpleListByParams?typeId=H13H1FjJQ';
   this.http.get(url)
@@ -33,19 +32,8 @@ export class ContactPage {
   });
   }
   send(){
-    let modal = this.modalCtrl.create(LaunchPage);
+    let modal = this.modalCtrl.create('LaunchPage');
       modal.present();
   }
-
-
-  /*getItems(ev: any) {
-    this.initializeItems();
-    let val = ev.target.value;
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }*/
 }
 
