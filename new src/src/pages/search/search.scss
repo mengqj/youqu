@@ -1,0 +1,20 @@
+page-search {
+  .search button{
+    float: right;
+    position: relative;
+    margin-top: -14%;
+    font-weight: lighter;
+  }
+  .doc{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .content{
+    position: relative;
+    overflow: hidden;
+    font-weight: normal;
+    font-size: 1.6rem;
+    }
+}
