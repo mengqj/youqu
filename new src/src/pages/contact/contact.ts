@@ -35,5 +35,8 @@ export class ContactPage {
     let modal = this.modalCtrl.create('LaunchPage');
       modal.present();
   }
+  show(id){
+    this.navCtrl.push('ClicktextPage',{textId:id});
+  }
 }
 
