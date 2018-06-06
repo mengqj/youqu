@@ -30,21 +30,24 @@
 
   <ion-grid>
       <ion-row>
-        <ion-col col-5 text-center>
+        <ion-col col-4 text-center>
             <img src="assets/imgs/touxiang.jpg" alt="" class="touxiang">
-            <p class="name" >travel</p>
+            <!-- <p class="name" >travel</p> -->
         </ion-col>
-        <ion-col col-7>
-         <ion-row>
+        <ion-col col-8>
+         <!-- <ion-row>
            <ion-col text-center style="margin-top:-20px;">关注</ion-col>
            <ion-col text-center style="margin-top:-20px;">粉丝</ion-col>
            <ion-col text-center style="margin-top:-20px;">获赞</ion-col>
          </ion-row>
          <ion-row *ngFor="let item of item;">
-          <ion-col text-center>{{item.focus}}</ion-col>
+          <ion-col text-center>c</ion-col>
           <ion-col text-center>{{item.fans}}</ion-col>
           <ion-col text-center>{{item.favor}}</ion-col>
-        </ion-row>
+        </ion-row> -->
+      <ion-list *ngFor="let item of item;">
+        <p class="name" >{{item.name}}</p>
+      </ion-list>
         </ion-col>
 
       </ion-row>
@@ -55,12 +58,9 @@
               <ion-segment-button value='information' class="seg-btn">
                  游记
               </ion-segment-button>
-              <ion-segment-button value="server" class="seg-btn">
-                 相册
-              </ion-segment-button>
               <ion-segment-button value="star" class="seg-btn">
 
-                      我的收藏
+                      我参与的
                </ion-segment-button>
           </ion-segment>
 </ion-list>
@@ -75,11 +75,11 @@
             <ion-avatar item-start>
               <img src="assets/imgs/touxiang.jpg">
             </ion-avatar>
-            <h2>>{{val[in].title}}</h2>
+            <h2>{{val[in].title}}</h2>
             <p>{{val[in].updateDate}}</p>
           </ion-item>
         
-          <!-- <img src="assets/img/advance-card-bttf.png"> -->
+          <img src="http://35.194.153.183:8080{{val[in].sImg}}" style="height:180px;">
         
           <ion-card-content>
             <p>{{val[in].content}}</p>
@@ -105,40 +105,13 @@
       </ion-item>
 
      </ion-list>
-     <ion-list *ngSwitchCase="'server'">
-          <ion-list>
-            <ion-grid>
-              <ion-row>
-                <ion-col col-3 class="date-box">
-                 <p > 3月10日</p>
-                </ion-col>
-                <ion-col col-9>
-                  <ion-row>
-                    <ion-col>
-                    <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                    <ion-col>
-                      <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                    <ion-col>
-                      <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col>
-                    <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                    <ion-col>
-                      <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                    <ion-col>
-                      <img src="assets/imgs/touxiang.jpg" alt="">
-                    </ion-col>
-                  </ion-row>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-list>
+     <ion-list *ngSwitchCase="'star'">
+         <ion-list style="border-bottom:1px dotted gray;" *ngFor="let i of words;let in = index;"v>
+           <div style="width:30%;height:40px;float:left;line-height:40px;padding-left:8px;"><strong>{{words[in].name}}</strong>&nbsp;&nbsp;发表在</div>
+           <div style="width:60%;line-height:40px;float: left;height:40px">{{words[in].title}}</div>
+           <div style="width:10%;height: 40px;line-height:40px;float: left;color:gray">{{words[in].date}}</div>
+           <div style="width:100%;clear:both;padding-left:15px;line-height:40px;margin-bottom:10px;">{{words[in].content}}</div>
+         </ion-list>
      </ion-list>
 </div>
 </ion-content>
