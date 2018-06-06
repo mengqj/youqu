@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
-import { ForgetpasswordPage } from "../../pages/forgetpassword/forgetpassword";
-import { ChangeinfoPage } from "../../pages/changeinfo/changeinfo";
-import { CallbackPage } from "../../pages/callback/callback";
-import { AboutPage } from "../../pages/about/about";
 @IonicPage()
 @Component({
   selector: 'page-setting',
@@ -24,21 +20,21 @@ export class SettingPage {
   ];
   fbtn(item){
     if (item == "修改个人信息") {
-      let modal = this.modalCtrl.create(ChangeinfoPage);
+      let modal = this.modalCtrl.create('ChangeinfoPage');
       modal.present();
 
     }
     else if (item == "修改密码") {
       // let modal = this.modalCtrl.create(ForgetpasswordPage);
       // modal.present();
-      this.navCtrl.push(ForgetpasswordPage);
+      this.navCtrl.push('ForgetpasswordPage');
     }
     else if (item == "问题反馈") {
-      let modal = this.modalCtrl.create(CallbackPage);
+      let modal = this.modalCtrl.create('CallbackPage');
       modal.present();
     }
     else if (item == "关于") {
-      let modal = this.modalCtrl.create(AboutPage);
+      let modal = this.modalCtrl.create('AboutPage');
       modal.present();
     }
 
