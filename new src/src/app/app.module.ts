@@ -23,7 +23,7 @@ import { DiscoveryPage } from '../pages/discovery/discovery';
 import { SendtextPage } from '../pages/sendtext/sendtext';
 import { GuidePage } from '../pages/guide/guide';
 import { MyPage } from '../pages/my/my';
-
+import { LaunchPage } from "../pages/launch/launch";
 import { ContactPage } from "../pages/contact/contact";
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { ContactPage } from "../pages/contact/contact";
     SendtextPage,
     GuidePage,
     MyPage,
-    ContactPage
+    ContactPage,
+    LaunchPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,8 @@ import { ContactPage } from "../pages/contact/contact";
     SendtextPage,
     GuidePage,
     MyPage,
-    ContactPage
+    ContactPage,
+    LaunchPage
   ],
   providers: [
     StatusBar,
