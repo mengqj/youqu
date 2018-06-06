@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ModalController } from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
+import { LaunchPage } from "../launch/launch";
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -32,11 +33,8 @@ export class ContactPage {
   });
   }
   send(){
-    let modal = this.modalCtrl.create('LaunchPage');
+    let modal = this.modalCtrl.create(LaunchPage);
       modal.present();
-  }
-  show(id){
-    this.navCtrl.push('ClicktextPage',{textId:id});
   }
 }
 

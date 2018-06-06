@@ -70,18 +70,6 @@ page-contact {
     margin-top:-0px;
   }
   .doc{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-  .label-md .hang{
-    position: relative;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space:normal;
-    word-wrap:break-word;
-    word-break:break-all; 
-   // white-space: nowrap;
+
   }
 }
