@@ -1,66 +1,3 @@
-
-
-
-// import { Component } from '@angular/core';
-// import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-// import {HttpClient} from "@angular/common/http";
-// import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-// import { File } from '@ionic-native/file';
-// @IonicPage()
-// @Component({
-//   selector: 'page-sendtext',
-//   templateUrl: 'sendtext.html',
-// })
-// export class SendtextPage {
-
-//   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-//     private http: HttpClient,private transfer: FileTransfer,private file: File,)
-//   {
-//     this.username=this.navParams.get('userName');
-//     console.log(this.username)
-    
-//   }
-  
-//   username;
-//   words='';
-//   path: string="../../assets/imgs/zijingcheng.jpeg";
-//   fileTransfer: FileTransferObject = this.transfer.create();
-//   stroage=window.localStorage;
-//   user:string;
-// send(){
-//   console.log(this.words);
-//   this.user=this.stroage.getItem(this.username);
-
-  
-//   var params = {
-//   "title":"",
-//   "categories":["Bys_NYfCM"],
-//   "tags":["BkI1O_MRz"],
-//   "sImg":"",
-//   "discription":"",
-//   "author":this.user,
-//   "state":true,
-//   "comments":"",
-//   "markDownComments":this.words,
-// };
-//   let url:string='http://35.194.153.183:8080/api/content/addOne';
-//   this.http.post(url,params)
-//   .subscribe(
-//     data => {
-//       console.log(data);
-//     }
-// );
-// }
-
-// back(){
-//   this.viewCtrl.dismiss();
-// }
-// }
-
-
-
-
-
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController ,ModalController} from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
@@ -68,7 +5,6 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { File } from '@ionic-native/file';
 import  * as $ from 'jquery';
 import { Keyboard } from '@ionic-native/keyboard';
-import { PhotoPage } from '../photo/photo';
 
 @IonicPage()
 @Component({
@@ -76,34 +12,27 @@ import { PhotoPage } from '../photo/photo';
   templateUrl: 'sendtext.html',
 })
 export class SendtextPage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
     private http: HttpClient,private transfer: FileTransfer,private file: File,
     private keyboard: Keyboard,public modalCtrl:ModalController
   )
-  {
-       this.username=this.navParams.get('name');
-
-  }
-
-  username;
+  {}
+  username=localStorage.getItem('userName');
   ionViewDidLoad(){
     $('#btn').on('click',function(){
       console.log($('#page').html());
 
     })
   }
-  words='';
-  fileTransfer: FileTransferObject = this.transfer.create();
+words:string;
+fileTransfer: FileTransferObject = this.transfer.create();
 val;
-src;
- stroage=window.localStorage;
-user;
+src="/upload/blogpicture/white.png";
+user=localStorage.getItem('userName');
+userId=localStorage.getItem('ID');
 upload(){
-  //let file = (<HTMLInputElement>$('#img')).files[0];
-  //let file = document.getElementById("choose").files[0];
-  let file=(<HTMLInputElement>document.getElementById('img')).files[0];
-  console.log(file);
+  var temp;
+  let file=(<HTMLInputElement>document.getElementById('file')).files[0];
             let formData = new FormData();
             formData.append('file',file);
             $.ajax({
@@ -116,71 +45,56 @@ upload(){
                 processData: false,
                 success: function (data) {
                     console.log(data);
-
-                    $("#show").attr("src", 'http://35.194.153.183:8080'+data);
+                    //$("#show").attr("src", 'http://35.194.153.183:8080'+data);
+                    temp=data;
+                    return temp;
                 },
                 error: function (err) {
                     console.log(err);
                 }
-            })
+            });
+       this.src=temp;
 }
-/*upload(){
-  console.log(this.val);
-  this.src=this.val;
-  console.log(this.src);
-
-  let url:string="http://localhost:8080/system/upload?type=image";
-  var formData = new FormData();
-  let file='';
-  formData.append('file',file);
-  this.http.post(url,formData).subscribe(
-    data => {
-        console.log(data);
-        }
-  );
-}*/
-
 send(){
-    console.log(this.words);
-    this.user=this.stroage.getItem(this.username);
-    console.log(this.user);
-    
-    var params = {
-    "title":"",
-    "categories":["Bys_NYfCM"],
-    "tags":["BkI1O_MRz"],
-    "sImg":"",
-    "discription":"",
-    "author":this.user,
-    "state":true,
-    "comments":"",
-    "markDownComments":this.words,
-  };
-    let url:string='http://35.194.153.183:8080/api/content/addOne';
-    this.http.post(url,params)
-    .subscribe(
-      data => {
-        this.words='';
-      }
-  );
+    if (!this.words||this.words==" ") {
+      alert('内容不能为空');
+    }else{
+      var params = {
+        "title":this.username+"的游记",
+        "stitle":'',
+        "categories":["H1QbOnwAf", "By2w49cyX"],
+        "tags":["ryDyMqcJX"],
+        "sImg":this.src,
+        "discription":"",
+        "author":this.userId,
+        "state":true,
+        "comments":"",
+        "markDownComments":this.words,
+      };
+        let url:string='http://35.194.153.183:8080/api/content/addOne';
+        this.http.post(url,params)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.navCtrl.parent.select(4);
+          }
+      );
+    }
   }
 
 back(){
-  this.viewCtrl.dismiss();
+  this.navCtrl.parent.select(0);
 }
 focusInput(){
-  console.log('000');
   this.keyboard.show();
+  if (!this.words||this.words==" ") {
+    $('#sen').removeAttr("disabled");
+  }
 }
 
 blurInput(){
-  console.log(1111);
   this.keyboard.close();
 }
 
-goPhoto(){
-  let profileModal = this.modalCtrl.create(PhotoPage);
-     profileModal.present();
-}
 }
 
