@@ -7,13 +7,6 @@ import { ForgetpasswordPage }  from '../forgetpassword/forgetpassword';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -24,7 +17,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl:ModalController,public http:HttpClient,public alertCtrl:AlertController) {
   }
 
-  
+
 
 
   username:string;
@@ -36,17 +29,6 @@ export class LoginPage {
    changeUnm(e){
      this.username=e.target.value;
      }
-  /*  request(){
-
-  this.http.post("http://35.194.153.183:8080/api/users/doLogin",JSON.stringify({userName:this.username,password:this.password}),
-).subscribe(data=>{
-    console.log(data);
-  });
-  // this.navCtrl.push(HomePage);
-  
-  // let profileModal = this.modalCtrl.create(TabsPage);
-  // profileModal.present();
-}*/
 request(){
 
 let url:string='http://35.194.153.183:8080/api/users/doLogin';
@@ -65,20 +47,20 @@ this.http.post(url,{
     this.http.get(url).subscribe(val=>{
     localStorage.setItem('ID',val['id']);
     localStorage.setItem('userName',this.username);
-    
-   
+    localStorage.setItem('login','true');
+
     })
   }
   else if(data['state']=="error"&& data['type']=="ERROR_PARAMS")
   {
-    
+
       let alert = this.alertCtrl.create({
         title: "密码错误",
         subTitle: data['message'],
         buttons: ['OK']
       });
       alert.present();
-    
+
   }
   else if(data['state']=="error")
   {
@@ -89,10 +71,10 @@ this.http.post(url,{
     });
     alert.present();
   }
-  
-  
-  
-    
+
+
+
+
 }
 
  );
