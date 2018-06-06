@@ -19,28 +19,19 @@ export class ThumbsupPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items=[{
-      name:'一颗柠檬',
-      avatar:'assets/imgs/title.jpg',
-      text:'有没有结伴同行去西藏旅行的朋友',
-      time:'1:34 pm'
+      avatar:'assets/imgs/logo2.jpg',
+      text:'您反馈的意见我们已接收',
+      time:'05-31 08:00'
     },
     {
-      name:'一颗西柚',
-      avatar:'assets/imgs/title.jpg',
-      text:'有没有结伴同行去西藏',
-      time:'2:34 pm'
+      avatar:'assets/imgs/logo2.jpg',
+      text:'您好，感谢您的对我们服务满意，也非常感谢您给我们的宝贵建议，我们会继续努力，不断改善，为您提供更优质的服务',
+      time:'06-01 17:00'
     },
     {
-      name:'Alice',
-      avatar:'assets/imgs/title.jpg',
-      text:'有没有结伴同行去西藏',
-      time:'3:34 pm'
-    },
-    {
-      name:'Selina',
-      avatar:'assets/imgs/title.jpg',
-      text:'有没有结伴同行去西藏',
-      time:'3:34 pm'
+      avatar:'assets/imgs/logo2.jpg',
+      text:'感谢您提出宝贵意见',
+      time:'06-01 17:00'
     }
     ]
   }

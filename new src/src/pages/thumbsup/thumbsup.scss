@@ -11,7 +11,7 @@ page-thumbsup {
         }
     }
     .item{
-        border-bottom: 0.5px solid #e5e5e5;
+        border: 0px;
         background: #ffffff;
     }
     .item-md.item-block .item-inner{
@@ -45,6 +45,22 @@ page-thumbsup {
     .div2 {
         font-size:14px;
         margin-top:10px;
-        padding-left:32px;
+        margin-left:32px;
+        width:90%;
+        height:auto;
+        text-indent:1em;
     }
+    .div3{
+        width:90px;
+        border-radius:3px;
+        text-align:center;
+        margin:0 auto;
+        background:#e5e5e5;
+        color:white
+    }
+    ion-content ion-label{
+        white-space:normal;
+        word-wrap:break-word;
+        word-break:break-all; 
+     }
 }
