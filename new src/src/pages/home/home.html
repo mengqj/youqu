@@ -3,11 +3,12 @@
     <ion-buttons left >
       <button ion-button>
         <ion-icon ios="ios-pin" md="md-pin" color="color1"></ion-icon>
+        <p style="margin-left: 5%;">{{location}}</p>
       </button>
     </ion-buttons>
 
     <ion-title text-center>
-      <ion-searchbar [(ngModel)]="searchInput" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" class="search"></ion-searchbar>
+      <ion-searchbar (click)="search()" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" class="search"></ion-searchbar>
     </ion-title>
 
     <ion-buttons right>
@@ -56,10 +57,4 @@
       <p class="p2"><ion-icon ios="ios-eye" md="md-eye"></ion-icon>{{val[i].clickNum}}<button ion-button outline item-end  color="primary"  style="float:right">{{val[i].tags[0].name}}</button></p>
     </ion-item>
   </ion-list>
-
-    <!--上拉加载
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-      <ion-infinite-scroll-content loadingSpinner="ios" loadingText="正在加载..."></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-    -->
 </ion-content>
