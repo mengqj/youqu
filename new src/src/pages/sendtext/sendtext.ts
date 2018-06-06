@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController ,ModalController} from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import { File } from '@ionic-native/file';
 import  * as $ from 'jquery';
 import { Keyboard } from '@ionic-native/keyboard';
 
@@ -13,8 +11,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 })
 export class SendtextPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-    private http: HttpClient,private transfer: FileTransfer,private file: File,
-    private keyboard: Keyboard,public modalCtrl:ModalController
+    private http: HttpClient,private keyboard: Keyboard,public modalCtrl:ModalController
   )
   {}
   username=localStorage.getItem('userName');
@@ -25,7 +22,6 @@ export class SendtextPage {
     })
   }
 words:string;
-fileTransfer: FileTransferObject = this.transfer.create();
 val;
 src="/upload/blogpicture/white.png";
 user=localStorage.getItem('userName');
