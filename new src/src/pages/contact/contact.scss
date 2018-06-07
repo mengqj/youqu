@@ -55,10 +55,10 @@ page-contact {
       border:2.5px solid #A8EDAB;
       background-color: #A8EDAB;
       border-radius: 30px;
-      width: 35%;
+      width: 45%;
       float: right;
       position: relative;
-      left: -110px;
+      left: -70px;
   }
   .div1{
       margin-top: 30px;
@@ -70,6 +70,18 @@ page-contact {
     margin-top:-0px;
   }
   .doc{
-
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .label-md .hang{
+    position: relative;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:normal;
+    word-wrap:break-word;
+    word-break:break-all; 
+   // white-space: nowrap;
   }
 }
