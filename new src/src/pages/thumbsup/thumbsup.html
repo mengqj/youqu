@@ -1,17 +1,17 @@
 <ion-header>
-  <ion-navbar color="color1">      
-    <ion-title text-center>系统通知</ion-title>
+  <ion-navbar color="color1">
+    <ion-title text-center>通知消息</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="list-avatar-page">
-  <ion-list  *ngFor="let item of items">
-    <div class="div3">{{item.time}}</div>
+  <ion-list>
+    <div class="div3">{{val.date}}</div>
     <ion-item class="item">
       <div class="div1">
-        <img src="{{item.avatar}}"><span class="thumbup">系统通知</span>
+        <img src=""><span class="thumbup">{{val.title}}</span>
       </div>
-      <div class="div2">{{item.text}}</div>
+      <div class="div2" innerHTML="{{val.content}}"></div>
     </ion-item>
   </ion-list>
 </ion-content>

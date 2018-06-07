@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ThumbsupPage } from '../thumbsup/thumbsup';
-
-/**
- * Generated class for the NewslistPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HttpClient} from "@angular/common/http";
 
 @IonicPage()
 @Component({
@@ -16,34 +9,37 @@ import { ThumbsupPage } from '../thumbsup/thumbsup';
 })
 
 export class NewslistPage {
-  items=[{
-    news:'您反馈的意见我们已接收',
-    time:'05-31 08:00'
-  },
-  {
-    news:'感谢您提出宝贵意见',
-    time:'06-01 17:00'
-  },{
-    news:'感谢您提出宝贵意见',
-    time:'06-01 17:00'
-  }];
+  val;
+  host="35.194.153.183";
+  userId=localStorage.getItem('ID');
+  constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
+    this.getNotify();
+   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewslistPage');
+  goInfo(date,title,content){
+    this.navCtrl.push('ThumbsupPage',{date:date,title:title,content:content});
   }
-
-  goInfo(){
-    this.navCtrl.push(ThumbsupPage);
+  getNotify(){
+    let host='35.194.153.183';
+    let url:string='http://35.194.153.183:8080/api/users/getUserNotifys?author='+this.userId;
+      this.http.get(url)
+      .subscribe(
+      (data:any) =>{
+        this.val = data['docs'];
+        console.log(data);
+      });
   }
-
-  removeItem(item){
-    for(var i = 0; i < this.items.length; i++) {
-      if(this.items[i] == item){
-        this.items.splice(i, 1);
-      }
-    }
+  delNotifty(Nid){
+    let url:string="http://35.194.153.183:8080/api/users/delUserNotify?ids="+Nid;
+      this.http.get(url)
+      .subscribe(
+      (data:any) =>{
+        if (data.state=="success") {
+          this.getNotify();
+        } else {
+          alert("删除失败");
+        }
+      });
   }
 
 }

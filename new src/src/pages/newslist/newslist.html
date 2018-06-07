@@ -1,22 +1,26 @@
 <ion-header>
-  <ion-navbar color="color1">      
+  <ion-navbar color="color1">
     <ion-title text-center style="color:white;">消息</ion-title>
   </ion-navbar>
 </ion-header>
 
-<!--联系人列表-->
 <ion-content class="list-avatar-page">
-  <ion-list *ngFor="let item of items;">
-    <ion-item-sliding (click)="goInfo()">
+  <ion-list *ngFor="let item of val; let i=index">
+    <ion-item-sliding (click)="goInfo(val[i].date,val[i].notify.title,val[i].notify.content)">
       <ion-item class="item">
         <ion-avatar item-start>
           <button ion-fab color="color1" mini><ion-icon ios="ios-notifications" md="md-notifications" color="wh"></ion-icon></button>
         </ion-avatar>
-        <h2>消息通知<span style="float:right;font-size:12px;color:gray;">{{item.time}}</span></h2>
-        <p>{{item.news}}</p>
+        <h2>{{val[i].notify.title}}<span style="float:right;font-size:12px;color:gray;">{{val[i].date}}</span></h2>
+
+      </ion-item>
+      <ion-item class="content">
+        <div >
+          <p innerHTML="{{val[i].notify.content}}" ></p>
+        </div>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="danger" (click)="removeItem(item)">
+        <button ion-button color="danger" (click)="delNotifty(val[i].id)">
             <ion-icon ios="ios-trash" md="md-trash"></ion-icon>删除
         </button>
       </ion-item-options>
