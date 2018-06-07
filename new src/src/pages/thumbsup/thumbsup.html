@@ -1,17 +1,22 @@
 <ion-header>
-  <ion-navbar color="color1">
+  <ion-navbar>
     <ion-title text-center>通知消息</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="more" style="opacity:0;"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="list-avatar-page">
-  <ion-list>
-    <div class="div3">{{val.date}}</div>
-    <ion-item class="item">
-      <div class="div1">
-        <img src=""><span class="thumbup">{{val.title}}</span>
-      </div>
-      <div class="div2" innerHTML="{{val.content}}"></div>
-    </ion-item>
-  </ion-list>
+  <div class="date">{{val.date}}</div>
+  <ion-card>
+    <ion-card-header>
+      {{val.notify.title}}
+    </ion-card-header>
+    <ion-card-content>
+      <p innerHTML="{{val.notify.content}}"></p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

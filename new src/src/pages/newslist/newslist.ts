@@ -16,8 +16,8 @@ export class NewslistPage {
     this.getNotify();
    }
 
-  goInfo(date,title,content){
-    this.navCtrl.push('ThumbsupPage',{date:date,title:title,content:content});
+  goInfo(i){
+    this.navCtrl.push('ThumbsupPage',{index:i});
   }
   getNotify(){
     let host='35.194.153.183';

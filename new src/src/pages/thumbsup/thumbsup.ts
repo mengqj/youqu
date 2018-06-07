@@ -9,22 +9,32 @@ import { HttpClient} from "@angular/common/http";
 })
 export class ThumbsupPage {
 
-  index;
-  val;
   userId=localStorage.getItem('ID');
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
     this.index=navParams.data['index'];
+    console.log(this.index);
+  }
+  index;
+  val={
+    date:'123',
+    notify:{
+      title:'',
+      content:''
+    }
+  };
+
+  ionViewWillEnter(){
     this.getNotify(this.index);
   }
   getNotify(i){
-    let host='35.194.153.183';
     let url:string='http://35.194.153.183:8080/api/users/getUserNotifys?author='+this.userId;
       this.http.get(url)
       .subscribe(
       (data:any) =>{
-        this.val.date = data['docs'][i].date;
-        this.val.title = data['docs'][i].notify.title;
-        this.val.content = data['docs'][i].notify.content;
+        this.val= data['docs'][i];
+        console.log(this.val.date);
+
       });
   }
+
 }

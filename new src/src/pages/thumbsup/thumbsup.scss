@@ -2,6 +2,7 @@ page-thumbsup {
     *{
         margin: 0px;
         padding: 0px;
+
     }
     .list-avatar-page {
         ion-note {
@@ -9,58 +10,19 @@ page-thumbsup {
         align-self: flex-start;
         margin-top: 14px;
         }
+        background-color: #f4f4f4;
     }
-    .item{
-        border: 0px;
-        background: #ffffff;
+    ion-list{
+      background-color: #fff;
     }
-    .item-md.item-block .item-inner{
-        border: 0px;
+    .date{
+      text-align: center;
+      margin-top: 2%;
     }
-    .div1{
-        height:30px;
-        line-height: 30px;
-        margin: 5px 0px;
-    }
-    .div1 img{
-        width:30px;
-        height:30px;
-        border-radius:50%;
-        vertical-align: middle
-    }
-    .div1 .name{
-        color:#54bafa;
-        padding-left: 3px;
-        font-size:14px;
-        vertical-align: middle;
-    }
-    .div1 .thumbup,.time{
-        color:gray;
-        font-size:14px;
-    }
-    .div1 .time{
-        float: right;
-        font-size:12px;
-    }
-    .div2 {
-        font-size:14px;
-        margin-top:10px;
-        margin-left:32px;
-        width:90%;
-        height:auto;
-        text-indent:1em;
-    }
-    .div3{
-        width:90px;
-        border-radius:3px;
-        text-align:center;
-        margin:0 auto;
-        background:#e5e5e5;
-        color:white
-    }
+
     ion-content ion-label{
         white-space:normal;
         word-wrap:break-word;
-        word-break:break-all; 
+        word-break:break-all;
      }
 }
