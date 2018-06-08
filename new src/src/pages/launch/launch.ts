@@ -19,17 +19,14 @@ export class LaunchPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public cityDataProvider: CityDataProvider,private http: HttpClient, public viewCtrl: ViewController) {
     this.cityColumns = this.cityDataProvider.cities;
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LaunchPage');
-  }
   send(){
-    console.log(this.myDate);
-    console.log(this.comments);
+    $("#fabu").attr("disabled","true");
+    //console.log(this.myDate);
+    //console.log(this.comments);
     this.destination=$('#des').text();
-    console.log(this.destination);
+    //console.log(this.destination);
     this.location=$('#location').text();
-    console.log(this.location);
+    //console.log(this.location);
 
     var params = {
       "title":this.destination,

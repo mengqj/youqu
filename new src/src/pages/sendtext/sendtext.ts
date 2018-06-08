@@ -51,6 +51,7 @@ upload(){
        this.src=temp;
 }
 send(){
+    $('#sen').attr("disabled","true");
     if (!this.words||this.words==" ") {
       alert('内容不能为空');
     }else if (this.src="/upload/blogpicture/white.png") {

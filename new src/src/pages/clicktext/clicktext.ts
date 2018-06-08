@@ -62,8 +62,8 @@ export class ClicktextPage {
     });
   }
   postMessage(){
+    $('#sendmessage').attr("disabled","true");
     console.log(this.message);
-
     var params = {
     "contentId": this.id,
     "content":this.message,
@@ -77,6 +77,7 @@ export class ClicktextPage {
       .subscribe(
         data => {
           //console.log(data);
+          $('#sendmessage').removeAttr("disabled");
           this.message='';
           this.getlist();
         }
