@@ -33,14 +33,25 @@ export class ContentPage {
   '乌镇','鼓浪屿','香港','普吉岛','曼谷',
   '新加坡','北戴河','南京','广州','青岛',
   "桂林","洛阳","少林寺","威海","深圳",
-  "拉萨","大同","苏州","五台山","无锡"];
+  "拉萨","大同","苏州","五台山","无锡","台北","垦丁","花莲","高雄","台中"
+  ,"九份","南投","阿里山","澳门","东京","大阪","京都","济州岛",
+"首尔","釜山","巴厘岛","民丹岛","马尔代夫","罗马","威尼斯","洛杉矶"
+,"塞班岛","巴黎","普罗旺斯","悉尼","凯恩斯","黄金海岸","奥克兰","皇后镇","开罗",
+"卢克索","札幌","伦敦","墨尔本"];
   ids=['ryh28F9km','HkWzTETkm','Bk7pIN6yQ','Byd8hX6Jm','HJ_9-STJ7',
   'BygAEST1Q','ryv1xamlm','SJduMNp17','SkyAQ4akm','rkzCPEa17',
   'S1y8D4Ty7','Bk7pIN6yQ',"r1CetEpJX","Hk5Hs4aJX","HkWzTETkm",
   "ByZopET1m","rJ261Spk7","B1s9SNRy7","ByDRh3mem","H1-Bin7gX",
   "B1Bu0h7gQ", "rkqxaVT1Q","rylP8frayQ","rkICQH6km","Hk8mg40JQ",
   "HyZSqQAy7","Hyn2cNp1Q","HyWB24a1X","B1S1W4Ay7","B1st4Haym",
-  "BJ72ENCJm","BJ8EKQAk7","BJ_kmBayX","Bk9H57Cym","H17PXBTJQ"];
+  "BJ72ENCJm","BJ8EKQAk7","BJ_kmBayX","Bk9H57Cym","H17PXBTJQ","HycB4LwlX","Hk4FS8DeQ",
+  "Hys4UIDlX","HJlWuUwlm","rJXo_IvgQ","Bkkct8PlX","S1nZqIPxQ",
+  "SkiP9UvxX","r15moUDx7","rJKJh8DeQ","S1EO28Dem","BJ6H6IDxm","B1VyCLPem",
+  "BJUwALvlX","r1JM1vDem","SkbAywPeQ","ryBHgvDxm","Hk4zZDDeQ","H19nbwPxm",
+  "Hk4XMwwe7","H1ncGwPlm","ryMSmPPe7","BkcC7DwgX","HJPmNwwxX","r1XANPve7",
+  "BJTmBvPgQ","ryGFBvDe7","BJmZ8PDe7","S1spIvPeX","rkZ5wwvgX","HJjpwwPgX",
+  "HJOduvve7","r1dZFwvem","Sy1hYPwxm"
+];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {

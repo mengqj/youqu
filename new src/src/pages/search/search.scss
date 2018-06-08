@@ -1,10 +1,12 @@
 page-search {
-  .search button{
+  // .searchbox 
+  button{
     float: right;
     position: relative;
-    margin-top: -14%;
+    margin-top: -12%;
     font-weight: lighter;
   }
+  
   .doc{
     display: -webkit-box;
     -webkit-box-orient: vertical;

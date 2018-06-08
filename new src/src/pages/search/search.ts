@@ -24,11 +24,11 @@ export class SearchPage {
       this.val = data['docs'];
       console.log(data);
       setTimeout(() => {
-        this.clear();
-      }, 50);
+        this.claer();
+      }, 1000);
     });
   }
-  clear(){
+  claer(){
     $('.img').each(function(){
       if($(this).attr("src")=="http://35.194.153.183:8080"){
         $(this).hide();
