@@ -19,5 +19,6 @@
         <ion-input type="password" (input)="changePwd1($event)" [value]="password1"></ion-input>
       </ion-item>
       </ion-list>
-      <button ion-butont round outline color="#38ADFF;" style="width:70%;margin-left:15%;margin-top:40px;" class="btn4"  (click)="goAbo()">注&nbsp;册</button>
+      <button ion-butont round  color="#38ADFF;" style="width:70%;margin-left:15%;margin-top:40px;" class="btn4" id="reg" (click)="goAbo()">注&nbsp;册</button>
+      <div style="display: block;margin: 3% auto;text-align: center;">已有账号?&nbsp;<button style="color: #38ADFF;background: #fff;height: 5%;" (click)="doLogin()" id="log">点击登录</button></div>
     </ion-content>
