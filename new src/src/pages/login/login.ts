@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
-import { HomePage }  from '../home/home';
 import { TabsPage }  from '../tabs/tabs';
-import { RegisterPage }  from '../register/register';
-import { ForgetpasswordPage }  from '../forgetpassword/forgetpassword';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
-
+import  * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -16,9 +13,6 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl:ModalController,public http:HttpClient,public alertCtrl:AlertController) {
   }
-
-
-
 
   username:string;
   password:string;
@@ -30,7 +24,7 @@ export class LoginPage {
      this.username=e.target.value;
      }
 request(){
-
+$('#log,#reg').attr('disabled','true');
 let url:string='http://35.194.153.183:8080/api/users/doLogin';
 this.http.post(url,{
   'userName': this.username,
@@ -53,7 +47,7 @@ this.http.post(url,{
   }
   else if(data['state']=="error"&& data['type']=="ERROR_PARAMS")
   {
-
+    $('#log,#reg').removeAttr('disabled');
       let alert = this.alertCtrl.create({
         title: "密码错误",
         subTitle: data['message'],
@@ -64,6 +58,7 @@ this.http.post(url,{
   }
   else if(data['state']=="error")
   {
+    $('#log,#reg').removeAttr('disabled');
     let alert = this.alertCtrl.create({
       title: "请重新登录",
       subTitle: data['message'],
@@ -71,20 +66,10 @@ this.http.post(url,{
     });
     alert.present();
   }
-
-
-
-
 }
-
  );
 }
-
 goReg(){
-  this.navCtrl.push(RegisterPage);
+  this.navCtrl.push('RegisterPage');
 }
-forgetpw(){
-  this.navCtrl.push(ForgetpasswordPage);
-}
-
 }
