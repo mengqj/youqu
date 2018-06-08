@@ -18,42 +18,13 @@ export class MyPage {
   storage=window.localStorage;
   val=new Array();
   user;
-
-  
+  item=new Array()
+words=new Array()
   ionViewDidLoad(){
-this.user=this.storage.getItem('ID');
-console.log(this.user);
-    let host='35.194.153.183';
-    let host2='localhost';
-    let url:string='http://35.194.153.183:8080/api/users/getUserContents?user='+this.user;
-    let url1:string=':http://35.194.153.183:8080/api/users/getUser?searchkey='+this.user;
-    
-    this.http.get(url)
-    .subscribe(
-    data =>{
-      this.val = data['docs'];
-      for(var i=0;i<this.val.length;i++){
-        this.val[i].title=this.storage.getItem('userName');
-        this.val[i].updateDate=data['docs'][i].updateDate.substr(5,5);
-        // this.val[i].sImg='http://'+host+':8080'+data['docs'].sImg;
-        this.val[i].content=data['docs'][i].markDownComments ;
-        console.log(this.val[i].updateDate);
-
-      }
-      console.log(data);
-      console.log(this.val.length);
-
-
-    });
-
   
+  this.loading();
   };
 show="information"
-
-item=[{
-  name:this.storage.getItem('userName')
- 
-}];
 setting(){
   this.navCtrl.push('SettingPage');
 }
@@ -61,33 +32,70 @@ setting(){
 doionrefresh(ionrefresher){
 
   setTimeout(()=>{
-    this.user=this.storage.getItem('ID');
-console.log(this.user);
-    let host='35.194.153.183';
-    let host2='localhost';
-    let url:string='http://35.194.153.183:8080/api/users/getUserContents?user='+this.user;
+  
     
-    
-    this.http.get(url)
-    .subscribe(
-    data =>{
-      this.val = data['docs'];
-      for(var i=0;i<this.val.length;i++){
-        this.val[i].title=this.storage.getItem('userName');
-        this.val[i].updateDate=data['docs'][i].updateDate.substr(5,5);
-        // this.val[i].sImg='http://'+host+':8080'+['docs'].sImg;
-        this.val[i].content=data['docs'][i].markDownComments ;
-        console.log(this.val[i].updateDate);
-
-      }
-      console.log(data);
-      console.log(this.val.length);
-
-
-    });
-
-
-  ionrefresher.complete();
+this.loading();
+   ionrefresher.complete();
 },500);
+}
+
+
+loading(){
+  this.user=this.storage.getItem('ID');
+  console.log(this.user);
+      let host='35.194.153.183';
+      let host2='localhost';
+      let url:string='http://35.194.153.183:8080/api/users/getUserContents?user='+this.user+"&typeId=H1QbOnwAf";
+      let url1:string='http://35.194.153.183:8080/api/users/getUserReplies?author='+this.user;
+      let url2:string='http://35.194.153.183:8080/api/users/getUser?searchkey='+this.user;
+      var params={
+        "categories":["H1QbOnwAf", "By2w49cyX"],
+      }
+      this.http.get(url)
+      .subscribe(
+      data =>{
+
+        this.val = data['docs'];
+        for(var i=0;i<this.val.length;i++){
+          
+          this.val[i].title=data['docs'][i].uAuthor.name;
+          this.val[i].updateDate=data['docs'][i].updateDate.substr(5,5);
+          // this.val[i].sImg='http://'+host+':8080'+data['docs'].sImg;
+          this.val[i].content=data['docs'][i].markDownComments ;
+          this.val[i].logo='http://'+host+':8080'+data['docs'][i].uAuthor.logo;
+          
+
+          
+          console.log(this.val[i].updateDate);
+         
+        
+      }
+        console.log(data);
+      });
+  
+  
+  this.http.get(url1).subscribe(data=>{
+    this.words=data['docs'];
+    for(var i=0;i<this.words.length;i++){
+      this.words[i].name=data['docs'][i].author['userName'];
+      this.words[i].date=data['docs'][i].contentId['date'];
+      this.words[i].content=data['docs'][i].content;
+      this.words[i].title=data['docs'][i].contentId['stitle'];
+    }
+  })
+  
+  this.http.get(url2).subscribe(data=>{
+    this.item=[{
+      name:data['docs'][0].name,
+      logo:data['docs'][0].logo,
+      bglogo:data['docs'][0].bgLogo
+    }]
+  
+  })
+  
+}
+
+open(id){
+  this.navCtrl.push('ClicktextPage',{textId:id});
 }
 }

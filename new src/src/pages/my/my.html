@@ -19,19 +19,19 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content   *ngFor="let item of item;">
     <ion-refresher (ionRefresh)="doionrefresh($event)">
     <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
-<ion-list>
-   <img src="assets/imgs/bg.jpg" alt="" class="bg">
+<ion-list class="bg">
+   <img src="http://35.194.153.183:8080{{item.bglogo}}" alt="">
 </ion-list>
-<ion-list style="border-bottom:1px solid #eeeeee;margin-bottom:0px;">
+<ion-list style="border-bottom:1px solid #eeeeee;margin-bottom:0px;" >
 
   <ion-grid>
       <ion-row>
         <ion-col col-4 text-center>
-            <img src="assets/imgs/touxiang.jpg" alt="" class="touxiang">
+            <img src="http://35.194.153.183:8080{{item.logo}}" alt="" class="touxiang">
             <!-- <p class="name" >travel</p> -->
         </ion-col>
         <ion-col col-8>
@@ -45,7 +45,7 @@
           <ion-col text-center>{{item.fans}}</ion-col>
           <ion-col text-center>{{item.favor}}</ion-col>
         </ion-row> -->
-      <ion-list *ngFor="let item of item;">
+      <ion-list >
         <p class="name" >{{item.name}}</p>
       </ion-list>
         </ion-col>
@@ -70,10 +70,10 @@
        
 
       <ion-item *ngFor="let i of val;let in = index;">
-      <ion-card>
+      <ion-card (click)="open(val[in].id)">
           <ion-item >
             <ion-avatar item-start>
-              <img src="assets/imgs/touxiang.jpg">
+              <img src="{{val[in].logo}}">
             </ion-avatar>
             <h2>{{val[in].title}}</h2>
             <p>{{val[in].updateDate}}</p>
@@ -107,9 +107,9 @@
      </ion-list>
      <ion-list *ngSwitchCase="'star'">
          <ion-list style="border-bottom:1px dotted gray;" *ngFor="let i of words;let in = index;"v>
-           <div style="width:30%;height:40px;float:left;line-height:40px;padding-left:8px;"><strong>{{words[in].name}}</strong>&nbsp;&nbsp;发表在</div>
-           <div style="width:60%;line-height:40px;float: left;height:40px">{{words[in].title}}</div>
-           <div style="width:10%;height: 40px;line-height:40px;float: left;color:gray">{{words[in].date}}</div>
+           <div style="width:30%;height:40px;float:left;line-height:40px;padding-left:8px;"><strong>你</strong>&nbsp;&nbsp;发表评论在</div>
+           <div style="width:50%;line-height:40px;float: left;height:40px; overflow:hidden;text-overflow:ellipsis">{{words[in].title}}</div>
+           <div style="width:20%;height: 40px;line-height:40px;float: left;color:gray">{{words[in].date}}</div>
            <div style="width:100%;clear:both;padding-left:15px;line-height:40px;margin-bottom:10px;">{{words[in].content}}</div>
          </ion-list>
      </ion-list>
