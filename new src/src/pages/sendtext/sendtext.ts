@@ -41,7 +41,6 @@ upload(){
                 processData: false,
                 success: function (data) {
                     console.log(data);
-                    //$("#show").attr("src", 'http://35.194.153.183:8080'+data);
                     temp=data;
                     return temp;
                 },
@@ -54,7 +53,8 @@ upload(){
 send(){
     if (!this.words||this.words==" ") {
       alert('内容不能为空');
-    }else{
+    }else if (this.src="/upload/blogpicture/white.png") {
+      this.src="";
       var params = {
         "title":this.username+"的游记",
         "stitle":'',
@@ -72,6 +72,8 @@ send(){
         .subscribe(
           data => {
             console.log(data);
+            this.words="";
+            this.src="/upload/blogpicture/white.png"
             this.navCtrl.parent.select(4);
           }
       );
