@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+npm-debug.log
+.vscode/
+.idea/
+admin.lock
+server/config/secret.js
+logs/
+databak/
+dist/
