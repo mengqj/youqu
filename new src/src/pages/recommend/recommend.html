@@ -1,10 +1,5 @@
 <ion-header>
     <ion-navbar>
-<!--       <ion-buttons begin class="but1">
-        <button ion-button icon-only color="royal">
-          <ion-icon name="ios-arrow-back"></ion-icon>
-        </button>
-      </ion-buttons> -->
       <ion-title>推荐</ion-title>
       <ion-buttons right>
         <button ion-button icon-only>
@@ -26,7 +21,7 @@
       </button>
     </ion-item>
     <ion-card-content (click)="info(val[i].id)">
-        <p >{{val[i].discription}}</p>
+        <p >{{val[i].content}}</p>
     </ion-card-content>
     <img  src="http://35.194.153.183:8080{{val[i].sImg}}" class="tuijianimg" (click)="info(val[i].id)">
     <ion-row>

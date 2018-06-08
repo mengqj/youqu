@@ -27,10 +27,12 @@ export class RecommendPage {
       this.val[i].date=data['docs'][i].updateDate;
       this.val[i].commentNum=data['docs'][i].commentNum;
       if (data['docs'][i].author) {
+        this.val[i].content=data['docs'][i].discription;
         this.val[i].name=data['docs'][i].author.userName;
         console.log(this.val[i].name);
         this.val[i].logo='http://'+host+':8080'+data['docs'][i].author.logo;
       } else {
+        this.val[i].content=data['docs'][i].markDownComments;
         this.val[i].name=data['docs'][i].uAuthor.userName;
         console.log(this.val[i].name);
         this.val[i].logo='http://'+host+':8080'+data['docs'][i].uAuthor.logo;
@@ -38,7 +40,7 @@ export class RecommendPage {
       }
       setTimeout(() => {
         this.claer();
-      }, 1000);
+      }, 500);
     });
   }
   claer(){
