@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SettingPage } from '../setting/setting';
 import {HttpClient} from "@angular/common/http";
-
+import * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-my',
@@ -13,30 +13,26 @@ export class MyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: HttpClient) {
      this.username=this.navParams.get('name');
      console.log(this.username);
-     
+     this.loading();
   }
   storage=window.localStorage;
   val=new Array();
   user;
   item=new Array()
 words=new Array()
-  ionViewDidLoad(){
-  
-  this.loading();
-  };
+
 show="information"
 setting(){
   this.navCtrl.push('SettingPage');
 }
 
 doionrefresh(ionrefresher){
-
+  this.claer();
   setTimeout(()=>{
-  
-    
-this.loading();
+    this.loading();
    ionrefresher.complete();
 },500);
+
 }
 
 
@@ -63,24 +59,24 @@ loading(){
           // this.val[i].sImg='http://'+host+':8080'+data['docs'].sImg;
           this.val[i].content=data['docs'][i].markDownComments ;
           this.val[i].logo='http://'+host+':8080'+data['docs'][i].uAuthor.logo;
-          
-
-          
           console.log(this.val[i].updateDate);
-         
-        
       }
         console.log(data);
+        setTimeout(() => {
+        this.claer();
+      }, 500);
       });
   
   
   this.http.get(url1).subscribe(data=>{
+    console.log(data);
+    
     this.words=data['docs'];
     for(var i=0;i<this.words.length;i++){
       this.words[i].name=data['docs'][i].author['userName'];
-      this.words[i].date=data['docs'][i].contentId['date'];
+      this.words[i].date=data['docs'][i].date;
       this.words[i].content=data['docs'][i].content;
-      this.words[i].title=data['docs'][i].contentId['stitle'];
+      this.words[i].title=data['docs'][i].contentId.stitle;
     }
   })
   
@@ -94,7 +90,13 @@ loading(){
   })
   
 }
-
+claer(){
+    $('.simg').each(function(){
+      if($(this).attr("src")=="http://35.194.153.183:8080"){
+        $(this).hide();
+      }
+    })
+  }
 open(id){
   this.navCtrl.push('ClicktextPage',{textId:id});
 }
