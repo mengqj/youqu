@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient} from "@angular/common/http";
-
+import * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-clicktext',
@@ -22,14 +22,20 @@ export class ClicktextPage {
       this.id=navParams.data['textId'];
     }
   }
+  userId=localStorage.getItem('ID');
+  userName=localStorage.getItem("userName");
   ionViewWillEnter(){
     let host='35.194.153.183';
     let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
     //获取内容
     this.http.get(url)
     .subscribe(
-    data =>{
+    (data:any) =>{
       this.val = data['doc'];
+      if (this.val.title==this.userName+"的游记") {
+        this.val.title="你的游记";
+        $('#htitle').hide();
+      }
       this.val.sImg='http://'+host+':8080'+data['doc'].sImg;
       //console.log(data);
       //console.log(this.val.sImg);
@@ -61,7 +67,7 @@ export class ClicktextPage {
     var params = {
     "contentId": this.id,
     "content":this.message,
-    "author":"BJpVFFMRG",
+    "author":this.userId,
     "replyContent": "",
     "replyAuthor": "",
     "relationMsgId": ""

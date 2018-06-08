@@ -55,7 +55,7 @@
 </ion-list>
 <ion-list>
           <ion-segment [(ngModel)]="show">
-              <ion-segment-button value='information' class="seg-btn">
+              <ion-segment-button value='information' class="seg-btn"(click)="doclear()">
                  游记
               </ion-segment-button>
               <ion-segment-button value="star" class="seg-btn">
@@ -67,7 +67,7 @@
 <div [ngSwitch]="show">
 
      <ion-list  *ngSwitchCase="'information'">
-       
+
 
       <ion-item *ngFor="let i of val;let in = index;">
       <ion-card (click)="open(val[in].id)">
@@ -78,13 +78,13 @@
             <h2>{{val[in].title}}</h2>
             <p>{{val[in].updateDate}}</p>
           </ion-item>
-        
+
           <img src="http://35.194.153.183:8080{{val[in].sImg}}" style="height:180px;" class="simg">
-        
+
           <ion-card-content>
             <p>{{val[in].content}}</p>
           </ion-card-content>
-        
+
           <ion-row>
             <ion-col>
               <button ion-button color="primary" clear small icon-start>
@@ -98,15 +98,15 @@
                 {{val[in].commentNum}} 留言
               </button>
             </ion-col>
-            
+
           </ion-row>
-        
+
         </ion-card>
       </ion-item>
 
      </ion-list>
      <ion-list *ngSwitchCase="'star'" style="margin-bottom:30%;">
-         <ion-list style="border-bottom:1px dotted gray;" *ngFor="let i of words;let in = index;"v>
+         <ion-list style="border-bottom:1px dotted gray;" *ngFor="let i of words;let in = index;"(click)="open(words[in].contentId.id)">
            <div style="width:30%;height:40px;float:left;line-height:40px;padding-left:8px;"><strong>你</strong>&nbsp;&nbsp;发表评论在</div>
            <div style="width:50%;line-height:40px;float: left;height:40px; overflow:hidden;text-overflow:ellipsis">{{words[in].title}}</div>
            <div style="width:20%;height: 40px;line-height:40px;float: left;color:gray">{{words[in].date}}</div>

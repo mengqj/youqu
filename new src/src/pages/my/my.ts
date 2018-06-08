@@ -27,7 +27,6 @@ setting(){
 }
 
 doionrefresh(ionrefresher){
-  this.claer();
   setTimeout(()=>{
     this.loading();
    ionrefresher.complete();
@@ -53,24 +52,23 @@ loading(){
 
         this.val = data['docs'];
         for(var i=0;i<this.val.length;i++){
-          
+
           this.val[i].title=data['docs'][i].uAuthor.name;
           this.val[i].updateDate=data['docs'][i].updateDate.substr(5,5);
-          // this.val[i].sImg='http://'+host+':8080'+data['docs'].sImg;
           this.val[i].content=data['docs'][i].markDownComments ;
           this.val[i].logo='http://'+host+':8080'+data['docs'][i].uAuthor.logo;
           console.log(this.val[i].updateDate);
       }
         console.log(data);
         setTimeout(() => {
-        this.claer();
-      }, 500);
+        this.clear();
+      }, 50);
       });
-  
-  
+
+
   this.http.get(url1).subscribe(data=>{
     console.log(data);
-    
+
     this.words=data['docs'];
     for(var i=0;i<this.words.length;i++){
       this.words[i].name=data['docs'][i].author['userName'];
@@ -79,23 +77,28 @@ loading(){
       this.words[i].title=data['docs'][i].contentId.stitle;
     }
   })
-  
+
   this.http.get(url2).subscribe(data=>{
     this.item=[{
       name:data['docs'][0].name,
       logo:data['docs'][0].logo,
       bglogo:data['docs'][0].bgLogo
     }]
-  
+
   })
-  
+
 }
-claer(){
+clear(){
     $('.simg').each(function(){
       if($(this).attr("src")=="http://35.194.153.183:8080"){
         $(this).hide();
       }
     })
+  }
+  doclear(){
+    setTimeout(() => {
+      this.clear();
+    }, 50);
   }
 open(id){
   this.navCtrl.push('ClicktextPage',{textId:id});
