@@ -1,0 +1,117 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="more" style="opacity:0;"></ion-icon>
+      </button>
+  </ion-buttons>
+    <ion-title text-center>我&nbsp;的</ion-title>
+        <ion-buttons end >
+            <button ion-button icon-only (click)="setting()">
+              <ion-icon name="settings" ></ion-icon>
+            </button>
+          </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content   *ngFor="let item of item;">
+    <ion-refresher (ionRefresh)="doionrefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+<ion-list class="bg">
+   <img src="http://35.194.153.183:8080{{item.bglogo}}" alt="">
+</ion-list>
+<ion-list style="border-bottom:1px solid #eeeeee;margin-bottom:0px;" >
+
+  <ion-grid>
+      <ion-row>
+        <ion-col col-4 text-center>
+            <img src="http://35.194.153.183:8080{{item.logo}}" alt="" class="touxiang">
+            <!-- <p class="name" >travel</p> -->
+        </ion-col>
+        <ion-col col-8>
+         <!-- <ion-row>
+           <ion-col text-center style="margin-top:-20px;">关注</ion-col>
+           <ion-col text-center style="margin-top:-20px;">粉丝</ion-col>
+           <ion-col text-center style="margin-top:-20px;">获赞</ion-col>
+         </ion-row>
+         <ion-row *ngFor="let item of item;">
+          <ion-col text-center>c</ion-col>
+          <ion-col text-center>{{item.fans}}</ion-col>
+          <ion-col text-center>{{item.favor}}</ion-col>
+        </ion-row> -->
+      <ion-list >
+        <p class="name" >{{item.name}}</p>
+      </ion-list>
+        </ion-col>
+
+      </ion-row>
+      </ion-grid>
+</ion-list>
+<ion-list>
+          <ion-segment [(ngModel)]="show">
+              <ion-segment-button value='information' class="seg-btn"(click)="doclear()">
+                 游记
+              </ion-segment-button>
+              <ion-segment-button value="star" class="seg-btn">
+
+                      我参与的
+               </ion-segment-button>
+          </ion-segment>
+</ion-list>
+<div [ngSwitch]="show">
+
+     <ion-list  *ngSwitchCase="'information'">
+
+
+      <ion-item *ngFor="let i of val;let in = index;">
+      <ion-card (click)="open(val[in].id)">
+          <ion-item >
+            <ion-avatar item-start>
+              <img src="{{val[in].logo}}">
+            </ion-avatar>
+            <h2>{{val[in].title}}</h2>
+            <p>{{val[in].updateDate}}</p>
+          </ion-item>
+
+          <img src="http://35.194.153.183:8080{{val[in].sImg}}" style="height:180px;" class="simg">
+
+          <ion-card-content>
+            <p>{{val[in].content}}</p>
+          </ion-card-content>
+
+          <ion-row>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                <ion-icon name='md-eye'></ion-icon>
+                {{val[in].clickNum}} 浏览
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                <ion-icon name='text'></ion-icon>
+                {{val[in].commentNum}} 留言
+              </button>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-card>
+      </ion-item>
+
+     </ion-list>
+     <ion-list *ngSwitchCase="'star'" style="margin-bottom:30%;">
+         <ion-list style="border-bottom:1px dotted gray;" *ngFor="let i of words;let in = index;"(click)="open(words[in].contentId.id)">
+           <div style="width:30%;height:40px;float:left;line-height:40px;padding-left:8px;"><strong>你</strong>&nbsp;&nbsp;发表评论在</div>
+           <div style="width:50%;line-height:40px;float: left;height:40px; overflow:hidden;text-overflow:ellipsis">{{words[in].title}}</div>
+           <div style="width:20%;height: 40px;line-height:40px;float: left;color:gray">{{words[in].date}}</div>
+           <div style="width:100%;clear:both;padding-left:15px;padding-right:25px;line-height:40px;margin-bottom:10px;">{{words[in].content}}</div>
+         </ion-list>
+     </ion-list>
+</div>
+</ion-content>

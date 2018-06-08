@@ -26,7 +26,7 @@ export class ClicktextPage {
   userName=localStorage.getItem("userName");
   ionViewWillEnter(){
     let host='35.194.153.183';
-    let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
+    let url:string='http://'+host+':8080/api/content/getContent?apiSource=client&id='+this.id;
     //获取内容
     this.http.get(url)
     .subscribe(
