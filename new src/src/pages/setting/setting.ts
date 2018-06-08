@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { BeginPage } from '../begin/begin';
 @IonicPage()
 @Component({
   selector: 'page-setting',
@@ -41,5 +42,6 @@ export class SettingPage {
   }
   clear(){
     localStorage.clear();
+    this.navCtrl.push(BeginPage);
   }
 }

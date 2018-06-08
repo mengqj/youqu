@@ -7,7 +7,7 @@
         </ion-buttons>
         <ion-title text-center><span style="font-weight: lighter;">问题反馈</span></ion-title>
         <ion-buttons right>
-            <button ion-button icon-only>  
+            <button ion-button icon-only>
               <ion-icon name="more" style="opacity:0;"></ion-icon>
             </button>
         </ion-buttons>
@@ -16,6 +16,6 @@
 
 
 <ion-content class="call-bg">
-    <textarea placeholder="请输入遇到的问题或建议..." class="callback-text"></textarea>
-    <button ion-button class="call-btn display-center" (click)="submit()" disabled>提交</button>
+    <textarea placeholder="请输入遇到的问题或建议..." class="callback-text" [(ngModel)]="content"></textarea>
+    <button ion-button class="call-btn " style="display:block;margin:0 auto;" (click)="submit()" id="sub">提交</button>
 </ion-content>
