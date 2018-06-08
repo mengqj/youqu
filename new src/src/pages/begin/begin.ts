@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage }  from '../tabs/tabs';
+import  * as $ from 'jquery';
 @IonicPage()
 @Component({
   selector: 'page-begin',
@@ -29,9 +29,11 @@ export class BeginPage {
     }
 }
 home(){
+  $("#reg,#log").attr("disabled","true");
   this.navCtrl.push('LoginPage');
 }
 zhuce(){
+  $("#reg,#log").attr("disabled","true");
   this.navCtrl.push('RegisterPage');
 }
 }
