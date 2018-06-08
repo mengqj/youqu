@@ -39,11 +39,11 @@ export class RecommendPage {
       }
       }
       setTimeout(() => {
-        this.claer();
-      }, 500);
+        this.clear();
+      }, 50);
     });
   }
-  claer(){
+  clear(){
     $('.tuijianimg').each(function(){
       if($(this).attr("src")=="http://35.194.153.183:8080"){
         $(this).hide();
