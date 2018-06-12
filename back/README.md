@@ -1,9 +1,4 @@
-演示地址： [前端开发俱乐部](https://www.html-js.cn)
-后台登录： https://www.html-js.cn/dr-admin     测试账号：doracms/123456
-
-开发文档： [前端内容管理框架 DoraCMS2.0 开发文档](https://www.html-js.cn/details/ryn2kSWqZ.html)   
-生产部署教程： [DoraCMS2.0 linux部署(生产环境)教程](https://www.html-js.cn/details/ry4-B-hkf.html)  
-
+游趣后台是根据[DoraCMS](https://github.com/doramart/DoraCMS)进行的二次开发
 
 ## 目录结构
 
@@ -65,11 +60,30 @@
     └─validatorUtil.js // 信息校验
 
 ```
+## 准备工作:
+安装 NodeJS:
+https://nodejs.org/zh-cn/
 
+安装 Mongodb:
+https://www.mongodb.com/download-center#community
+
+```shell
+# 安装依赖
+$ npm install
+
+# 开发模式
+$ npm run dev
+
+# 生产模式
+$ npm run build
+
+# 启动(需先生成静态文件)
+$ npm run start
+```
 首页
 http://localhost:8080  
-http://35.194.153.183:8080
+http://35.194.153.183:8080 (游趣服务器)
 
 登录
 http://localhost:8080/dr-admin  
-http://35.194.153.183:8080/dr-admin
+http://35.194.153.183:8080/dr-admin (游趣服务器)
