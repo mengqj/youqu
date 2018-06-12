@@ -314,6 +314,7 @@ class User {
             }
             const userObj = {
                 userName: fields.userName,
+                name:fields.name,
                // email: fields.email,
                 password: service.encrypt(fields.password, settings.encrypt_key),
             }
