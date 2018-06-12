@@ -1,0 +1,91 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title>问答</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="ask()">
+        提问
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div>
+        <ion-segment [(ngModel)]="question">
+          <ion-segment-button value="recommend">
+            推荐问题
+          </ion-segment-button>
+          <ion-segment-button value="myquestion">
+            我的提问
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <div [ngSwitch]="question">
+        <ion-list *ngSwitchCase="'recommend'">
+            <ion-card *ngFor="let item of val;let i = index;">
+                <ion-item class="askhead">
+                  <ion-avatar item-start >
+                    <img src="{{val[i].logo}}" class="logo">
+                  </ion-avatar>
+                  <h2>{{val[i].name}}</h2>
+                  <h2>{{val[i].title}}</h2>
+                </ion-item>
+                <ion-card-content (click)="show(val[i].id)">
+                  <div class="contentdiv">
+                      <p class="content">{{val[i].content}}</p>
+                  </div>
+
+                </ion-card-content>
+
+                <ion-row>
+                  <ion-col center text-left>
+                      <ion-note>
+                        {{val[i].commentNum}}条回答
+                      </ion-note>
+                    </ion-col>
+                    <ion-col center text-right>
+                      <ion-note>
+                          {{val[i].date}}
+                      </ion-note>
+                    </ion-col>
+                </ion-row>
+              </ion-card>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'myquestion'">
+            <ion-card *ngFor="let item of valt;let i = index;">
+                <ion-item class="askhead">
+                  <ion-avatar item-start >
+                    <img src="{{valt[i].logo}}" class="logo">
+                  </ion-avatar>
+                  <h2>{{valt[i].name}}</h2>
+                  <h2>{{valt[i].title}}</h2>
+                </ion-item>
+                <ion-card-content (click)="show(valt[i].id)">
+                  <div class="contentdiv">
+                      <p class="content">{{valt[i].content}}</p>
+                  </div>
+
+                </ion-card-content>
+
+                <ion-row>
+                  <ion-col center text-left>
+                      <ion-note>
+                        {{valt[i].commentNum}}条回答
+                      </ion-note>
+                    </ion-col>
+                    <ion-col center text-right>
+                      <ion-note>
+                          {{valt[i].date}}
+                      </ion-note>
+                    </ion-col>
+                </ion-row>
+              </ion-card>
+        </ion-list>
+
+      </div>
+
+
+
+</ion-content>

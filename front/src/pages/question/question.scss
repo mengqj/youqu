@@ -1,0 +1,23 @@
+page-question {
+    ion-header{
+        text-align: center;
+    }
+    .segment-md .segment-button{
+        font-size:14px;
+    }
+    .guanzhu{
+        font-size: 10px;
+
+    }
+    .contentdiv{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .content{
+      position: relative;
+      overflow: hidden;
+     // white-space: nowrap;
+    }
+}

@@ -1,0 +1,52 @@
+page-begin {
+    margin:0 auto;
+    width:750px;
+    color:white;
+    #beginlogo{
+        margin:16% auto;
+        display: block;
+    }
+    h1{
+        text-align: center;
+        color:white;
+        font-weight: 700;
+        line-height: 5px;
+    }
+    .btn{
+        margin-top: 36%;
+        margin-bottom: 30%;
+        margin-left: 10%;
+        width: 35%;
+        background-color:transparent;
+        border-style:solid;
+        border-color:rgb(176,224,230);
+        border-radius: 10px;
+    }
+    button{
+        border:1px;
+    }
+    p{
+        color:black;
+        text-align: center;
+        font-size:16px;
+    }
+    .content-md hr{
+        background-color: white;
+    }
+    hr{
+
+        height:2px;
+        color:white;
+        width:70%;
+        text-align: center;
+    }
+
+    .login img{
+        width:8%;
+        margin-left:18%;
+    }
+    .logintext span{
+       margin-left:19%;
+    }
+
+}

@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-navbar >
+    <ion-title text-center>攻略</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="more" style="opacity:0;"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content  class="card-background-page" lazy-scroll>
+  <!--上部分 图片-->
+  <ion-card>
+      <img src="{{val.sImg}}" alt="">
+    <div class="card-title">{{val.title}}</div>
+  </ion-card>
+  <!--文字内容-->
+  <div class="textcontent">
+      <!--第一部分 预览-->
+      <div class="text">
+        <div innerHTML={{val.comments}} id="valcom"></div>
+
+      </div>
+
+  </div>
+  
+ <!--相关攻略 列表-->
+  <div class="hotnews">
+    <h4 style="padding-left:16px;">相关攻略</h4>
+  </div>
+  
+  <ion-list class="index-list" (click)="content(val2[i].id)" *ngFor="let item of val2;let i = index;">
+      <h6 style="padding-left:16px;margin:5px 0px">{{val2[i].stitle}}</h6>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{val2[i].sImg}}" class="thumb-img">
+        </ion-thumbnail>
+        <p class="p1">{{val2[i].discription}}</p>
+        <p class="p2"><ion-icon ios="ios-eye" md="md-eye"></ion-icon>{{val2[i].clickNum}}<button ion-button outline item-end  color="primary"  style="float:right">{{val2[i].tags[0].name}}</button></p>
+      </ion-item>
+    </ion-list>
+  <!--
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+-->
+</ion-content>

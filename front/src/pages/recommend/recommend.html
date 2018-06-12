@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>推荐</ion-title>
+      <ion-buttons right>
+        <button ion-button icon-only>
+          <ion-icon name="more" style="opacity:0;"></ion-icon>
+        </button>
+    </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+  <ion-card *ngFor="let item of val;let i = index;">
+    <ion-item>
+      <ion-avatar item-start class="touxiang">
+        <img src="{{val[i].logo}}">
+      </ion-avatar>
+      <h2>&nbsp;&nbsp;&nbsp;{{val[i].name}}</h2>
+      <button ion-button icon-left clear small >
+          <ion-icon name="ios-time-outline"></ion-icon>
+          <div>{{val[i].date}}</div>
+      </button>
+    </ion-item>
+    <ion-card-content (click)="info(val[i].id)">
+        <p >{{val[i].content}}</p>
+    </ion-card-content>
+    <img  src="http://35.194.153.183:8080{{val[i].sImg}}" class="tuijianimg" (click)="info(val[i].id)">
+    <ion-row>
+        <ion-col>&nbsp;</ion-col>
+        <ion-col>&nbsp;</ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="ios-text-outline"></ion-icon>
+          <div>{{val[i].commentNum}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small >
+          <ion-icon name="ios-eye-outline"></ion-icon>
+          <div>{{val[i].clickNum}}</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div id="noimg">
+
+  </div>
+</ion-content>

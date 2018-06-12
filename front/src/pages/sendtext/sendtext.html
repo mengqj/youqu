@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button (click)="back()">
+          <span style="color: #000;font-size:1em;font-weight: normal;">取&nbsp;消</span>
+        </button>
+        </ion-buttons>
+        <ion-title text-center><span style="font-weight: lighter;">发文字</span></ion-title>
+        <ion-buttons right>
+            <button ion-button  (click)="send()" id="sen" disabled>
+          <span style="font-size:1em;font-weight: normal;">完&nbsp;成</span>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-textarea class="area" placeholder="分享新鲜事..." [(ngModel)]="words"  (ionBlur)="blurInput()" (ionFocus)="focusInput()"  >
+    </ion-textarea>
+    <!--<ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                  <ion-list class="location">
+                    <ion-icon name="md-compass" style="margin-left:10px;" >&nbsp;石家庄</ion-icon>
+                  </ion-list>
+                  </ion-col>
+                <ion-col col-6>
+                        <ion-list class="method">
+                                <ion-icon name="md-globe" style="margin-left:10px;">&nbsp;公开</ion-icon>
+                        </ion-list>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-list>-->
+      <div class="img">
+        <img id="simg" src="http://35.194.153.183:8080{{src}}">
+      </div>
+    <ion-list style="height:50px;background-color:#f2f2f2; width:100%;padding:0xp !important;border-top:1px solid #d6d6d6;line-height:50px;" >
+    <ion-grid>
+        <ion-row >
+          <ion-col  col-3 text-center>
+            <label for="file">
+              <ion-icon name="ios-image-outline" style="font-size:30px;"></ion-icon>
+            </label>
+            <input type="file" name="file" id="file" style="display: none;" (change)="upload()">
+          </ion-col>
+            <ion-col  col-3 text-center> <ion-icon name="ios-camera-outline"  style="font-size:40px;"></ion-icon></ion-col>
+            <ion-col col-3 text-center> <ion-icon name="ios-grid-outline" style="font-size:30px;"></ion-icon></ion-col>
+            <ion-col col-3 text-center><ion-icon  name="ios-happy-outline" style="font-size: 30px;"></ion-icon></ion-col>
+        </ion-row>
+    </ion-grid>
+    </ion-list>
+</ion-content>

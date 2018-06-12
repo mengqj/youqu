@@ -1,0 +1,28 @@
+page-thumbsup {
+    *{
+        margin: 0px;
+        padding: 0px;
+
+    }
+    .list-avatar-page {
+        ion-note {
+        font-size: 12px;
+        align-self: flex-start;
+        margin-top: 14px;
+        }
+        background-color: #f4f4f4;
+    }
+    ion-list{
+      background-color: #fff;
+    }
+    .date{
+      text-align: center;
+      margin-top: 2%;
+    }
+
+    ion-content ion-label{
+        white-space:normal;
+        word-wrap:break-word;
+        word-break:break-all;
+     }
+}

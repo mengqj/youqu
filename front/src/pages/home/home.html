@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="wh">
+    <ion-buttons left >
+      <button ion-button>
+        <ion-icon ios="ios-pin" md="md-pin" color="color1"></ion-icon>
+        <p style="margin-left: 5%;">{{location}}</p>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>
+      <ion-searchbar (click)="search()" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" class="search"></ion-searchbar>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button (click)="openlist()">
+       <ion-icon ios="ios-notifications" md="md-notifications" color="color1"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!--文章推荐列表-->
+<ion-content>
+    <!--轮播图-->
+    <ion-slides class="slide" loop="true" pager="true" *ngIf="len>=1" autoplay="1000">
+        <ion-slide  *ngFor="let item of lunbo;let i = index;" class="slide">
+          <img src="{{lunbo[i].sImg}}" (click)="content(lunbo[i].id)">
+        </ion-slide>
+    </ion-slides>
+  <!--<h2>热文推送</h2>-->
+  <!--
+  <div class="hotnews">
+    <ion-icon ios="ios-paw" md="md-paw" color="color1"></ion-icon><span class="hottitle">热文推送</span>
+  </div>
+-->
+
+  <!--广告-->
+  <ion-list class="index-list" (click)="content(ad[i].id)" *ngFor="let item of ad;let i = index;">
+    <h6 style="padding-left:16px;margin:5px 0px;">{{ad[i].title}}</h6>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{ad[i].sImg}}" class="thumb-img">
+      </ion-thumbnail>
+      <p class="p1">{{ad[i].discription}}</p>
+      <p class="p2"><ion-icon ios="ios-eye" md="md-eye"></ion-icon>{{ad[i].clickNum}}<button ion-button outline item-end  color="danger" style="float:right">{{ad[i].tags[0].name}}</button></p>
+    </ion-item>
+  </ion-list>
+
+  <!--内容-->
+  <ion-list class="index-list" (click)="content(val[i].id)" *ngFor="let item of val;let i = index;">
+    <h6 style="padding-left:16px;margin:5px 0px">{{val[i].stitle}}</h6>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{val[i].sImg}}" class="thumb-img">
+      </ion-thumbnail>
+      <p class="p1">{{val[i].discription}}</p>
+      <p class="p2"><ion-icon ios="ios-eye" md="md-eye"></ion-icon>{{val[i].clickNum}}<button ion-button outline item-end  color="primary"  style="float:right">{{val[i].tags[0].name}}</button></p>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+page-newslist {
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .list-avatar-page {
+        ion-note {
+        font-size: 12px;
+        align-self: flex-start;
+        margin-top: 14px;
+        }
+    }
+    .item{
+        border-bottom: 0.5px solid #e5e5e5;
+        background: #ffffff;
+    }
+    .item-md.item-block .item-inner{
+        border: 0px;
+    }
+    .fab[mini]{
+        margin:0px;
+    }
+    .list-md{
+        margin:0px;
+    }
+}

@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button (click)="back()">
+              <span style="color: #000;">取消</span>
+            </button>
+        </ion-buttons>
+        <ion-title text-center><span style="font-weight: lighter;">修改个人信息</span></ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="send()">
+              <span>保存</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="c-top">
+        <div class="c-bg">
+        </div>
+        <div class="user-head">
+            <img src="http://35.194.153.183:8080{{logo}}" id="logo">
+          <label for="file">
+            <div class="logobtn">设置头像</div>
+          </label>
+            <input type="file" id="file" style="display: none" (change)="setLogo()">
+
+            <label for="file2">
+              <div class="logobtn">设置背景</div>
+            </label>
+              <input type="file" id="file2" style="display: none" (change)="setBgLogo()">
+        </div>
+    </div>
+
+    <ion-list class="c-list">
+
+        <ion-item>
+            <ion-label>昵称</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>性别</ion-label>
+            <ion-select [(ngModel)]="gender" class="c-select-gen">
+                <ion-option value="f">女</ion-option>
+                <ion-option value="m">男</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>生日</ion-label>
+            <ion-datetime displayFormat="YYYY年 MM月 DD日" [(ngModel)]="event.month" class="c-select-date"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>邮箱</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>电话</ion-label>
+            <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+        </ion-item>
+    </ion-list>
+</ion-content>

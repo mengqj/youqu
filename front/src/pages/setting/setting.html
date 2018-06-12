@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <!-- <ion-buttons left>
+            <button ion-button icon-only (click)="back()">
+            <ion-icon name="ios-arrow-back" style="font-size: 30px; color: #000;"></ion-icon>
+            </button>
+        </ion-buttons> -->
+        <ion-title style="text-align:center"><span style="font-weight: lighter;">设置</span></ion-title>
+        <ion-buttons right>
+            <button ion-button icon-only>
+              <ion-icon name="more" style="opacity:0;"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="setting-list">
+        <button ion-item *ngFor="let item of items" style="padding: 0;" (click)="fbtn(item)">
+                {{ item }}
+            </button>
+    </ion-list>
+    <button ion-button round col-8 class="display-center" style="display:block;margin:0 auto;"(click)="clear()">
+    退出登录
+</button>
+
+</ion-content>
