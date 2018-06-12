@@ -14,13 +14,10 @@ export class SendtextPage {
     private http: HttpClient,private keyboard: Keyboard,public modalCtrl:ModalController
   )
   {}
-  username=localStorage.getItem('userName');
-  ionViewDidLoad(){
-    $('#btn').on('click',function(){
-      console.log($('#page').html());
-
-    })
+  ionViewWillEnter(){
+    this.src="/upload/blogpicture/white.png";
   }
+username=localStorage.getItem('userName');
 words:string;
 val;
 src="/upload/blogpicture/white.png";
@@ -49,38 +46,41 @@ upload(){
                 }
             });
        this.src=temp;
+       //console.log(this.src);
+
 }
 send(){
     $('#sen').attr("disabled","true");
     if (!this.words||this.words==" ") {
       alert('内容不能为空');
-    }else if (this.src="/upload/blogpicture/white.png") {
-      this.src="";
-      var params = {
-        "title":this.username+"的游记",
-        "stitle":'',
-        "categories":["H1QbOnwAf", "By2w49cyX"],
-        "tags":["ryDyMqcJX"],
-        "sImg":this.src,
-        "discription":"",
-        "author":this.userId,
-        "state":true,
-        "comments":"",
-        "markDownComments":this.words,
-      };
-        let url:string='http://35.194.153.183:8080/api/content/addOne';
-        this.http.post(url,params)
-        .subscribe(
-          data => {
-            console.log(data);
-            this.words="";
-            this.src="/upload/blogpicture/white.png"
-            this.navCtrl.parent.select(4);
-          }
-      );
+    }else{
+     // console.log(this.src);
+      this.message(this.src);
     }
   }
-
+message(src){
+  var params = {
+    "title":this.username+"的游记",
+    "stitle":'',
+    "categories":["H1QbOnwAf", "By2w49cyX"],
+    "tags":["ryDyMqcJX"],
+    "sImg":src,
+    "discription":"",
+    "author":this.userId,
+    "state":true,
+    "comments":"",
+    "markDownComments":this.words,
+  };
+    let url:string='http://35.194.153.183:8080/api/content/addOne';
+    this.http.post(url,params)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.words="";
+        this.navCtrl.parent.select(4);
+      }
+  );
+}
 back(){
   this.navCtrl.parent.select(0);
 }
