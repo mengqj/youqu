@@ -59,12 +59,18 @@ send(){
     }
   }
 message(src){
+  var temp;
+  if (src=="/upload/blogpicture/white.png") {
+    temp='';
+  } else {
+    temp=src;
+  }
   var params = {
     "title":this.username+"的游记",
     "stitle":'',
     "categories":["H1QbOnwAf", "By2w49cyX"],
     "tags":["ryDyMqcJX"],
-    "sImg":src,
+    "sImg":temp,
     "discription":"",
     "author":this.userId,
     "state":true,
