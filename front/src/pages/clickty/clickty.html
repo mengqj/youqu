@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon ios="ios-send" md="md-send" color="primary" item-start></ion-icon>
+        目的地：<strong>{{val.title}}</strong>
+    </ion-item>
+    <ion-item>
+      <ion-icon ios="ios-pin" md="md-pin" item-start color="primary"></ion-icon>
+        出发地：<strong>{{val.stitle}}</strong>
+    </ion-item>
+    <ion-item>
+      <ion-icon ios="ios-calendar" md="md-calendar" item-start color="primary"></ion-icon>
+        出发时间：<strong>{{val.discription}}</strong>
+    </ion-item>
+  </ion-list>
+
+  <div class="con">
+    <h4>详细内容</h4>
+    {{val.markDownComments}}
+  </div>
+  <!--留言-->
+  <div class="message">
+      <ion-textarea placeholder="想说些什么..." [(ngModel)]="message">
+
+      </ion-textarea>
+      <button ion-button round class="btn"(click)="postMessage()" id="sendmessage">发表留言</button>
+
+            <ion-list class="meslist">
+              <span class="meslist2">留言列表</span>
+              <button ion-item *ngFor="let i of meslist;let in = index;">
+                  <div class="userName">
+                    <img src="{{meslist[in].logo}}">
+                  </div>
+                  <div class="date">
+                      <span style="display:inline;white-space:nowrap;color: #409EFF;">
+                        {{meslist[in].name}}
+                      </span>
+                    {{meslist[in].date}}
+                  </div>
+                <div class="content">
+                  <div class="contenttext">{{meslist[in].content}}</div>
+                </div>
+              </button>
+            </ion-list>
+
+    </div>
+</ion-content>

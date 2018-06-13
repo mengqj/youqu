@@ -37,7 +37,7 @@ export class ContactPage {
       modal.present();
   }
   show(id){
-    this.navCtrl.push('ClicktextPage',{textId:id});
+    this.navCtrl.push('ClicktyPage',{textId:id});
   }
 }
 
