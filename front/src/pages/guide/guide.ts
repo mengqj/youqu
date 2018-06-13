@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ContentPage } from '../content/content';
 import { MorecityPage } from '../morecity/morecity';
 @IonicPage()
 @Component({
@@ -103,7 +102,7 @@ items3=[{
 show="show1";
 
   goDetail(title){
-    this.navCtrl.push(ContentPage,{place:title});
+    this.navCtrl.push('ContentPage',{place:title});
   }
 
   gomore(){

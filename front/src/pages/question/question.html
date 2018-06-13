@@ -23,7 +23,7 @@
       </div>
       <div [ngSwitch]="question">
         <ion-list *ngSwitchCase="'recommend'">
-            <ion-card *ngFor="let item of val;let i = index;">
+            <ion-card *ngFor="let item of val;let i = index;" (click)="show(val[i].id)">
                 <ion-item class="askhead">
                   <ion-avatar item-start >
                     <img src="{{val[i].logo}}" class="logo">
@@ -31,7 +31,7 @@
                   <h2>{{val[i].name}}</h2>
                   <h2>{{val[i].title}}</h2>
                 </ion-item>
-                <ion-card-content (click)="show(val[i].id)">
+                <ion-card-content >
                   <div class="contentdiv">
                       <p class="content">{{val[i].content}}</p>
                   </div>
@@ -54,7 +54,7 @@
         </ion-list>
 
         <ion-list *ngSwitchCase="'myquestion'">
-            <ion-card *ngFor="let item of valt;let i = index;">
+            <ion-card *ngFor="let item of valt;let i = index;" (click)="show(valt[i].id)">
                 <ion-item class="askhead">
                   <ion-avatar item-start >
                     <img src="{{valt[i].logo}}" class="logo">
@@ -62,7 +62,7 @@
                   <h2>{{valt[i].name}}</h2>
                   <h2>{{valt[i].title}}</h2>
                 </ion-item>
-                <ion-card-content (click)="show(valt[i].id)">
+                <ion-card-content >
                   <div class="contentdiv">
                       <p class="content">{{valt[i].content}}</p>
                   </div>

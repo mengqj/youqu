@@ -1,7 +1,7 @@
 page-changeinfo {
   .c-top {
     margin-top: 1px;
-    height: 30%;
+    height: 36%;
     width: 100%;
 }
 
@@ -29,7 +29,10 @@ page-changeinfo {
 }
 
 .user-head img {
+    width:100%;
+    height:100%;
     border-radius: 50%;
+    overflow:hidden;
 }
 
 .user-head button {

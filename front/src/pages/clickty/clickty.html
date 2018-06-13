@@ -1,12 +1,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>详情</ion-title>
+    <ion-title text-center>详情</ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only>
+          <ion-icon name="more" style="opacity:0;"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 <ion-content padding>
-  <ion-list>
+  <ion-list class="detail">
     <ion-item>
       <ion-icon ios="ios-send" md="md-send" color="primary" item-start></ion-icon>
         目的地：<strong>{{val.title}}</strong>

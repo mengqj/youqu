@@ -1,25 +1,12 @@
 <ion-header>
     <ion-navbar>
-        <!-- <ion-title style="text-align:center"><span style="font-weight: lighter;">搜索</span></ion-title>
-        <ion-buttons right>
-            <button ion-button icon-only>
-              <ion-icon name="more" style="opacity:0;"></ion-icon>
-            </button>
-        </ion-buttons> -->
-        <!-- <div class="searchbox"> -->
-          <ion-searchbar  [(ngModel)]="input" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" class=“search”></ion-searchbar>
+          <ion-searchbar  [(ngModel)]="input" [showCancelButton]="shouldShowCancel" placeholder="攻略、游记、答案" class=“search”></ion-searchbar>
           <ion-buttons right>
           <button ion-button (click)="getlist(input)">搜索</button>
         </ion-buttons>
-        <!-- </div> -->
     </ion-navbar>
 </ion-header>
 <ion-content padding >
-  <!-- <div class="searchbox">
-    <ion-searchbar col-10 [(ngModel)]="input" [showCancelButton]="shouldShowCancel" placeholder="搜索攻略、游记、答案" ></ion-searchbar>
-    <button ion-button (click)="getlist(input)">搜索</button>
-  </div> -->
-
   <ion-card *ngFor="let item of val;let i = index;">
       <ion-item (click)="detail(val[i].id)">
           <h2>{{val[i].title}}</h2>

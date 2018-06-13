@@ -36,10 +36,9 @@ export class ClicktextPage {
         this.val.title="你的游记";
         $('#htitle').hide();
       }
-      this.val.sImg='http://'+host+':8080'+data['doc'].sImg;
-      //console.log(data);
-      //console.log(this.val.sImg);
-      //console.log(this.id);
+      setTimeout(() => {
+        this.clear();
+      }, 50);
     });
     this.getlist();
   };
@@ -59,6 +58,7 @@ export class ClicktextPage {
         this.meslist[i].logo='http://'+host+':8080'+data['docs'][i].author.logo;
         this.meslist[i].name=data['docs'][i].author.userName;
       }
+
     });
   }
   postMessage(){
@@ -82,5 +82,13 @@ export class ClicktextPage {
           this.getlist();
         }
     );
+  }
+
+  clear(){
+    $('.simg').each(function(){
+      if($(this).attr("src")=="http://35.194.153.183:8080"){
+        $(this).hide();
+      }
+    })
   }
 }

@@ -1,9 +1,12 @@
 page-sendtext {
     .area {
         width: 100%;
-        height:60%;
+        height:55%;
     }
-
+    .area textarea{
+      height: 400px;
+      margin-bottom: 500px;
+    }
     .text-btn1 {
         padding: 0;
         height: 4%;

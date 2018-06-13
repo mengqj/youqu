@@ -14,24 +14,10 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <ion-textarea class="area" placeholder="分享新鲜事..." [(ngModel)]="words"  (ionBlur)="blurInput()" (ionFocus)="focusInput()"  >
-    </ion-textarea>
-    <!--<ion-list>
-        <ion-grid>
-            <ion-row>
-                <ion-col col-6>
-                  <ion-list class="location">
-                    <ion-icon name="md-compass" style="margin-left:10px;" >&nbsp;石家庄</ion-icon>
-                  </ion-list>
-                  </ion-col>
-                <ion-col col-6>
-                        <ion-list class="method">
-                                <ion-icon name="md-globe" style="margin-left:10px;">&nbsp;公开</ion-icon>
-                        </ion-list>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-list>-->
+  <div class="area">
+      <ion-textarea  placeholder="分享新鲜事..." [(ngModel)]="words"  (ionBlur)="blurInput()" (ionFocus)="focusInput()"  >
+        </ion-textarea>
+  </div>
       <div class="img">
         <img id="simg" src="http://35.194.153.183:8080{{src}}">
       </div>
@@ -44,7 +30,7 @@
             </label>
             <input type="file" name="file" id="file" style="display: none;" (change)="upload()">
           </ion-col>
-            <ion-col  col-3 text-center> <ion-icon name="ios-camera-outline"  style="font-size:40px;"></ion-icon></ion-col>
+            <ion-col  col-3 text-center (click)="takepic()"> <ion-icon name="ios-camera-outline"  style="font-size:40px;"></ion-icon></ion-col>
             <ion-col col-3 text-center> <ion-icon name="ios-grid-outline" style="font-size:30px;"></ion-icon></ion-col>
             <ion-col col-3 text-center><ion-icon  name="ios-happy-outline" style="font-size: 30px;"></ion-icon></ion-col>
         </ion-row>

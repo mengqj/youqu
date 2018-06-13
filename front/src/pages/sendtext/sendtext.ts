@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams,ViewController ,ModalController} fr
 import {HttpClient} from "@angular/common/http";
 import  * as $ from 'jquery';
 import { Keyboard } from '@ionic-native/keyboard';
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
 @IonicPage()
 @Component({
   selector: 'page-sendtext',
@@ -11,7 +11,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 })
 export class SendtextPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-    private http: HttpClient,private keyboard: Keyboard,public modalCtrl:ModalController
+    private http: HttpClient,private keyboard: Keyboard,public modalCtrl:ModalController,private camera: Camera
   )
   {}
   ionViewWillEnter(){
@@ -100,6 +100,20 @@ focusInput(){
 blurInput(){
   this.keyboard.close();
 }
-
+takepic(){
+  const options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE
+  }
+  this.camera.getPicture(options).then((imageData) => {
+    // imageData is either a base64 encoded string or a file URI
+    // If it's base64:
+    //let base64Image = 'data:image/jpeg;base64,' + imageData;
+   }, (err) => {
+    // Handle error
+   });
+}
 }
 
