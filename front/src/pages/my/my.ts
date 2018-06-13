@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SettingPage } from '../setting/setting';
 import {HttpClient} from "@angular/common/http";
 import * as $ from 'jquery';
 @IonicPage()
@@ -39,13 +38,12 @@ loading(){
   this.user=this.storage.getItem('ID');
   console.log(this.user);
       let host='35.194.153.183';
-      let host2='localhost';
       let url:string='http://35.194.153.183:8080/api/users/getUserContents?user='+this.user+"&typeId=H1QbOnwAf";
       let url1:string='http://35.194.153.183:8080/api/users/getUserReplies?author='+this.user;
       let url2:string='http://35.194.153.183:8080/api/users/getUser?searchkey='+this.user;
-      var params={
+      /*var params={
         "categories":["H1QbOnwAf", "By2w49cyX"],
-      }
+      }*/
       this.http.get(url)
       .subscribe(
       data =>{

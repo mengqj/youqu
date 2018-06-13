@@ -64,7 +64,6 @@ export class ContentPage {
   }
   ionViewDidLoad(){
     let host='35.194.153.183';
-    let host2='localhost';
     let url:string='http://'+host+':8080/api/content/getContent?id='+this.id;
     this.http.get(url)
     .subscribe(
@@ -109,5 +108,5 @@ export class ContentPage {
   //  img:'assets/imgs/content_03.jpeg',
   //  count:'22727',
   //  btn:'浏览'
-  //}];  
+  //}];
 }

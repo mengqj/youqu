@@ -8,20 +8,14 @@
                攻&nbsp;略
       </ion-title>
     </ion-navbar>
-  
+
   </ion-header>
-  
-  
-  
       <ion-content class="card-background-page">
         <!-- <ion-searchbar (ionInput)="getItems($event)" class="search" placeholder="搜索目的地" ></ion-searchbar> -->
           <ion-card>
             <img src="assets/imgs/bg3.jpg"/>
-  
-            <div class="card-subtitle"><p>去海参崴旅游前，我有一本《独家指南》相赠 </p>
-  
+            <div class="card-subtitle">
             </div>
-  
           </ion-card>
           <div class="more" (click)="gomore()" >
             <p>热门目的地 </p>
@@ -59,23 +53,23 @@
                 </ion-row>
               </ion-grid>
             </ion-list>
-  
-  
+
+
             <ion-list *ngSwitchCase="'show2'">
               <ion-grid>
-                <ion-row class="row1"> 
+                <ion-row class="row1">
 
 
-                 
+
                   <ion-col col-4 center *ngFor="let item of items1;" (click)="goDetail(item.title)" class="col1">
                     <img src="{{item.img}}" alt="">
                     <p class="title">{{item.title}}</p>
                   </ion-col>
-                  
+
                 </ion-row>
               </ion-grid>
             </ion-list>
-  
+
             <ion-list *ngSwitchCase="'show3'">
               <ion-grid class="row1">
                 <ion-row>
@@ -87,7 +81,7 @@
                 </ion-row>
               </ion-grid>
             </ion-list>
-  
+
             <ion-list *ngSwitchCase="'show4'">
               <ion-grid>
                 <ion-row  class="row1">
@@ -104,5 +98,4 @@
             <button ion-button outline class="more-btn" (click)="gomore()">更多目的地</button>
           </ion-list>
        </ion-content>
-  
-  
+

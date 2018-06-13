@@ -1,15 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ItemSliding } from 'ionic-angular';
 import { ContentPage } from '../content/content';
-import * as $ from 'jquery';
-
-/**
- * Generated class for the MorecityPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-morecity',
@@ -28,7 +19,7 @@ export class MorecityPage {
 
   segmentsArray = ['domestic','hongkong','japan','asiae','asian','europe','australia'];
   city: string = this.segmentsArray[0];
-  
+
 
 swipeEvent(event){
   //向左滑

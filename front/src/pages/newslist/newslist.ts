@@ -20,7 +20,6 @@ export class NewslistPage {
     this.navCtrl.push('ThumbsupPage',{index:i});
   }
   getNotify(){
-    let host='35.194.153.183';
     let url:string='http://35.194.153.183:8080/api/users/getUserNotifys?author='+this.userId;
       this.http.get(url)
       .subscribe(
