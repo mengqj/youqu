@@ -16,7 +16,21 @@ export class SendtextPage {
   {}
   ionViewWillEnter(){
     this.src="/upload/blogpicture/white.png";
+    let elements = document.querySelectorAll(".tabbar");
+    if(elements != null) {
+        Object.keys(elements).map((key) => {
+            elements[key].style.display ='none';
+        });
+    }
   }
+  ionViewWillLeave() {
+    let elements = document.querySelectorAll(".tabbar");
+    if(elements != null) {
+        Object.keys(elements).map((key) => {
+            elements[key].style.display ='flex';
+        });
+    }
+}
 username=localStorage.getItem('userName');
 words:string;
 val;

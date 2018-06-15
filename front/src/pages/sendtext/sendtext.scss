@@ -4,7 +4,7 @@ page-sendtext {
         height:55%;
     }
     .area textarea{
-      height: 400px;
+      height: 300px;
       margin-bottom: 500px;
     }
     .text-btn1 {
@@ -50,13 +50,27 @@ page-sendtext {
     line-height:30px;
  }
  .img{
-   width: 150px;
-   height: 150px;
-  margin-bottom: 4%;
+   position: fixed;
+   bottom: 60px;
+   width: 50px;
+   height: 50px;
+  margin-bottom: 2%;
+  margin-left: 2%;
  }
  .img img{
    height: 100%;
    width: 100%;
+ }
+ ion-list{
+  position: fixed;
+  bottom: 0;
+  height:60px;
+  background-color:#f2f2f2;
+  width:100%;
+  padding:0 !important;
+  border-top:1px solid #d6d6d6;
+  margin-bottom: 0 !important;
+  line-height: 50px;
  }
 }
 

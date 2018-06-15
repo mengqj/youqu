@@ -72,4 +72,7 @@ export class RegisterPage {
 
 })
 }
+doLogin(){
+  this.navCtrl.push('LoginPage');
+}
 }

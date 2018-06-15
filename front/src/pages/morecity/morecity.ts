@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ItemSliding } from 'ionic-angular';
-import { ContentPage } from '../content/content';
 @IonicPage()
 @Component({
   selector: 'page-morecity',
@@ -242,6 +241,6 @@ items19=[{
 
 
 goDetail(title){
-  this.navCtrl.push(ContentPage,{place:title});
+  this.navCtrl.push('ContentPage',{place:title});
 }
 }

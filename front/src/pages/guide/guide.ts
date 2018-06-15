@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MorecityPage } from '../morecity/morecity';
 @IonicPage()
 @Component({
   selector: 'page-guide',
@@ -106,6 +105,6 @@ show="show1";
   }
 
   gomore(){
-    this.navCtrl.push(MorecityPage);
+    this.navCtrl.push('MorecityPage');
   }
 }
