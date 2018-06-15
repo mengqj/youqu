@@ -290,7 +290,7 @@ class Content {
                 groupObj.comments = marked(
                     (fields.markDownComments).replace(/<!--more-->/g, "")
                 )
-                groupObj.stitle = groupObj.title;
+                //groupObj.stitle = groupObj.title;
                 groupObj.from = '3';
                 groupObj.uAuthor = !_.isEmpty(req.session.user) ? req.session.user._id : fields.author;
                 groupObj.state = fields.state;
