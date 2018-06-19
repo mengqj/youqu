@@ -109,28 +109,35 @@ export class ChangeinfoPage {
   }
   //修改信息
   send(){
-    var params = {
-    "_id": this.userId,
-    "name":this.name,
-    "email": this.email,
-    "logo": this.logo,
-    "gender": this.gender,
-    "birth": this.event.month,
-    "phoneNum":this.phone,
-    "bgLogo":this.bgLogo,
-    };
+    if (this.name=='') {
+      alert('昵称不能为空!');
+    }
+    else {
+      var params = {
+      "_id": this.userId,
+      "name":this.name,
+      "email": this.email,
+      "logo": this.logo,
+      "gender": this.gender,
+      "birth": this.event.month,
+      "phoneNum":this.phone,
+      "bgLogo":this.bgLogo,
+        };
       let url:string='http://35.194.153.183:8080/api/users/updateInfo';
       this.http.post(url,params)
       .subscribe(
         (data:any) => {
           console.log(data);
           if (data.state=="success") {
+            console.log(data);
             this.viewCtrl.dismiss();
-          } else {
-            alert('发送失败');
+          } else if (data.state=="error") {
+            alert(data.message);
           }
-
         }
     );
+
+    }
+    
   }
 }
