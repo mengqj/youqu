@@ -16,9 +16,6 @@ export class AskPage {
     title:'',
     val:'',
   };
-  back(){
-    this.viewCtrl.dismiss();
-  }
   send(){
     $('#ask').attr("disabled","true");
     if (this.content.title.length==0) {

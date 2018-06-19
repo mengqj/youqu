@@ -14,9 +14,6 @@ export class CallbackPage {
   content;
   userId=localStorage.getItem('ID');
   userName=localStorage.getItem('userName');
-  back() {
-    this.viewCtrl.dismiss();
-  }
   submit(){
     $('#sub').attr("disabled","true");
     if(this.content.length==0){

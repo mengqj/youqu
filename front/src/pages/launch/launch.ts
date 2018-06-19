@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CityDataProvider} from "../../providers/city-data/city-data";
-import { MultiPickerModule} from 'ion-multi-picker';
 import { HttpClient } from "@angular/common/http";
 import  * as $ from 'jquery';
 @IonicPage()
@@ -48,8 +47,5 @@ export class LaunchPage {
           this.viewCtrl.dismiss();
         }
     );
-  }
-  back(){
-    this.viewCtrl.dismiss();
   }
 }

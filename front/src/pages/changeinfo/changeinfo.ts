@@ -53,7 +53,6 @@ export class ChangeinfoPage {
       processData: false,
       success: function (data) {
         console.log(data);
-        //$("#logo").attr("src", 'http://35.194.153.183:8080'+data);
         temp=data;
         return temp;
       },
@@ -133,11 +132,5 @@ export class ChangeinfoPage {
 
         }
     );
-  }
-
-
-
-  back() {
-    this.viewCtrl.dismiss();
   }
 }

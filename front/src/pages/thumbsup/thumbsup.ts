@@ -16,7 +16,7 @@ export class ThumbsupPage {
   }
   index;
   val={
-    date:'123',
+    date:'',
     notify:{
       title:'',
       content:''

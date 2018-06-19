@@ -33,8 +33,7 @@ export class ContactPage {
   });
   }
   send(){
-    let modal = this.modalCtrl.create(LaunchPage);
-      modal.present();
+    this.navCtrl.push(LaunchPage);
   }
   show(id){
     this.navCtrl.push('ClicktyPage',{textId:id});

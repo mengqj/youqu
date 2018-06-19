@@ -64,8 +64,7 @@ export class QuestionPage {
   }
   question:string="recommend";
   ask(){
-    let modal = this.modalCtrl.create('AskPage');
-      modal.present();
+    this.navCtrl.push('AskPage');
   }
   show(id){
     this.navCtrl.push('ClicktextPage',{textId:id});

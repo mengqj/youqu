@@ -6,12 +6,12 @@ import { MultiPickerModule} from 'ion-multi-picker';
 import { CommonModule } from "@angular/common";
 import { HttpClientModule,HttpClientJsonpModule } from '@angular/common/http';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer,FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { CityDataProvider} from "../providers/city-data/city-data";
 import { Keyboard } from '@ionic-native/keyboard';
 import { ImagePicker } from '@ionic-native/image-picker';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 
 
 

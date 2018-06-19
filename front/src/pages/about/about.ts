@@ -9,8 +9,4 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
-  back() {
-    this.viewCtrl.dismiss();
-  }
-
 }

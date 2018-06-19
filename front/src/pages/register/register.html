@@ -8,12 +8,12 @@
         <ion-label color="#999099;">用户名</ion-label>
         <ion-input id="username" (input)="changeUnm($event)" [value]="username"></ion-input>
       </ion-item>
-      <button ion-button clear item-start style="color:#999099;" class="btn2"><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></button>
+      <button ion-button clear item-start style="color:#999099;" class="btn2"><ion-icon ios="ios-lock" md="md-lock"></ion-icon></button>
       <ion-item class="item1">
         <ion-label color="#999099;" >密码</ion-label>
         <ion-input type="password" (input)="changePwd($event)" [value]="password"></ion-input>
       </ion-item>
-      <button ion-button clear item-start style="color:#999099;" class="btn5"><ion-icon ios="ios-unlock" md="md-unlock"></ion-icon></button>
+      <button ion-button clear item-start style="color:#999099;" class="btn5"><ion-icon ios="ios-lock" md="md-lock"></ion-icon></button>
       <ion-item class="item1">
         <ion-label color="#999099;" >确认密码</ion-label>
         <ion-input type="password" (input)="changePwd1($event)" [value]="password1"></ion-input>

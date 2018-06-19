@@ -30,10 +30,16 @@ export class BeginPage {
 }
 home(){
   $("#reg,#log").attr("disabled","true");
+  setTimeout(() => {
+    $("#reg,#log").removeAttr('disabled');
+  }, 1000);
   this.navCtrl.push('LoginPage');
 }
 zhuce(){
   $("#reg,#log").attr("disabled","true");
+  setTimeout(() => {
+    $("#reg,#log").removeAttr('disabled');
+  }, 1000);
   this.navCtrl.push('RegisterPage');
 }
 }

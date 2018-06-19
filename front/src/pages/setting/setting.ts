@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController,App } from 'ionic-angular';
 import { BeginPage } from '../begin/begin';
 @IonicPage()
 @Component({
@@ -8,7 +8,8 @@ import { BeginPage } from '../begin/begin';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+   public viewCtrl: ViewController,public appCtrl:App) {
   }back(){
       this.viewCtrl.dismiss();
   }
@@ -21,27 +22,21 @@ export class SettingPage {
   ];
   fbtn(item){
     if (item == "修改个人信息") {
-      let modal = this.modalCtrl.create('ChangeinfoPage');
-      modal.present();
-
+      this.navCtrl.push('ChangeinfoPage');
     }
     else if (item == "修改密码") {
-      // let modal = this.modalCtrl.create(ForgetpasswordPage);
-      // modal.present();
       this.navCtrl.push('ForgetpasswordPage');
     }
     else if (item == "问题反馈") {
-      let modal = this.modalCtrl.create('CallbackPage');
-      modal.present();
+      this.navCtrl.push('CallbackPage');
     }
     else if (item == "关于") {
-      let modal = this.modalCtrl.create('AboutPage');
-      modal.present();
+      this.navCtrl.push('AboutPage');
     }
-
   }
   clear(){
     localStorage.clear();
-    this.navCtrl.push(BeginPage);
+    this.appCtrl.getRootNavs()[0].setRoot(BeginPage);
+   // this.navCtrl.push(BeginPage);
   }
 }

@@ -37,7 +37,7 @@ export class ContentPage {
   ,"九份","南投","阿里山","澳门","东京","大阪","京都","济州岛",
 "首尔","釜山","巴厘岛","民丹岛","马尔代夫","罗马","威尼斯","洛杉矶"
 ,"塞班岛","巴黎","普罗旺斯","悉尼","凯恩斯","黄金海岸","奥克兰","皇后镇","开罗",
-"卢克索","札幌","伦敦","墨尔本"];
+"卢克索","札幌","伦敦","墨尔本","纽约"];
   ids=['ryh28F9km','HkWzTETkm','Bk7pIN6yQ','Byd8hX6Jm','HJ_9-STJ7',
   'BygAEST1Q','ryv1xamlm','SJduMNp17','SkyAQ4akm','rkzCPEa17',
   'S1y8D4Ty7','Bk7pIN6yQ',"r1CetEpJX","Hk5Hs4aJX","HkWzTETkm",
@@ -50,7 +50,7 @@ export class ContentPage {
   "BJUwALvlX","r1JM1vDem","SkbAywPeQ","ryBHgvDxm","Hk4zZDDeQ","H19nbwPxm",
   "Hk4XMwwe7","H1ncGwPlm","ryMSmPPe7","BkcC7DwgX","HJPmNwwxX","r1XANPve7",
   "BJTmBvPgQ","ryGFBvDe7","BJmZ8PDe7","S1spIvPeX","rkZ5wwvgX","HJjpwwPgX",
-  "HJOduvve7","r1dZFwvem","Sy1hYPwxm"
+  "HJOduvve7","r1dZFwvem","Sy1hYPwxm","rJ57_52eX"
 ];
 
 
