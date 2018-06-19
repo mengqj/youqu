@@ -55,7 +55,11 @@ page-content {
         border-bottom: 0.5px solid #e5e5e5;     
     }
     ion-content  .index-list .p1{
-        height: 55px;
+        margin-top: 5px;
+        overflow: hidden;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
     }
     ion-content  .index-list .p2{
         height:35px;
@@ -67,13 +71,8 @@ page-content {
        word-break:break-all; 
     }
     ion-content .item ion-thumbnail img{
-        width:120px;
-        height:92px;
+        width:130px;
+        height:95px;
+        border-radius:3px;
     }
-    input-wrapper{
-        margin:0 40px;
-    }
-
-
-
 }
