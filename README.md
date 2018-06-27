@@ -17,3 +17,16 @@
 * 孟秋建 （项目经理 ， 客户端代码开发）
     * Email: <2931602191@qq.com>
     * Github: [https://github.com/mengqj](https://github.com/mengqj)
+* 薛佳炜  (后端代码开发 ， 测试)
+     * Email: <763782172@qq.com>
+     * Github: [https://github.com/xuejiawei1](https://github.com/xuejiawei1)
+* 谷文佳  （客户端代码开发 ， 测试）
+     * Email: <1023478561@qq.com>
+     * Github: [https://github.com/guwenjia](https://github.com/guwenjia)
+* 高静   （客户端代码开发 ， 测试）
+     * Email：<646040659@qq.com>
+     * Github: [https://github.com/gaojing1226](https://github.com/gaojing1226)
+* 刘怡洁   (客户端代码开发 ， 测试)
+     * Email: <951014453@qq.com>
+     * Github: [https://github.com/yijieliu](https://github.com/yijieliu)
+
