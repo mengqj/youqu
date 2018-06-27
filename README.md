@@ -40,4 +40,6 @@
   <img src="images/thum/gonglue.png" width="250px" height="400px">
   
   <img src="images/thum/wo.png" width="250px" height="400px">
+  <img src="images/thum/shezhi.png" width="250px" height="400px">
+  <img src="images/thum/changeinfo.png" width="250px" height="400px">
 
