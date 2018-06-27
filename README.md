@@ -33,4 +33,5 @@
 ### 运行效果
   <img src="images/thum/kaishi.png" width="250px" height="400px">
   <img src="images/thum/zhuce.png" width="250px"  height="480px">
+  <img src="images/thum/login.png" width="250px" height="480px">
 
