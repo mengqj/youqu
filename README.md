@@ -17,7 +17,7 @@
 * 孟秋建 （项目经理 ， 客户端代码开发）
     * Email: <2931602191@qq.com>
     * Github: [https://github.com/mengqj](https://github.com/mengqj)
-* 薛佳炜  (后端代码开发 ， 测试)
+* 薛佳炜  (服务器代码开发 ， 测试)
      * Email: <763782172@qq.com>
      * Github: [https://github.com/xuejiawei1](https://github.com/xuejiawei1)
 * 谷文佳  （客户端代码开发 ， 测试）
