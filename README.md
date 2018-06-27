@@ -31,7 +31,9 @@
      * Github: [https://github.com/yijieliu](https://github.com/yijieliu)
      
 ### 运行效果
-  <img src="images/thum/kaishi.png" width="250px" height="400px" style="float:left">
-  <img src="images/thum/zhuce.png" width="250px"  height="480px" style="float:left">
-  <img src="images/thum/login.png" width="250px" height="480px">
+  <img src="images/thum/kaishi.png" width="250px" height="400px" >
+  <img src="images/thum/zhuce.png" width="250px"  height="400px" >
+  <img src="images/thum/login.png" width="250px" height="400px">
+  
+  <img src="images/thum/hone.png" width="250px" height="400px">
 
