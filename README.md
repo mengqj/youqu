@@ -15,5 +15,5 @@
 
 ### 项目成员
 * 孟秋建 （项目经理 ， 客户端代码开发）
-    *Email: <2931602191@qq.com>
-    *Github: [https://github.com/mengqj](https://github.com/mengqj)
+    * Email: <2931602191@qq.com>
+    * Github: [https://github.com/mengqj](https://github.com/mengqj)
