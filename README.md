@@ -37,4 +37,5 @@
   
   <img src="images/thum/hone.png" width="250px" height="400px">
   <img src="images/thum/faxian.png" width="250px" height="400px">
+  <img src="images/thum/gonglue.png" width="250px" height="400px">
 
