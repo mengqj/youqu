@@ -29,4 +29,7 @@
 * 刘怡洁   (客户端代码开发 ， 测试)
      * Email: <951014453@qq.com>
      * Github: [https://github.com/yijieliu](https://github.com/yijieliu)
+     
+### 运行效果
+  <img src="images/thum/kaishi.png" width="250px" height="400px">
 
