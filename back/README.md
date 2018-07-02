@@ -84,6 +84,6 @@ $ npm run start
 http://localhost:8080  
 http://35.194.153.183:8080 (游趣服务器)
 
-登录
+登录(test01 123456)  
 http://localhost:8080/dr-admin  
 http://35.194.153.183:8080/dr-admin (游趣服务器)
